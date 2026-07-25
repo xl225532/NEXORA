@@ -9,577 +9,634 @@
 
 <link
     rel="stylesheet"
-    href="style.css"
+    href="style.css?v=20"
 >
 
 </head><body><!-- =====================================================
-     DASHBOARD
-===================================================== --><div id="dashboardPage"><!-- HEADER -->
+     DASHBOARD NAVBAR
+===================================================== --><header class="dashboard-navbar"><div class="dashboard-logo">
+    NEXORA
+</div>
 
-<header class="dashboard-header">
 
-    <div class="dashboard-brand">
-        NEXORA
+<div class="dashboard-user-area">
+
+    <span id="welcomeUser">
+        مرحبًا بك
+    </span>
+
+
+    <button
+        id="logoutButton"
+        class="logout-button"
+        type="button"
+    >
+        تسجيل الخروج
+    </button>
+
+</div>
+
+</header><!-- =====================================================
+     DASHBOARD LAYOUT
+===================================================== --><div class="dashboard-layout"><!-- =================================================
+     SIDEBAR
+================================================== -->
+
+<aside class="dashboard-sidebar">
+
+
+    <div class="sidebar-title">
+        القائمة الرئيسية
     </div>
 
 
-    <div class="dashboard-user">
-
-        <span id="headerUserName">
-            مستخدم
-        </span>
-
-        <div class="user-avatar" id="userAvatar">
-            N
-        </div>
-
-    </div>
-
-</header>
+    <nav class="sidebar-menu">
 
 
-<!-- MAIN LAYOUT -->
-
-<div class="dashboard-layout">
-
-
-    <!-- SIDEBAR -->
-
-    <aside class="dashboard-sidebar">
-
-
-        <div class="sidebar-logo">
-            NEXORA
-        </div>
-
-
-        <nav>
-
-
-            <button
-                class="sidebar-item active"
-                onclick="showSection('homeSection', this)"
-            >
-                🏠 الرئيسية
-            </button>
-
-
-            <button
-                class="sidebar-item"
-                onclick="showSection('tasksSection', this)"
-            >
-                📋 المهام
-            </button>
-
-
-            <button
-                class="sidebar-item"
-                onclick="showSection('teamSection', this)"
-            >
-                👥 الفريق
-            </button>
-
-
-            <button
-                class="sidebar-item"
-                onclick="showSection('walletSection', this)"
-            >
-                💰 المحفظة
-            </button>
-
-
-            <button
-                class="sidebar-item"
-                onclick="showSection('settingsSection', this)"
-            >
-                ⚙️ الإعدادات
-            </button>
-
-
-            <button
-                class="sidebar-item logout-item"
-                onclick="logout()"
-            >
-                🚪 تسجيل الخروج
-            </button>
-
-
-        </nav>
-
-
-    </aside>
-
-
-    <!-- CONTENT -->
-
-    <main class="dashboard-content">
-
-
-        <!-- HOME -->
-
-        <section
-            id="homeSection"
-            class="dashboard-section active"
+        <a
+            href="#overview"
+            class="sidebar-link active"
         >
 
+            <span>
+                🏠
+            </span>
 
-            <div class="welcome-box">
+            الرئيسية
 
-                <h1>
-                    مرحبًا بك،
-                    <span id="welcomeUserName">
-                        مستخدم
-                    </span>
-                </h1>
+        </a>
 
-                <p>
-                    أهلاً بك في منصة NEXORA الرقمية.
-                </p>
 
+        <a
+            href="#tasks"
+            class="sidebar-link"
+        >
+
+            <span>
+                📋
+            </span>
+
+            المهام
+
+        </a>
+
+
+        <a
+            href="#team"
+            class="sidebar-link"
+        >
+
+            <span>
+                👥
+            </span>
+
+            فريقي
+
+        </a>
+
+
+        <a
+            href="#wallet"
+            class="sidebar-link"
+        >
+
+            <span>
+                💰
+            </span>
+
+            المحفظة
+
+        </a>
+
+
+        <a
+            href="#referral"
+            class="sidebar-link"
+        >
+
+            <span>
+                🔗
+            </span>
+
+            الإحالة
+
+        </a>
+
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+
+        <a
+            href="index.html"
+            class="sidebar-home"
+        >
+
+            العودة إلى الرئيسية
+
+        </a>
+
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- =================================================
+     MAIN CONTENT
+================================================== -->
+
+<main class="dashboard-main">
+
+
+    <!-- =================================================
+         WELCOME
+    ================================================== -->
+
+    <section
+        id="overview"
+        class="dashboard-welcome"
+    >
+
+        <div>
+
+            <span class="dashboard-label">
+                لوحة التحكم
+            </span>
+
+
+            <h1 id="dashboardUserName">
+                أهلاً بك في NEXORA
+            </h1>
+
+
+            <p>
+                من هنا يمكنك متابعة حسابك ومهامك وفريقك ومحفظتك.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         STAT CARDS
+    ================================================== -->
+
+    <section class="stats-grid">
+
+
+        <!-- BALANCE -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                💰
             </div>
 
 
-            <!-- STATS -->
+            <div class="stat-content">
 
-            <div class="stats-grid">
-
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        💰
-                    </div>
-
-                    <div class="stat-title">
-                        الرصيد
-                    </div>
-
-                    <div
-                        class="stat-value"
-                        id="balanceValue"
-                    >
-                        0
-                    </div>
-
-                </div>
+                <span>
+                    الرصيد الحالي
+                </span>
 
 
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        📋
-                    </div>
-
-                    <div class="stat-title">
-                        المهام
-                    </div>
-
-                    <div
-                        class="stat-value"
-                        id="tasksValue"
-                    >
-                        0
-                    </div>
-
-                </div>
+                <strong id="balanceValue">
+                    0
+                </strong>
 
 
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        👥
-                    </div>
-
-                    <div class="stat-title">
-                        أعضاء الفريق
-                    </div>
-
-                    <div
-                        class="stat-value"
-                        id="teamValue"
-                    >
-                        0
-                    </div>
-
-                </div>
-
-
-                <div class="stat-card">
-
-                    <div class="stat-icon">
-                        🎁
-                    </div>
-
-                    <div class="stat-title">
-                        كود الإحالة
-                    </div>
-
-                    <div
-                        class="stat-value referral-value"
-                        id="referralCodeValue"
-                    >
-                        -
-                    </div>
-
-                </div>
-
+                <small>
+                    الرصيد المتاح
+                </small>
 
             </div>
 
+        </div>
 
-            <!-- QUICK ACTIONS -->
-
-            <div class="dashboard-card">
-
-                <h2>
-                    الوصول السريع
-                </h2>
-
-
-                <div class="quick-actions">
-
-
-                    <button
-                        onclick="showSectionById('tasksSection')"
-                    >
-                        📋 عرض المهام
-                    </button>
-
-
-                    <button
-                        onclick="showSectionById('teamSection')"
-                    >
-                        👥 عرض الفريق
-                    </button>
-
-
-                    <button
-                        onclick="showSectionById('walletSection')"
-                    >
-                        💰 عرض المحفظة
-                    </button>
-
-
-                </div>
-
-            </div>
-
-
-        </section>
 
 
         <!-- TASKS -->
 
-        <section
-            id="tasksSection"
-            class="dashboard-section"
-        >
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📋
+            </div>
 
 
-            <div class="section-header">
+            <div class="stat-content">
 
-                <h1>
+                <span>
                     المهام
-                </h1>
-
-                <p>
-                    المهام المتاحة لك
-                </p>
-
-            </div>
+                </span>
 
 
-            <div class="dashboard-card">
+                <strong id="tasksValue">
+                    0
+                </strong>
 
 
-                <div class="task-card">
-
-
-                    <div>
-
-                        <h3>
-                            المهمة اليومية
-                        </h3>
-
-                        <p>
-                            أكمل مهامك اليومية للحصول على المكافآت.
-                        </p>
-
-                    </div>
-
-
-                    <button
-                        class="task-button"
-                        onclick="startTask()"
-                    >
-                        بدء المهمة
-                    </button>
-
-
-                </div>
-
+                <small>
+                    المهام المسجلة
+                </small>
 
             </div>
 
+        </div>
 
-        </section>
 
 
         <!-- TEAM -->
 
-        <section
-            id="teamSection"
-            class="dashboard-section"
-        >
+        <div class="stat-card">
 
-
-            <div class="section-header">
-
-                <h1>
-                    الفريق
-                </h1>
-
-                <p>
-                    إدارة ومتابعة فريقك
-                </p>
-
+            <div class="stat-icon">
+                👥
             </div>
 
 
-            <div class="dashboard-card">
+            <div class="stat-content">
 
-
-                <h2>
-                    كود الإحالة الخاص بك
-                </h2>
-
-
-                <div class="referral-box">
-
-
-                    <span id="teamReferralCode">
-                        -
-                    </span>
-
-
-                    <button
-                        onclick="copyReferralCode()"
-                    >
-                        نسخ
-                    </button>
-
-
-                </div>
-
-
-                <p
-                    id="copyMessage"
-                    class="copy-message"
-                ></p>
-
-
-            </div>
-
-
-            <div class="dashboard-card">
-
-
-                <h2>
+                <span>
                     أعضاء الفريق
-                </h2>
+                </span>
 
 
-                <div class="empty-state">
-
-                    👥
-
-                    <p>
-                        لا يوجد أعضاء في فريقك حاليًا.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-        <!-- WALLET -->
-
-        <section
-            id="walletSection"
-            class="dashboard-section"
-        >
-
-
-            <div class="section-header">
-
-                <h1>
-                    المحفظة
-                </h1>
-
-                <p>
-                    إدارة رصيدك
-                </p>
-
-            </div>
-
-
-            <div class="wallet-card">
-
-
-                <div class="wallet-label">
-                    الرصيد الحالي
-                </div>
-
-
-                <div
-                    class="wallet-balance"
-                    id="walletBalance"
-                >
+                <strong id="teamValue">
                     0
-                </div>
+                </strong>
 
 
-                <div class="wallet-currency">
-                    الرصيد التجريبي
-                </div>
-
+                <small>
+                    إجمالي الفريق
+                </small>
 
             </div>
 
+        </div>
 
-            <div class="dashboard-card">
+
+
+        <!-- REFERRAL -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🔗
+            </div>
+
+
+            <div class="stat-content">
+
+                <span>
+                    كود الإحالة
+                </span>
+
+
+                <strong
+                    id="referralCodeValue"
+                    class="referral-code"
+                >
+                    NEXORA
+                </strong>
+
+
+                <small>
+                    كود الدعوة الخاص بك
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         TASKS SECTION
+    ================================================== -->
+
+    <section
+        id="tasks"
+        class="dashboard-section"
+    >
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>
+                    المهام
+                </span>
 
 
                 <h2>
-                    سجل العمليات
+                    مهامي
                 </h2>
-
-
-                <div class="empty-state">
-
-                    💳
-
-                    <p>
-                        لا توجد عمليات حتى الآن.
-                    </p>
-
-                </div>
-
 
             </div>
 
 
-        </section>
+            <button
+                type="button"
+                class="section-button"
+            >
+                عرض الكل
+            </button>
+
+        </div>
 
 
-        <!-- SETTINGS -->
-
-        <section
-            id="settingsSection"
-            class="dashboard-section"
-        >
+        <div class="empty-dashboard-card">
 
 
-            <div class="section-header">
+            <div class="empty-icon">
+                📋
+            </div>
 
-                <h1>
-                    الإعدادات
-                </h1>
+
+            <h3>
+                لا توجد مهام حاليًا
+            </h3>
+
+
+            <p>
+                سيتم عرض المهام الخاصة بك هنا عند توفرها.
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         TEAM SECTION
+    ================================================== -->
+
+    <section
+        id="team"
+        class="dashboard-section"
+    >
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>
+                    الفريق
+                </span>
+
+
+                <h2>
+                    فريقي
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="section-button"
+            >
+                إدارة الفريق
+            </button>
+
+        </div>
+
+
+        <div class="team-card">
+
+
+            <div class="team-card-icon">
+                👥
+            </div>
+
+
+            <div>
+
+                <h3>
+                    أعضاء فريقك
+                </h3>
+
 
                 <p>
-                    معلومات حسابك
+                    عدد أعضاء فريقك الحالي:
+                    <strong id="teamCountText">
+                        0
+                    </strong>
                 </p>
 
             </div>
 
 
-            <div class="dashboard-card">
+        </div>
 
 
-                <div class="profile-row">
+    </section>
+
+
+
+    <!-- =================================================
+         WALLET SECTION
+    ================================================== -->
+
+    <section
+        id="wallet"
+        class="dashboard-section"
+    >
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>
+                    المحفظة
+                </span>
+
+
+                <h2>
+                    محفظتي
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="section-button"
+            >
+                عرض العمليات
+            </button>
+
+        </div>
+
+
+        <div class="wallet-card">
+
+
+            <div class="wallet-top">
+
+
+                <div>
 
                     <span>
-                        الاسم
+                        الرصيد المتاح
                     </span>
 
-                    <strong id="settingsName">
-                        -
-                    </strong>
+
+                    <h3 id="walletBalance">
+                        0
+                    </h3>
 
                 </div>
 
 
-                <div class="profile-row">
-
-                    <span>
-                        البريد أو الهاتف
-                    </span>
-
-                    <strong id="settingsIdentifier">
-                        -
-                    </strong>
-
-                </div>
-
-
-                <div class="profile-row">
-
-                    <span>
-                        كود الإحالة
-                    </span>
-
-                    <strong id="settingsReferralCode">
-                        -
-                    </strong>
-
+                <div class="wallet-icon">
+                    💰
                 </div>
 
 
             </div>
 
 
-            <div class="dashboard-card">
+            <div class="wallet-actions">
 
 
                 <button
-                    class="danger-button"
-                    onclick="logout()"
+                    type="button"
+                    class="wallet-button"
                 >
-                    تسجيل الخروج
+                    إيداع
+                </button>
+
+
+                <button
+                    type="button"
+                    class="wallet-button secondary"
+                >
+                    سحب
                 </button>
 
 
             </div>
 
 
-        </section>
+        </div>
 
 
-    </main>
+    </section>
 
 
-</div>
+
+    <!-- =================================================
+         REFERRAL SECTION
+    ================================================== -->
+
+    <section
+        id="referral"
+        class="dashboard-section"
+    >
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>
+                    الإحالة
+                </span>
+
+
+                <h2>
+                    كود الإحالة الخاص بك
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="referral-card">
+
+
+            <p>
+                شارك كود الإحالة الخاص بك مع الآخرين.
+            </p>
+
+
+            <div class="referral-box">
+
+
+                <strong id="referralCodeLarge">
+                    NEXORA
+                </strong>
+
+
+                <button
+                    id="copyReferralButton"
+                    type="button"
+                >
+                    نسخ الكود
+                </button>
+
+
+            </div>
+
+
+            <div
+                id="copyMessage"
+                class="copy-message hidden"
+            >
+                تم نسخ كود الإحالة بنجاح
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="dashboard-footer">
+
+        ©
+        <span id="dashboardYear"></span>
+
+        NEXORA
+
+        -
+        جميع الحقوق محفوظة.
+
+    </footer>
+
+
+</main>
 
 </div><!-- =====================================================
-     JAVASCRIPT
+     DASHBOARD JAVASCRIPT
 ===================================================== --><script>
 
 "use strict";
-
-
-/*
-=========================================================
-NEXORA DASHBOARD SYSTEM
-=========================================================
-*/
-
-
-const SESSION_KEY =
-    "nexora_session";
 
 
 /*
@@ -588,25 +645,32 @@ GET SESSION
 =========================================================
 */
 
-function getSession() {
 
-    let session =
+function getNexoraSession() {
+
+
+    const localSession =
         localStorage.getItem(
-            SESSION_KEY
+            "nexora_session"
         );
 
 
-    if (!session) {
-
-        session =
-            sessionStorage.getItem(
-                SESSION_KEY
-            );
-
-    }
+    const temporarySession =
+        sessionStorage.getItem(
+            "nexora_session"
+        );
 
 
-    if (!session) {
+    const sessionData =
+        localSession
+        ||
+        temporarySession;
+
+
+    if (!sessionData) {
+
+        window.location.href =
+            "login.html";
 
         return null;
 
@@ -616,18 +680,25 @@ function getSession() {
     try {
 
         return JSON.parse(
-            session
+            sessionData
         );
 
     }
 
     catch(error) {
 
-        console.error(
-            "Session error:",
-            error
+        localStorage.removeItem(
+            "nexora_session"
         );
 
+
+        sessionStorage.removeItem(
+            "nexora_session"
+        );
+
+
+        window.location.href =
+            "login.html";
 
         return null;
 
@@ -636,358 +707,203 @@ function getSession() {
 }
 
 
-/*
-=========================================================
-CHECK LOGIN
-=========================================================
-*/
-
-const currentSession =
-    getSession();
-
-
-if (!currentSession) {
-
-    window.location.href =
-        "login.html";
-
-}
-
 
 /*
 =========================================================
-LOAD USER DATA
+LOAD USER
 =========================================================
 */
 
-if (currentSession) {
+
+const session =
+    getNexoraSession();
+
+
+if (session) {
 
 
     /*
-    ---------------------------------------------
     USER NAME
-    ---------------------------------------------
     */
 
-    const userName =
-        currentSession.name ||
-        "مستخدم";
+
+    const welcomeUser =
+        document.getElementById(
+            "welcomeUser"
+        );
 
 
-    document
-        .getElementById(
-            "headerUserName"
-        )
-        .textContent =
-        userName;
+    const dashboardUserName =
+        document.getElementById(
+            "dashboardUserName"
+        );
 
 
-    document
-        .getElementById(
-            "welcomeUserName"
-        )
-        .textContent =
-        userName;
+    if (welcomeUser) {
+
+        welcomeUser.textContent =
+            "مرحبًا، " +
+            session.name;
+
+    }
+
+
+    if (dashboardUserName) {
+
+        dashboardUserName.textContent =
+            "أهلاً بك، " +
+            session.name;
+
+    }
+
 
 
     /*
-    ---------------------------------------------
-    AVATAR
-    ---------------------------------------------
-    */
-
-    document
-        .getElementById(
-            "userAvatar"
-        )
-        .textContent =
-        userName
-            .charAt(0)
-            .toUpperCase();
-
-
-    /*
-    ---------------------------------------------
     BALANCE
-    ---------------------------------------------
     */
+
+
+    const balanceValue =
+        document.getElementById(
+            "balanceValue"
+        );
+
+
+    const walletBalance =
+        document.getElementById(
+            "walletBalance"
+        );
+
 
     const balance =
-        currentSession.balance ||
+        session.balance
+        ||
         0;
 
 
-    document
-        .getElementById(
-            "balanceValue"
-        )
-        .textContent =
-        balance;
+    if (balanceValue) {
+
+        balanceValue.textContent =
+            balance;
+
+    }
 
 
-    document
-        .getElementById(
-            "walletBalance"
-        )
-        .textContent =
-        balance;
+    if (walletBalance) {
+
+        walletBalance.textContent =
+            balance;
+
+    }
+
 
 
     /*
-    ---------------------------------------------
     TASKS
-    ---------------------------------------------
     */
 
-    document
-        .getElementById(
+
+    const tasksValue =
+        document.getElementById(
             "tasksValue"
-        )
-        .textContent =
-        currentSession.tasks ||
+        );
+
+
+    const tasks =
+        session.tasks
+        ||
         0;
 
 
+    if (tasksValue) {
+
+        tasksValue.textContent =
+            tasks;
+
+    }
+
+
+
     /*
-    ---------------------------------------------
     TEAM
-    ---------------------------------------------
     */
 
-    document
-        .getElementById(
+
+    const teamValue =
+        document.getElementById(
             "teamValue"
-        )
-        .textContent =
-        currentSession.team ||
+        );
+
+
+    const teamCountText =
+        document.getElementById(
+            "teamCountText"
+        );
+
+
+    const team =
+        session.team
+        ||
         0;
 
 
+    if (teamValue) {
+
+        teamValue.textContent =
+            team;
+
+    }
+
+
+    if (teamCountText) {
+
+        teamCountText.textContent =
+            team;
+
+    }
+
+
+
     /*
-    ---------------------------------------------
     REFERRAL CODE
-    ---------------------------------------------
     */
+
+
+    const referralCodeValue =
+        document.getElementById(
+            "referralCodeValue"
+        );
+
+
+    const referralCodeLarge =
+        document.getElementById(
+            "referralCodeLarge"
+        );
+
 
     const referralCode =
-        currentSession.referralCode ||
-        "-";
+        session.referralCode
+        ||
+        "NEXORA";
 
 
-    document
-        .getElementById(
-            "referralCodeValue"
-        )
-        .textContent =
-        referralCode;
+    if (referralCodeValue) {
 
-
-    document
-        .getElementById(
-            "teamReferralCode"
-        )
-        .textContent =
-        referralCode;
-
-
-    document
-        .getElementById(
-            "settingsReferralCode"
-        )
-        .textContent =
-        referralCode;
-
-
-    /*
-    ---------------------------------------------
-    SETTINGS
-    ---------------------------------------------
-    */
-
-    document
-        .getElementById(
-            "settingsName"
-        )
-        .textContent =
-        userName;
-
-
-    document
-        .getElementById(
-            "settingsIdentifier"
-        )
-        .textContent =
-        currentSession.identifier ||
-        "-";
-
-}
-
-
-/*
-=========================================================
-SHOW SECTION
-=========================================================
-*/
-
-function showSection(
-    sectionId,
-    button
-) {
-
-
-    const sections =
-        document.querySelectorAll(
-            ".dashboard-section"
-        );
-
-
-    sections.forEach(
-        function(section) {
-
-            section.classList.remove(
-                "active"
-            );
-
-        }
-    );
-
-
-    const selectedSection =
-        document.getElementById(
-            sectionId
-        );
-
-
-    if (selectedSection) {
-
-        selectedSection.classList.add(
-            "active"
-        );
+        referralCodeValue.textContent =
+            referralCode;
 
     }
 
 
-    const buttons =
-        document.querySelectorAll(
-            ".sidebar-item"
-        );
+    if (referralCodeLarge) {
 
-
-    buttons.forEach(
-        function(item) {
-
-            item.classList.remove(
-                "active"
-            );
-
-        }
-    );
-
-
-    if (button) {
-
-        button.classList.add(
-            "active"
-        );
+        referralCodeLarge.textContent =
+            referralCode;
 
     }
 
 }
 
-
-/*
-=========================================================
-SHOW SECTION BY ID
-=========================================================
-*/
-
-function showSectionById(
-    sectionId
-) {
-
-
-    const button =
-        document.querySelector(
-            '[onclick*="' +
-            sectionId +
-            '"]'
-        );
-
-
-    showSection(
-        sectionId,
-        button
-    );
-
-}
-
-
-/*
-=========================================================
-START TASK
-=========================================================
-*/
-
-function startTask() {
-
-    alert(
-        "نظام المهام سيتم تفعيله في المرحلة القادمة."
-    );
-
-}
-
-
-/*
-=========================================================
-COPY REFERRAL CODE
-=========================================================
-*/
-
-function copyReferralCode() {
-
-
-    const code =
-        currentSession &&
-        currentSession.referralCode;
-
-
-    if (!code) {
-
-        return;
-
-    }
-
-
-    navigator.clipboard
-        .writeText(
-            code
-        )
-        .then(
-            function() {
-
-                document
-                    .getElementById(
-                        "copyMessage"
-                    )
-                    .textContent =
-                    "تم نسخ كود الإحالة بنجاح.";
-
-            }
-        )
-        .catch(
-            function() {
-
-                document
-                    .getElementById(
-                        "copyMessage"
-                    )
-                    .textContent =
-                    "تعذر النسخ تلقائيًا.";
-
-            }
-        );
-
-}
 
 
 /*
@@ -996,21 +912,189 @@ LOGOUT
 =========================================================
 */
 
-function logout() {
 
-
-    localStorage.removeItem(
-        SESSION_KEY
+const logoutButton =
+    document.getElementById(
+        "logoutButton"
     );
 
 
-    sessionStorage.removeItem(
-        SESSION_KEY
+if (logoutButton) {
+
+
+    logoutButton.addEventListener(
+        "click",
+        function() {
+
+
+            localStorage.removeItem(
+                "nexora_session"
+            );
+
+
+            sessionStorage.removeItem(
+                "nexora_session"
+            );
+
+
+            window.location.href =
+                "index.html";
+
+
+        }
+    );
+
+}
+
+
+
+/*
+=========================================================
+COPY REFERRAL CODE
+=========================================================
+*/
+
+
+const copyReferralButton =
+    document.getElementById(
+        "copyReferralButton"
     );
 
 
-    window.location.href =
-        "login.html";
+const copyMessage =
+    document.getElementById(
+        "copyMessage"
+    );
+
+
+if (copyReferralButton) {
+
+
+    copyReferralButton.addEventListener(
+        "click",
+        async function() {
+
+
+            const codeElement =
+                document.getElementById(
+                    "referralCodeLarge"
+                );
+
+
+            const code =
+                codeElement.textContent.trim();
+
+
+            try {
+
+
+                await navigator.clipboard.writeText(
+                    code
+                );
+
+
+                copyMessage.classList.remove(
+                    "hidden"
+                );
+
+
+                setTimeout(
+                    function() {
+
+                        copyMessage.classList.add(
+                            "hidden"
+                        );
+
+                    },
+                    2000
+                );
+
+
+            }
+
+            catch(error) {
+
+
+                alert(
+                    "كود الإحالة: " +
+                    code
+                );
+
+
+            }
+
+
+        }
+    );
+
+}
+
+
+
+/*
+=========================================================
+SIDEBAR ACTIVE LINK
+=========================================================
+*/
+
+
+const sidebarLinks =
+    document.querySelectorAll(
+        ".sidebar-link"
+    );
+
+
+sidebarLinks.forEach(
+    function(link) {
+
+
+        link.addEventListener(
+            "click",
+            function() {
+
+
+                sidebarLinks.forEach(
+                    function(item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                this.classList.add(
+                    "active"
+                );
+
+
+            }
+        );
+
+
+    }
+);
+
+
+
+/*
+=========================================================
+YEAR
+=========================================================
+*/
+
+
+const dashboardYear =
+    document.getElementById(
+        "dashboardYear"
+    );
+
+
+if (dashboardYear) {
+
+    dashboardYear.textContent =
+        new Date().getFullYear();
 
 }
 
