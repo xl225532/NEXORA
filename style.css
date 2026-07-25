@@ -1,1 +1,764 @@
+/* =========================================================
+NEXORA - MAIN STYLE
+الملف الرئيسي لتصميم الموقع
+========================================================= */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+:root {
+--gold: #d4af37;
+--gold-light: #f1d77a;
+--gold-dark: #9c7614;
+
+--black: #070707;
+--dark: #101010;
+--card: #151515;
+--card-light: #1c1c1c;
+
+--white: #ffffff;
+--text: #eeeeee;
+--muted: #888888;
+
+--green: #19b96b;
+--red: #e34b4b;
+
+--border: rgba(212, 175, 55, 0.25);
+
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Tahoma, Arial, sans-serif;
+background:
+radial-gradient(
+circle at top right,
+rgba(212, 175, 55, 0.12),
+transparent 35%
+),
+radial-gradient(
+circle at bottom left,
+rgba(212, 175, 55, 0.06),
+transparent 35%
+),
+var(--black);
+
+color: var(--white);
+min-height: 100vh;
+direction: rtl;
+
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+font-family: inherit;
+}
+
+button {
+cursor: pointer;
+}
+
+.hidden {
+display: none !important;
+}
+
+/* =========================================================
+LANDING PAGE
+========================================================= */
+
+.landing-page {
+min-height: 100vh;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+padding: 30px 20px;
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.85),
+        rgba(20, 17, 8, 0.95)
+    );
+
+}
+
+.landing-container {
+width: 100%;
+max-width: 650px;
+
+text-align: center;
+
+}
+
+.brand-logo {
+color: var(--gold);
+
+font-size: 48px;
+font-weight: 900;
+
+letter-spacing: 6px;
+
+text-shadow:
+    0 0 20px rgba(212, 175, 55, 0.15);
+
+margin-bottom: 8px;
+
+}
+
+.brand-subtitle {
+color: var(--muted);
+
+font-size: 16px;
+
+margin-bottom: 30px;
+
+}
+
+.landing-card {
+background:
+linear-gradient(
+145deg,
+rgba(25, 25, 25, 0.95),
+rgba(12, 12, 12, 0.98)
+);
+
+border: 1px solid var(--border);
+
+border-radius: 24px;
+
+padding: 45px 35px;
+
+box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.55),
+    0 0 40px rgba(212, 175, 55, 0.04);
+
+}
+
+.landing-icon {
+width: 75px;
+height: 75px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+margin: 0 auto 22px;
+
+border-radius: 50%;
+
+background:
+    linear-gradient(
+        135deg,
+        var(--gold),
+        var(--gold-dark)
+    );
+
+color: #111;
+
+font-size: 36px;
+font-weight: bold;
+
+box-shadow:
+    0 0 30px rgba(212, 175, 55, 0.15);
+
+}
+
+.landing-card h1 {
+color: var(--white);
+
+font-size: 30px;
+
+margin-bottom: 15px;
+
+}
+
+.landing-card p {
+color: var(--muted);
+
+font-size: 15px;
+
+line-height: 1.9;
+
+max-width: 500px;
+
+margin: 0 auto 30px;
+
+}
+
+.landing-actions {
+display: flex;
+
+gap: 12px;
+
+max-width: 450px;
+
+margin: 0 auto;
+
+}
+
+.primary-btn,
+.secondary-btn {
+flex: 1;
+
+padding: 14px 20px;
+
+border-radius: 10px;
+
+font-weight: bold;
+
+transition: 0.2s;
+
+}
+
+.primary-btn {
+background:
+linear-gradient(
+135deg,
+var(--gold-light),
+var(--gold-dark)
+);
+
+color: #111;
+
+}
+
+.primary-btn:hover {
+transform: translateY(-2px);
+
+filter: brightness(1.1);
+
+}
+
+.secondary-btn {
+background: #202020;
+
+color: var(--gold);
+
+border: 1px solid var(--border);
+
+}
+
+.secondary-btn:hover {
+background: #29240f;
+
+transform: translateY(-2px);
+
+}
+
+.landing-footer {
+color: #555;
+
+font-size: 12px;
+
+margin-top: 25px;
+
+}
+
+/* =========================================================
+AUTH PAGES
+========================================================= */
+
+.auth-page {
+min-height: 100vh;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+padding: 25px;
+
+}
+
+.auth-container {
+width: 100%;
+
+max-width: 430px;
+
+}
+
+.auth-logo {
+text-align: center;
+
+color: var(--gold);
+
+font-size: 38px;
+
+font-weight: 900;
+
+letter-spacing: 4px;
+
+margin-bottom: 8px;
+
+}
+
+.auth-subtitle {
+text-align: center;
+
+color: var(--muted);
+
+font-size: 14px;
+
+margin-bottom: 25px;
+
+}
+
+.auth-card {
+background: var(--card);
+
+border: 1px solid var(--border);
+
+border-radius: 20px;
+
+padding: 30px;
+
+box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.5);
+
+}
+
+.auth-card h1 {
+text-align: center;
+
+font-size: 24px;
+
+margin-bottom: 25px;
+
+}
+
+.form-group {
+margin-bottom: 17px;
+}
+
+.form-group label {
+display: block;
+
+color: #ccc;
+
+font-size: 14px;
+
+margin-bottom: 7px;
+
+}
+
+.form-input {
+width: 100%;
+
+padding: 13px 14px;
+
+background: #1b1b1b;
+
+border: 1px solid #333;
+
+border-radius: 10px;
+
+color: var(--white);
+
+outline: none;
+
+transition: 0.2s;
+
+}
+
+.form-input:focus {
+border-color: var(--gold);
+
+box-shadow:
+    0 0 0 3px rgba(212, 175, 55, 0.08);
+
+}
+
+.auth-btn {
+width: 100%;
+
+border: 0;
+
+padding: 14px;
+
+border-radius: 10px;
+
+background:
+    linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold-dark)
+    );
+
+color: #111;
+
+font-weight: 900;
+
+transition: 0.2s;
+
+}
+
+.auth-btn:hover {
+filter: brightness(1.1);
+
+transform: translateY(-1px);
+
+}
+
+.auth-switch {
+text-align: center;
+
+color: var(--muted);
+
+font-size: 14px;
+
+margin-top: 20px;
+
+}
+
+.auth-switch a {
+color: var(--gold);
+
+font-weight: bold;
+
+}
+
+/* =========================================================
+ERROR / SUCCESS
+========================================================= */
+
+.error-message {
+background: rgba(227, 75, 75, 0.12);
+
+border: 1px solid rgba(227, 75, 75, 0.3);
+
+color: #ff7777;
+
+padding: 10px 12px;
+
+border-radius: 8px;
+
+font-size: 13px;
+
+margin-bottom: 15px;
+
+}
+
+.success-message {
+background: rgba(25, 185, 107, 0.12);
+
+border: 1px solid rgba(25, 185, 107, 0.3);
+
+color: #55d995;
+
+padding: 10px 12px;
+
+border-radius: 8px;
+
+font-size: 13px;
+
+margin-bottom: 15px;
+
+}
+
+/* =========================================================
+DASHBOARD HEADER
+========================================================= */
+
+.app-header {
+position: fixed;
+
+top: 0;
+
+right: 0;
+
+left: 0;
+
+height: 70px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+padding: 0 25px;
+
+background: rgba(10, 10, 10, 0.96);
+
+border-bottom: 1px solid var(--border);
+
+z-index: 100;
+
+}
+
+.app-logo {
+color: var(--gold);
+
+font-size: 26px;
+
+font-weight: 900;
+
+letter-spacing: 3px;
+
+}
+
+.user-area {
+display: flex;
+
+align-items: center;
+
+gap: 10px;
+
+}
+
+.avatar {
+width: 40px;
+
+height: 40px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+border-radius: 50%;
+
+background:
+    linear-gradient(
+        135deg,
+        var(--gold),
+        var(--gold-dark)
+    );
+
+color: #111;
+
+font-weight: 900;
+
+}
+
+/* =========================================================
+SIDEBAR
+========================================================= */
+
+.sidebar {
+position: fixed;
+
+top: 70px;
+
+right: 0;
+
+bottom: 0;
+
+width: 230px;
+
+padding: 20px 13px;
+
+background: #101010;
+
+border-left: 1px solid var(--border);
+
+z-index: 90;
+
+}
+
+.nav-item {
+width: 100%;
+
+border: 0;
+
+background: transparent;
+
+color: #aaa;
+
+text-align: right;
+
+padding: 13px;
+
+border-radius: 10px;
+
+margin-bottom: 6px;
+
+transition: 0.2s;
+
+}
+
+.nav-item:hover,
+.nav-item.active {
+background:
+linear-gradient(
+90deg,
+rgba(212, 175, 55, 0.18),
+rgba(212, 175, 55, 0.04)
+);
+
+color: var(--gold);
+
+}
+
+/* =========================================================
+CONTENT
+========================================================= */
+
+.main-content {
+margin-right: 230px;
+
+padding: 100px 30px 40px;
+
+min-height: 100vh;
+
+}
+
+.page-title {
+margin-bottom: 25px;
+}
+
+.page-title h1 {
+color: var(--gold);
+
+font-size: 28px;
+
+margin-bottom: 7px;
+
+}
+
+.page-title p {
+color: var(--muted);
+
+font-size: 14px;
+
+}
+
+.card {
+background: var(--card);
+
+border: 1px solid var(--border);
+
+border-radius: 17px;
+
+padding: 22px;
+
+margin-bottom: 15px;
+
+}
+
+/* =========================================================
+BALANCE
+========================================================= */
+
+.balance-value {
+color: var(--gold);
+
+font-size: 34px;
+
+font-weight: 900;
+
+margin-top: 10px;
+
+}
+
+.balance-label {
+color: var(--muted);
+
+font-size: 14px;
+
+}
+
+.balance-actions {
+display: flex;
+
+gap: 12px;
+
+margin-top: 18px;
+
+}
+
+.action-btn {
+flex: 1;
+
+border: 0;
+
+padding: 12px;
+
+border-radius: 9px;
+
+font-weight: bold;
+
+}
+
+.deposit-btn {
+background: var(--gold);
+
+color: #111;
+
+}
+
+.withdraw-btn {
+background: #252525;
+
+color: var(--gold);
+
+border: 1px solid var(--border);
+
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+.sidebar {
+    display: none;
+}
+
+.main-content {
+    margin-right: 0;
+
+    padding: 90px 15px 30px;
+}
+
+.landing-card {
+    padding: 35px 20px;
+}
+
+.landing-actions {
+    flex-direction: column;
+}
+
+.brand-logo {
+    font-size: 38px;
+}
+
+.app-header {
+    padding: 0 15px;
+}
+
+}
+
+@media (max-width: 500px) {
+
+.auth-card {
+    padding: 22px 18px;
+}
+
+.landing-card h1 {
+    font-size: 24px;
+}
+
+.balance-actions {
+    flex-direction: column;
+}
+
+            }
