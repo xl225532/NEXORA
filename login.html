@@ -1,6 +1,5 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">
-
-<meta
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+    <meta charset="UTF-8"><meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
 >
@@ -12,206 +11,212 @@
     href="style.css"
 >
 
-</head><body><main class="auth-page"><div class="auth-container">
+</head><body><main class="auth-page"><div class="auth-container"><!-- LOGO -->
+
+<div class="auth-logo">
+    NEXORA
+</div>
 
 
-    <!-- LOGO -->
-
-    <div class="auth-logo">
-        NEXORA
-    </div>
+<div class="auth-subtitle">
+    مرحبًا بك من جديد
+</div>
 
 
-    <div class="auth-subtitle">
-        مرحبًا بك من جديد
-    </div>
+<!-- LOGIN CARD -->
+
+<div class="auth-card">
+
+    <h1>
+        تسجيل الدخول
+    </h1>
 
 
-    <!-- LOGIN CARD -->
+    <!-- ERROR -->
 
-    <div class="auth-card">
-
-
-        <h1>
-            تسجيل الدخول
-        </h1>
+    <div
+        id="loginError"
+        class="error-message hidden"
+    ></div>
 
 
-        <!-- ERROR -->
+    <!-- SUCCESS -->
 
-        <div
-            id="loginError"
-            class="error-message hidden"
-        >
+    <div
+        id="loginSuccess"
+        class="success-message hidden"
+    ></div>
+
+
+    <!-- LOGIN FORM -->
+
+    <form id="loginForm">
+
+
+        <!-- IDENTIFIER -->
+
+        <div class="form-group">
+
+            <label for="loginIdentifier">
+                البريد الإلكتروني أو رقم الهاتف
+            </label>
+
+            <input
+                id="loginIdentifier"
+                class="form-input"
+                type="text"
+                placeholder="أدخل البريد أو رقم الهاتف"
+                autocomplete="username"
+                required
+            >
+
         </div>
 
 
-        <!-- SUCCESS -->
+        <!-- PASSWORD -->
 
-        <div
-            id="loginSuccess"
-            class="success-message hidden"
-        >
+        <div class="form-group">
+
+            <label for="loginPassword">
+                كلمة المرور
+            </label>
+
+            <input
+                id="loginPassword"
+                class="form-input"
+                type="password"
+                placeholder="أدخل كلمة المرور"
+                autocomplete="current-password"
+                required
+            >
+
         </div>
 
 
-        <!-- LOGIN FORM -->
+        <!-- REMEMBER ME -->
 
-        <form id="loginForm">
+        <div
+            style="
+                display:flex;
+                align-items:center;
+                gap:8px;
+                margin-bottom:18px;
+                color:#888;
+                font-size:13px;
+            "
+        >
 
-
-            <!-- IDENTIFIER -->
-
-            <div class="form-group">
-
-                <label for="loginIdentifier">
-                    البريد الإلكتروني أو رقم الهاتف
-                </label>
-
-                <input
-                    id="loginIdentifier"
-                    class="form-input"
-                    type="text"
-                    placeholder="أدخل البريد أو رقم الهاتف"
-                    autocomplete="username"
-                    required
-                >
-
-            </div>
-
-
-            <!-- PASSWORD -->
-
-            <div class="form-group">
-
-                <label for="loginPassword">
-                    كلمة المرور
-                </label>
-
-                <input
-                    id="loginPassword"
-                    class="form-input"
-                    type="password"
-                    placeholder="أدخل كلمة المرور"
-                    autocomplete="current-password"
-                    required
-                >
-
-            </div>
-
-
-            <!-- REMEMBER -->
-
-            <div
+            <input
+                id="rememberMe"
+                type="checkbox"
                 style="
-                    display:flex;
-                    align-items:center;
-                    gap:8px;
-                    margin-bottom:18px;
-                    color:#888;
-                    font-size:13px;
+                    width:18px;
+                    height:18px;
+                    accent-color:#d4af37;
                 "
             >
 
-                <input
-                    id="rememberMe"
-                    type="checkbox"
-                    style="
-                        width:18px;
-                        height:18px;
-                        accent-color:#d4af37;
-                    "
-                >
-
-                <label
-                    for="rememberMe"
-                    style="margin:0;"
-                >
-
-                    تذكرني
-
-                </label>
-
-            </div>
-
-
-            <!-- SUBMIT -->
-
-            <button
-                type="submit"
-                class="auth-btn"
-                id="loginButton"
+            <label
+                for="rememberMe"
+                style="margin:0;"
             >
 
-                تسجيل الدخول
+                تذكرني
 
-            </button>
-
-
-        </form>
-
-
-        <!-- REGISTER -->
-
-        <div class="auth-switch">
-
-            ليس لديك حساب؟
-
-            <a href="register.html">
-                إنشاء حساب جديد
-            </a>
+            </label>
 
         </div>
 
 
-        <!-- HOME -->
+        <!-- SUBMIT -->
 
-        <div
-            class="auth-switch"
-            style="margin-top:12px;"
+        <button
+            type="submit"
+            class="auth-btn"
+            id="loginButton"
         >
 
-            <a href="index.html">
-                العودة إلى الرئيسية
-            </a>
+            تسجيل الدخول
 
-        </div>
+        </button>
 
+
+    </form>
+
+
+    <!-- REGISTER -->
+
+    <div class="auth-switch">
+
+        ليس لديك حساب؟
+
+        <a href="register.html">
+            إنشاء حساب جديد
+        </a>
 
     </div>
 
 
-    <!-- FOOTER -->
+    <!-- HOME -->
 
     <div
-        style="
-            text-align:center;
-            color:#555;
-            font-size:12px;
-            margin-top:20px;
-        "
+        class="auth-switch"
+        style="margin-top:12px;"
     >
 
-        ©
-        <span data-current-year></span>
-        NEXORA
+        <a href="index.html">
+            العودة إلى الرئيسية
+        </a>
 
     </div>
 
 
 </div>
 
-</main><!-- MAIN JS --><script src="app.js"></script><!-- LOGIN SCRIPT --><script>
+
+<!-- FOOTER -->
+
+<div
+    style="
+        text-align:center;
+        color:#555;
+        font-size:12px;
+        margin-top:20px;
+    "
+>
+
+    ©
+    <span data-current-year></span>
+    NEXORA
+
+</div>
+
+</div></main><script>
 
 "use strict";
 
 
 /*
 =========================================================
-NEXORA LOGIN
+NEXORA - LOGIN SYSTEM
+نسخة تجريبية محلية
 =========================================================
 */
 
+
+const USERS_KEY =
+    "nexora_users";
+
+
+const SESSION_KEY =
+    "nexora_session";
+
+
+/*
+=========================================================
+ELEMENTS
+=========================================================
+*/
 
 const loginForm =
     document.getElementById(
@@ -239,23 +244,72 @@ const loginButton =
 
 /*
 =========================================================
-HIDE MESSAGES
+GET USERS
 =========================================================
 */
 
-function clearLoginMessages() {
+function getUsers() {
 
-    loginError.textContent =
-        "";
+    try {
 
-    loginSuccess.textContent =
-        "";
+        const savedUsers =
+            localStorage.getItem(
+                USERS_KEY
+            );
 
-    loginError.classList.add(
+
+        if (!savedUsers) {
+
+            return [];
+
+        }
+
+
+        const users =
+            JSON.parse(
+                savedUsers
+            );
+
+
+        return Array.isArray(users)
+            ? users
+            : [];
+
+    }
+
+    catch(error) {
+
+        console.error(
+            "Users data error:",
+            error
+        );
+
+
+        return [];
+
+    }
+
+}
+
+
+/*
+=========================================================
+SHOW ERROR
+=========================================================
+*/
+
+function showLoginError(message) {
+
+    loginSuccess.classList.add(
         "hidden"
     );
 
-    loginSuccess.classList.add(
+
+    loginError.textContent =
+        message;
+
+
+    loginError.classList.remove(
         "hidden"
     );
 
@@ -264,7 +318,31 @@ function clearLoginMessages() {
 
 /*
 =========================================================
-LOGIN FORM
+SHOW SUCCESS
+=========================================================
+*/
+
+function showLoginSuccess(message) {
+
+    loginError.classList.add(
+        "hidden"
+    );
+
+
+    loginSuccess.textContent =
+        message;
+
+
+    loginSuccess.classList.remove(
+        "hidden"
+    );
+
+}
+
+
+/*
+=========================================================
+LOGIN
 =========================================================
 */
 
@@ -275,12 +353,25 @@ loginForm.addEventListener(
         event.preventDefault();
 
 
-        clearLoginMessages();
+        /*
+        ---------------------------------------------
+        HIDE OLD MESSAGES
+        ---------------------------------------------
+        */
+
+        loginError.classList.add(
+            "hidden"
+        );
+
+
+        loginSuccess.classList.add(
+            "hidden"
+        );
 
 
         /*
         ---------------------------------------------
-        GET DATA
+        GET FORM DATA
         ---------------------------------------------
         */
 
@@ -316,16 +407,12 @@ loginForm.addEventListener(
         */
 
         if (
-            !identifier
-            ||
+            !identifier ||
             !password
         ) {
 
-            loginError.textContent =
-                "يرجى إدخال البريد الإلكتروني أو رقم الهاتف وكلمة المرور.";
-
-            loginError.classList.remove(
-                "hidden"
+            showLoginError(
+                "يرجى إدخال البريد الإلكتروني أو رقم الهاتف وكلمة المرور."
             );
 
             return;
@@ -349,247 +436,193 @@ loginForm.addEventListener(
 
         /*
         ---------------------------------------------
-        DEMO LOGIN
+        GET USERS
+        ---------------------------------------------
+        */
+
+        const users =
+            getUsers();
+
+
+        /*
+        ---------------------------------------------
+        FIND USER
+        ---------------------------------------------
+        */
+
+        const user =
+            users.find(
+                function(item) {
+
+                    return (
+                        item.identifier
+                            .toLowerCase()
+                        ===
+                        identifier
+                            .toLowerCase()
+                    );
+
+                }
+            );
+
+
+        /*
+        ---------------------------------------------
+        USER NOT FOUND
+        ---------------------------------------------
+        */
+
+        if (!user) {
+
+            showLoginError(
+                "البريد الإلكتروني أو رقم الهاتف غير مسجل."
+            );
+
+
+            loginButton.disabled =
+                false;
+
+
+            loginButton.textContent =
+                "تسجيل الدخول";
+
+
+            return;
+
+        }
+
+
+        /*
+        ---------------------------------------------
+        PASSWORD CHECK
+        ---------------------------------------------
+        */
+
+        if (
+            user.password
+            !==
+            password
+        ) {
+
+            showLoginError(
+                "كلمة المرور غير صحيحة."
+            );
+
+
+            loginButton.disabled =
+                false;
+
+
+            loginButton.textContent =
+                "تسجيل الدخول";
+
+
+            return;
+
+        }
+
+
+        /*
+        ---------------------------------------------
+        CREATE SESSION
+        ---------------------------------------------
+        */
+
+        const session = {
+
+            userId:
+                user.id,
+
+            name:
+                user.name,
+
+            identifier:
+                user.identifier,
+
+            referralCode:
+                user.referralCode,
+
+            balance:
+                user.balance || 0,
+
+            team:
+                user.team || 0,
+
+            tasks:
+                user.tasks || 0,
+
+            loginAt:
+                new Date().toISOString()
+
+        };
+
+
+        /*
+        ---------------------------------------------
+        SAVE SESSION
+        ---------------------------------------------
+        */
+
+        if (
+            rememberMe
+        ) {
+
+            localStorage.setItem(
+                SESSION_KEY,
+                JSON.stringify(
+                    session
+                )
+            );
+
+
+            sessionStorage.removeItem(
+                SESSION_KEY
+            );
+
+        }
+
+        else {
+
+            sessionStorage.setItem(
+                SESSION_KEY,
+                JSON.stringify(
+                    session
+                )
+            );
+
+
+            localStorage.removeItem(
+                SESSION_KEY
+            );
+
+        }
+
+
+        /*
+        ---------------------------------------------
+        SUCCESS
+        ---------------------------------------------
+        */
+
+        showLoginSuccess(
+            "تم تسجيل الدخول بنجاح. جاري فتح لوحة التحكم..."
+        );
+
+
+        /*
+        ---------------------------------------------
+        REDIRECT
         ---------------------------------------------
         */
 
         setTimeout(
             function() {
 
-
-                /*
-                ---------------------------------------------
-                CHECK PENDING USER
-                ---------------------------------------------
-                */
-
-                const pendingUser =
-                    localStorage.getItem(
-                        "nexora_pending_user"
-                    );
-
-
-                /*
-                ---------------------------------------------
-                NO USER
-                ---------------------------------------------
-                */
-
-                if (
-                    !pendingUser
-                ) {
-
-                    loginError.textContent =
-                        "لا يوجد حساب مسجل على هذا الجهاز. يرجى إنشاء حساب جديد أولًا.";
-
-                    loginError.classList.remove(
-                        "hidden"
-                    );
-
-
-                    loginButton.disabled =
-                        false;
-
-
-                    loginButton.textContent =
-                        "تسجيل الدخول";
-
-
-                    return;
-
-                }
-
-
-                /*
-                ---------------------------------------------
-                PARSE USER
-                ---------------------------------------------
-                */
-
-                let user;
-
-
-                try {
-
-                    user =
-                        JSON.parse(
-                            pendingUser
-                        );
-
-                }
-
-                catch(error) {
-
-                    loginError.textContent =
-                        "حدث خطأ في بيانات الحساب.";
-
-                    loginError.classList.remove(
-                        "hidden"
-                    );
-
-
-                    loginButton.disabled =
-                        false;
-
-
-                    loginButton.textContent =
-                        "تسجيل الدخول";
-
-
-                    return;
-
-                }
-
-
-                /*
-                ---------------------------------------------
-                CHECK IDENTIFIER
-                ---------------------------------------------
-                */
-
-                if (
-                    user.identifier.toLowerCase()
-                    !==
-                    identifier.toLowerCase()
-                ) {
-
-                    loginError.textContent =
-                        "البريد الإلكتروني أو رقم الهاتف غير صحيح.";
-
-                    loginError.classList.remove(
-                        "hidden"
-                    );
-
-
-                    loginButton.disabled =
-                        false;
-
-
-                    loginButton.textContent =
-                        "تسجيل الدخول";
-
-
-                    return;
-
-                }
-
-
-                /*
-                ---------------------------------------------
-                DEMO PASSWORD CHECK
-                ---------------------------------------------
-                */
-
-                /*
-                   في النسخة التجريبية الحالية
-                   كلمة المرور لا يتم حفظها في الحساب.
-
-                   لذلك لا يمكن التحقق من كلمة المرور
-                   بشكل حقيقي قبل إضافة قاعدة البيانات.
-
-                   سنقوم بإصلاح ذلك عند بناء السيرفر.
-                */
-
-
-                /*
-                ---------------------------------------------
-                CREATE SESSION
-                ---------------------------------------------
-                */
-
-                const session = {
-
-                    userId:
-                        user.id,
-
-                    name:
-                        user.name,
-
-                    identifier:
-                        user.identifier,
-
-                    referralCode:
-                        user.referralCode,
-
-                    balance:
-                        user.balance || 0,
-
-                    team:
-                        user.team || 0,
-
-                    tasks:
-                        user.tasks || 0,
-
-                    loginAt:
-                        new Date().toISOString()
-
-                };
-
-
-                /*
-                ---------------------------------------------
-                SAVE SESSION
-                ---------------------------------------------
-                */
-
-                if (
-                    rememberMe
-                ) {
-
-                    localStorage.setItem(
-                        "nexora_session",
-                        JSON.stringify(
-                            session
-                        )
-                    );
-
-                }
-
-                else {
-
-                    sessionStorage.setItem(
-                        "nexora_session",
-                        JSON.stringify(
-                            session
-                        )
-                    );
-
-                }
-
-
-                /*
-                ---------------------------------------------
-                SUCCESS
-                ---------------------------------------------
-                */
-
-                loginSuccess.textContent =
-                    "تم تسجيل الدخول بنجاح. جاري فتح لوحة التحكم...";
-
-                loginSuccess.classList.remove(
-                    "hidden"
-                );
-
-
-                /*
-                ---------------------------------------------
-                REDIRECT
-                ---------------------------------------------
-                */
-
-                setTimeout(
-                    function() {
-
-                        window.location.href =
-                            "dashboard.html";
-
-                    },
-                    800
-                );
-
+                window.location.href =
+                    "dashboard.html";
 
             },
-            700
+            800
         );
 
     }
@@ -598,7 +631,7 @@ loginForm.addEventListener(
 
 /*
 =========================================================
-YEAR
+CURRENT YEAR
 =========================================================
 */
 
@@ -614,6 +647,5 @@ if (yearElement) {
         new Date().getFullYear();
 
 }
-
 
 </script></body></html>
