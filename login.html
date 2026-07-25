@@ -1,1 +1,434 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">
 
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>تسجيل الدخول | NEXORA</title>
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
+</head><body><main class="auth-page"><div class="auth-container">
+
+
+    <!-- LOGO -->
+
+    <div class="auth-logo">
+        NEXORA
+    </div>
+
+
+    <div class="auth-subtitle">
+        منصتك الرقمية الذكية
+    </div>
+
+
+    <!-- LOGIN CARD -->
+
+    <div class="auth-card">
+
+
+        <h1>
+            تسجيل الدخول
+        </h1>
+
+
+        <!-- ERROR MESSAGE -->
+
+        <div
+            id="loginError"
+            class="error-message hidden"
+        >
+        </div>
+
+
+        <!-- LOGIN FORM -->
+
+        <form id="loginForm">
+
+
+            <!-- IDENTIFIER -->
+
+            <div class="form-group">
+
+                <label for="loginIdentifier">
+                    البريد الإلكتروني أو رقم الهاتف
+                </label>
+
+
+                <input
+                    id="loginIdentifier"
+                    class="form-input"
+                    type="text"
+                    placeholder="أدخل البريد أو رقم الهاتف"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="loginPassword">
+                    كلمة المرور
+                </label>
+
+
+                <input
+                    id="loginPassword"
+                    class="form-input"
+                    type="password"
+                    placeholder="أدخل كلمة المرور"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="auth-btn"
+                id="loginButton"
+            >
+
+                تسجيل الدخول
+
+            </button>
+
+
+        </form>
+
+
+        <!-- REGISTER LINK -->
+
+        <div class="auth-switch">
+
+            ليس لديك حساب؟
+
+            <a href="register.html">
+                إنشاء حساب جديد
+            </a>
+
+        </div>
+
+
+        <!-- HOME LINK -->
+
+        <div
+            class="auth-switch"
+            style="margin-top:12px;"
+        >
+
+            <a href="index.html">
+                العودة إلى الرئيسية
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div
+        style="
+            text-align:center;
+            color:#555;
+            font-size:12px;
+            margin-top:20px;
+        "
+    >
+
+        ©
+        <span data-current-year></span>
+        NEXORA
+
+    </div>
+
+
+</div>
+
+</main><!-- APP JS --><script src="app.js"></script><!-- LOGIN PAGE SCRIPT --><script>
+
+"use strict";
+
+
+/*
+=========================================================
+NEXORA LOGIN
+=========================================================
+*/
+
+
+const loginForm =
+    document.getElementById(
+        "loginForm"
+    );
+
+
+const loginError =
+    document.getElementById(
+        "loginError"
+    );
+
+
+const loginButton =
+    document.getElementById(
+        "loginButton"
+    );
+
+
+/*
+=========================================================
+SHOW ERROR
+=========================================================
+*/
+
+function showLoginError(message) {
+
+    loginError.textContent =
+        message;
+
+    loginError.classList.remove(
+        "hidden"
+    );
+
+}
+
+
+/*
+=========================================================
+HIDE ERROR
+=========================================================
+*/
+
+function hideLoginError() {
+
+    loginError.textContent =
+        "";
+
+    loginError.classList.add(
+        "hidden"
+    );
+
+}
+
+
+/*
+=========================================================
+LOGIN FORM
+=========================================================
+*/
+
+loginForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        hideLoginError();
+
+
+        const identifier =
+            document
+                .getElementById(
+                    "loginIdentifier"
+                )
+                .value
+                .trim();
+
+
+        const password =
+            document
+                .getElementById(
+                    "loginPassword"
+                )
+                .value;
+
+
+        /*
+        ---------------------------------------------
+        VALIDATION
+        ---------------------------------------------
+        */
+
+        if (
+            !identifier
+            ||
+            !password
+        ) {
+
+            showLoginError(
+                "يرجى إدخال جميع البيانات المطلوبة"
+            );
+
+            return;
+
+        }
+
+
+        /*
+        ---------------------------------------------
+        CURRENT DEMO LOGIN
+        ---------------------------------------------
+        */
+
+        /*
+           في هذه المرحلة لا توجد قاعدة بيانات بعد.
+
+           لذلك سنجهز الاتصال البرمجي فقط.
+
+           لاحقًا سنستبدل هذا الجزء بطلب إلى السيرفر:
+
+           fetch("/api/login", {
+               method: "POST",
+               ...
+           })
+
+        */
+
+
+        loginButton.disabled =
+            true;
+
+
+        loginButton.textContent =
+            "جاري تسجيل الدخول...";
+
+
+        /*
+        ---------------------------------------------
+        DEMO DELAY
+        ---------------------------------------------
+        */
+
+        setTimeout(
+            function() {
+
+                /*
+                   في المرحلة الحالية:
+                   نستخدم بيانات تجريبية فقط.
+
+                   الحساب التجريبي:
+
+                   البريد:
+                   demo@nexora.com
+
+                   كلمة المرور:
+                   123456
+
+                */
+
+
+                if (
+                    identifier.toLowerCase()
+                    ===
+                    "demo@nexora.com"
+                    &&
+                    password
+                    ===
+                    "123456"
+                ) {
+
+
+                    const demoUser = {
+
+                        name:
+                            "مستخدم NEXORA",
+
+                        identifier:
+                            identifier,
+
+                        balance:
+                            0,
+
+                        referralCode:
+                            "NEXORA123"
+
+                    };
+
+
+                    /*
+                       حفظ المستخدم مؤقتًا
+
+                       لاحقًا سيتم استبداله
+                       بقاعدة البيانات والسيرفر
+                    */
+
+                    setCurrentUser(
+                        demoUser
+                    );
+
+
+                    /*
+                       الانتقال للوحة التحكم
+                    */
+
+                    window.location.href =
+                        "dashboard.html";
+
+
+                    return;
+
+                }
+
+
+                /*
+                ---------------------------------------------
+                INVALID LOGIN
+                ---------------------------------------------
+                */
+
+                showLoginError(
+                    "بيانات الدخول غير صحيحة. استخدم الحساب التجريبي الموجود في هذه المرحلة."
+                );
+
+
+                loginButton.disabled =
+                    false;
+
+
+                loginButton.textContent =
+                    "تسجيل الدخول";
+
+
+            },
+            700
+        );
+
+    }
+);
+
+
+/*
+=========================================================
+YEAR
+=========================================================
+*/
+
+const yearElement =
+    document.querySelector(
+        "[data-current-year]"
+    );
+
+
+if (yearElement) {
+
+    yearElement.textContent =
+        new Date().getFullYear();
+
+}
+
+</script></body></html>
