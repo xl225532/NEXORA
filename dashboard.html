@@ -1,1 +1,1017 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">
 
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>لوحة التحكم | NEXORA</title>
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
+</head><body><!-- =====================================================
+     DASHBOARD
+===================================================== --><div id="dashboardPage"><!-- HEADER -->
+
+<header class="dashboard-header">
+
+    <div class="dashboard-brand">
+        NEXORA
+    </div>
+
+
+    <div class="dashboard-user">
+
+        <span id="headerUserName">
+            مستخدم
+        </span>
+
+        <div class="user-avatar" id="userAvatar">
+            N
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- MAIN LAYOUT -->
+
+<div class="dashboard-layout">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="dashboard-sidebar">
+
+
+        <div class="sidebar-logo">
+            NEXORA
+        </div>
+
+
+        <nav>
+
+
+            <button
+                class="sidebar-item active"
+                onclick="showSection('homeSection', this)"
+            >
+                🏠 الرئيسية
+            </button>
+
+
+            <button
+                class="sidebar-item"
+                onclick="showSection('tasksSection', this)"
+            >
+                📋 المهام
+            </button>
+
+
+            <button
+                class="sidebar-item"
+                onclick="showSection('teamSection', this)"
+            >
+                👥 الفريق
+            </button>
+
+
+            <button
+                class="sidebar-item"
+                onclick="showSection('walletSection', this)"
+            >
+                💰 المحفظة
+            </button>
+
+
+            <button
+                class="sidebar-item"
+                onclick="showSection('settingsSection', this)"
+            >
+                ⚙️ الإعدادات
+            </button>
+
+
+            <button
+                class="sidebar-item logout-item"
+                onclick="logout()"
+            >
+                🚪 تسجيل الخروج
+            </button>
+
+
+        </nav>
+
+
+    </aside>
+
+
+    <!-- CONTENT -->
+
+    <main class="dashboard-content">
+
+
+        <!-- HOME -->
+
+        <section
+            id="homeSection"
+            class="dashboard-section active"
+        >
+
+
+            <div class="welcome-box">
+
+                <h1>
+                    مرحبًا بك،
+                    <span id="welcomeUserName">
+                        مستخدم
+                    </span>
+                </h1>
+
+                <p>
+                    أهلاً بك في منصة NEXORA الرقمية.
+                </p>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        💰
+                    </div>
+
+                    <div class="stat-title">
+                        الرصيد
+                    </div>
+
+                    <div
+                        class="stat-value"
+                        id="balanceValue"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📋
+                    </div>
+
+                    <div class="stat-title">
+                        المهام
+                    </div>
+
+                    <div
+                        class="stat-value"
+                        id="tasksValue"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div class="stat-title">
+                        أعضاء الفريق
+                    </div>
+
+                    <div
+                        class="stat-value"
+                        id="teamValue"
+                    >
+                        0
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🎁
+                    </div>
+
+                    <div class="stat-title">
+                        كود الإحالة
+                    </div>
+
+                    <div
+                        class="stat-value referral-value"
+                        id="referralCodeValue"
+                    >
+                        -
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    الوصول السريع
+                </h2>
+
+
+                <div class="quick-actions">
+
+
+                    <button
+                        onclick="showSectionById('tasksSection')"
+                    >
+                        📋 عرض المهام
+                    </button>
+
+
+                    <button
+                        onclick="showSectionById('teamSection')"
+                    >
+                        👥 عرض الفريق
+                    </button>
+
+
+                    <button
+                        onclick="showSectionById('walletSection')"
+                    >
+                        💰 عرض المحفظة
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- TASKS -->
+
+        <section
+            id="tasksSection"
+            class="dashboard-section"
+        >
+
+
+            <div class="section-header">
+
+                <h1>
+                    المهام
+                </h1>
+
+                <p>
+                    المهام المتاحة لك
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+
+                <div class="task-card">
+
+
+                    <div>
+
+                        <h3>
+                            المهمة اليومية
+                        </h3>
+
+                        <p>
+                            أكمل مهامك اليومية للحصول على المكافآت.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="task-button"
+                        onclick="startTask()"
+                    >
+                        بدء المهمة
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- TEAM -->
+
+        <section
+            id="teamSection"
+            class="dashboard-section"
+        >
+
+
+            <div class="section-header">
+
+                <h1>
+                    الفريق
+                </h1>
+
+                <p>
+                    إدارة ومتابعة فريقك
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+
+                <h2>
+                    كود الإحالة الخاص بك
+                </h2>
+
+
+                <div class="referral-box">
+
+
+                    <span id="teamReferralCode">
+                        -
+                    </span>
+
+
+                    <button
+                        onclick="copyReferralCode()"
+                    >
+                        نسخ
+                    </button>
+
+
+                </div>
+
+
+                <p
+                    id="copyMessage"
+                    class="copy-message"
+                ></p>
+
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+
+                <h2>
+                    أعضاء الفريق
+                </h2>
+
+
+                <div class="empty-state">
+
+                    👥
+
+                    <p>
+                        لا يوجد أعضاء في فريقك حاليًا.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- WALLET -->
+
+        <section
+            id="walletSection"
+            class="dashboard-section"
+        >
+
+
+            <div class="section-header">
+
+                <h1>
+                    المحفظة
+                </h1>
+
+                <p>
+                    إدارة رصيدك
+                </p>
+
+            </div>
+
+
+            <div class="wallet-card">
+
+
+                <div class="wallet-label">
+                    الرصيد الحالي
+                </div>
+
+
+                <div
+                    class="wallet-balance"
+                    id="walletBalance"
+                >
+                    0
+                </div>
+
+
+                <div class="wallet-currency">
+                    الرصيد التجريبي
+                </div>
+
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+
+                <h2>
+                    سجل العمليات
+                </h2>
+
+
+                <div class="empty-state">
+
+                    💳
+
+                    <p>
+                        لا توجد عمليات حتى الآن.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- SETTINGS -->
+
+        <section
+            id="settingsSection"
+            class="dashboard-section"
+        >
+
+
+            <div class="section-header">
+
+                <h1>
+                    الإعدادات
+                </h1>
+
+                <p>
+                    معلومات حسابك
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+
+                <div class="profile-row">
+
+                    <span>
+                        الاسم
+                    </span>
+
+                    <strong id="settingsName">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-row">
+
+                    <span>
+                        البريد أو الهاتف
+                    </span>
+
+                    <strong id="settingsIdentifier">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-row">
+
+                    <span>
+                        كود الإحالة
+                    </span>
+
+                    <strong id="settingsReferralCode">
+                        -
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+
+                <button
+                    class="danger-button"
+                    onclick="logout()"
+                >
+                    تسجيل الخروج
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+</div><!-- =====================================================
+     JAVASCRIPT
+===================================================== --><script>
+
+"use strict";
+
+
+/*
+=========================================================
+NEXORA DASHBOARD SYSTEM
+=========================================================
+*/
+
+
+const SESSION_KEY =
+    "nexora_session";
+
+
+/*
+=========================================================
+GET SESSION
+=========================================================
+*/
+
+function getSession() {
+
+    let session =
+        localStorage.getItem(
+            SESSION_KEY
+        );
+
+
+    if (!session) {
+
+        session =
+            sessionStorage.getItem(
+                SESSION_KEY
+            );
+
+    }
+
+
+    if (!session) {
+
+        return null;
+
+    }
+
+
+    try {
+
+        return JSON.parse(
+            session
+        );
+
+    }
+
+    catch(error) {
+
+        console.error(
+            "Session error:",
+            error
+        );
+
+
+        return null;
+
+    }
+
+}
+
+
+/*
+=========================================================
+CHECK LOGIN
+=========================================================
+*/
+
+const currentSession =
+    getSession();
+
+
+if (!currentSession) {
+
+    window.location.href =
+        "login.html";
+
+}
+
+
+/*
+=========================================================
+LOAD USER DATA
+=========================================================
+*/
+
+if (currentSession) {
+
+
+    /*
+    ---------------------------------------------
+    USER NAME
+    ---------------------------------------------
+    */
+
+    const userName =
+        currentSession.name ||
+        "مستخدم";
+
+
+    document
+        .getElementById(
+            "headerUserName"
+        )
+        .textContent =
+        userName;
+
+
+    document
+        .getElementById(
+            "welcomeUserName"
+        )
+        .textContent =
+        userName;
+
+
+    /*
+    ---------------------------------------------
+    AVATAR
+    ---------------------------------------------
+    */
+
+    document
+        .getElementById(
+            "userAvatar"
+        )
+        .textContent =
+        userName
+            .charAt(0)
+            .toUpperCase();
+
+
+    /*
+    ---------------------------------------------
+    BALANCE
+    ---------------------------------------------
+    */
+
+    const balance =
+        currentSession.balance ||
+        0;
+
+
+    document
+        .getElementById(
+            "balanceValue"
+        )
+        .textContent =
+        balance;
+
+
+    document
+        .getElementById(
+            "walletBalance"
+        )
+        .textContent =
+        balance;
+
+
+    /*
+    ---------------------------------------------
+    TASKS
+    ---------------------------------------------
+    */
+
+    document
+        .getElementById(
+            "tasksValue"
+        )
+        .textContent =
+        currentSession.tasks ||
+        0;
+
+
+    /*
+    ---------------------------------------------
+    TEAM
+    ---------------------------------------------
+    */
+
+    document
+        .getElementById(
+            "teamValue"
+        )
+        .textContent =
+        currentSession.team ||
+        0;
+
+
+    /*
+    ---------------------------------------------
+    REFERRAL CODE
+    ---------------------------------------------
+    */
+
+    const referralCode =
+        currentSession.referralCode ||
+        "-";
+
+
+    document
+        .getElementById(
+            "referralCodeValue"
+        )
+        .textContent =
+        referralCode;
+
+
+    document
+        .getElementById(
+            "teamReferralCode"
+        )
+        .textContent =
+        referralCode;
+
+
+    document
+        .getElementById(
+            "settingsReferralCode"
+        )
+        .textContent =
+        referralCode;
+
+
+    /*
+    ---------------------------------------------
+    SETTINGS
+    ---------------------------------------------
+    */
+
+    document
+        .getElementById(
+            "settingsName"
+        )
+        .textContent =
+        userName;
+
+
+    document
+        .getElementById(
+            "settingsIdentifier"
+        )
+        .textContent =
+        currentSession.identifier ||
+        "-";
+
+}
+
+
+/*
+=========================================================
+SHOW SECTION
+=========================================================
+*/
+
+function showSection(
+    sectionId,
+    button
+) {
+
+
+    const sections =
+        document.querySelectorAll(
+            ".dashboard-section"
+        );
+
+
+    sections.forEach(
+        function(section) {
+
+            section.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    const selectedSection =
+        document.getElementById(
+            sectionId
+        );
+
+
+    if (selectedSection) {
+
+        selectedSection.classList.add(
+            "active"
+        );
+
+    }
+
+
+    const buttons =
+        document.querySelectorAll(
+            ".sidebar-item"
+        );
+
+
+    buttons.forEach(
+        function(item) {
+
+            item.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    if (button) {
+
+        button.classList.add(
+            "active"
+        );
+
+    }
+
+}
+
+
+/*
+=========================================================
+SHOW SECTION BY ID
+=========================================================
+*/
+
+function showSectionById(
+    sectionId
+) {
+
+
+    const button =
+        document.querySelector(
+            '[onclick*="' +
+            sectionId +
+            '"]'
+        );
+
+
+    showSection(
+        sectionId,
+        button
+    );
+
+}
+
+
+/*
+=========================================================
+START TASK
+=========================================================
+*/
+
+function startTask() {
+
+    alert(
+        "نظام المهام سيتم تفعيله في المرحلة القادمة."
+    );
+
+}
+
+
+/*
+=========================================================
+COPY REFERRAL CODE
+=========================================================
+*/
+
+function copyReferralCode() {
+
+
+    const code =
+        currentSession &&
+        currentSession.referralCode;
+
+
+    if (!code) {
+
+        return;
+
+    }
+
+
+    navigator.clipboard
+        .writeText(
+            code
+        )
+        .then(
+            function() {
+
+                document
+                    .getElementById(
+                        "copyMessage"
+                    )
+                    .textContent =
+                    "تم نسخ كود الإحالة بنجاح.";
+
+            }
+        )
+        .catch(
+            function() {
+
+                document
+                    .getElementById(
+                        "copyMessage"
+                    )
+                    .textContent =
+                    "تعذر النسخ تلقائيًا.";
+
+            }
+        );
+
+}
+
+
+/*
+=========================================================
+LOGOUT
+=========================================================
+*/
+
+function logout() {
+
+
+    localStorage.removeItem(
+        SESSION_KEY
+    );
+
+
+    sessionStorage.removeItem(
+        SESSION_KEY
+    );
+
+
+    window.location.href =
+        "login.html";
+
+}
+
+</script></body></html>
