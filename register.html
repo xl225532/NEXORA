@@ -1,1 +1,672 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">
 
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>إنشاء حساب | NEXORA</title>
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
+</head><body><main class="auth-page"><div class="auth-container">
+
+
+    <!-- LOGO -->
+
+    <div class="auth-logo">
+        NEXORA
+    </div>
+
+
+    <div class="auth-subtitle">
+        انضم إلى منصتك الرقمية الذكية
+    </div>
+
+
+    <!-- REGISTER CARD -->
+
+    <div class="auth-card">
+
+
+        <h1>
+            إنشاء حساب جديد
+        </h1>
+
+
+        <!-- ERROR -->
+
+        <div
+            id="registerError"
+            class="error-message hidden"
+        >
+        </div>
+
+
+        <!-- SUCCESS -->
+
+        <div
+            id="registerSuccess"
+            class="success-message hidden"
+        >
+        </div>
+
+
+        <!-- REGISTER FORM -->
+
+        <form id="registerForm">
+
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label for="registerName">
+                    الاسم
+                </label>
+
+                <input
+                    id="registerName"
+                    class="form-input"
+                    type="text"
+                    placeholder="أدخل اسمك"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- EMAIL OR PHONE -->
+
+            <div class="form-group">
+
+                <label for="registerIdentifier">
+                    البريد الإلكتروني أو رقم الهاتف
+                </label>
+
+                <input
+                    id="registerIdentifier"
+                    class="form-input"
+                    type="text"
+                    placeholder="أدخل البريد أو رقم الهاتف"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="registerPassword">
+                    كلمة المرور
+                </label>
+
+                <input
+                    id="registerPassword"
+                    class="form-input"
+                    type="password"
+                    placeholder="6 أحرف على الأقل"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="registerConfirmPassword">
+                    تأكيد كلمة المرور
+                </label>
+
+                <input
+                    id="registerConfirmPassword"
+                    class="form-input"
+                    type="password"
+                    placeholder="أعد كتابة كلمة المرور"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- REFERRAL -->
+
+            <div class="form-group">
+
+                <label for="registerReferral">
+                    كود الدعوة
+                    <span style="color:#777;">
+                        (اختياري)
+                    </span>
+                </label>
+
+                <input
+                    id="registerReferral"
+                    class="form-input"
+                    type="text"
+                    placeholder="أدخل كود الدعوة إن وجد"
+                >
+
+            </div>
+
+
+            <!-- TERMS -->
+
+            <div
+                style="
+                    display:flex;
+                    align-items:flex-start;
+                    gap:8px;
+                    margin-bottom:18px;
+                    color:#888;
+                    font-size:13px;
+                "
+            >
+
+                <input
+                    id="registerTerms"
+                    type="checkbox"
+                    style="
+                        width:18px;
+                        height:18px;
+                        margin-top:2px;
+                        accent-color:#d4af37;
+                    "
+                    required
+                >
+
+                <label
+                    for="registerTerms"
+                    style="
+                        margin:0;
+                        line-height:1.7;
+                    "
+                >
+
+                    أوافق على شروط الاستخدام
+                    وسياسة الخصوصية
+
+                </label>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="auth-btn"
+                id="registerButton"
+            >
+
+                إنشاء الحساب
+
+            </button>
+
+
+        </form>
+
+
+        <!-- LOGIN LINK -->
+
+        <div class="auth-switch">
+
+            لديك حساب بالفعل؟
+
+            <a href="login.html">
+                تسجيل الدخول
+            </a>
+
+        </div>
+
+
+        <!-- HOME -->
+
+        <div
+            class="auth-switch"
+            style="margin-top:12px;"
+        >
+
+            <a href="index.html">
+                العودة إلى الرئيسية
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div
+        style="
+            text-align:center;
+            color:#555;
+            font-size:12px;
+            margin-top:20px;
+        "
+    >
+
+        ©
+        <span data-current-year></span>
+        NEXORA
+
+    </div>
+
+
+</div>
+
+</main><!-- MAIN JS --><script src="app.js"></script><!-- REGISTER SCRIPT --><script>
+
+"use strict";
+
+
+/*
+=========================================================
+NEXORA REGISTER
+=========================================================
+*/
+
+
+const registerForm =
+    document.getElementById(
+        "registerForm"
+    );
+
+
+const registerError =
+    document.getElementById(
+        "registerError"
+    );
+
+
+const registerSuccess =
+    document.getElementById(
+        "registerSuccess"
+    );
+
+
+const registerButton =
+    document.getElementById(
+        "registerButton"
+    );
+
+
+/*
+=========================================================
+SHOW ERROR
+=========================================================
+*/
+
+function showRegisterError(message) {
+
+    registerError.textContent =
+        message;
+
+    registerError.classList.remove(
+        "hidden"
+    );
+
+}
+
+
+/*
+=========================================================
+HIDE ERROR
+=========================================================
+*/
+
+function hideRegisterError() {
+
+    registerError.textContent =
+        "";
+
+    registerError.classList.add(
+        "hidden"
+    );
+
+}
+
+
+/*
+=========================================================
+SHOW SUCCESS
+=========================================================
+*/
+
+function showRegisterSuccess(message) {
+
+    registerSuccess.textContent =
+        message;
+
+    registerSuccess.classList.remove(
+        "hidden"
+    );
+
+}
+
+
+/*
+=========================================================
+REGISTER FORM
+=========================================================
+*/
+
+registerForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        hideRegisterError();
+
+
+        registerSuccess.classList.add(
+            "hidden"
+        );
+
+
+        /*
+        ---------------------------------------------
+        GET DATA
+        ---------------------------------------------
+        */
+
+        const name =
+            document
+                .getElementById(
+                    "registerName"
+                )
+                .value
+                .trim();
+
+
+        const identifier =
+            document
+                .getElementById(
+                    "registerIdentifier"
+                )
+                .value
+                .trim();
+
+
+        const password =
+            document
+                .getElementById(
+                    "registerPassword"
+                )
+                .value;
+
+
+        const confirmPassword =
+            document
+                .getElementById(
+                    "registerConfirmPassword"
+                )
+                .value;
+
+
+        const referral =
+            document
+                .getElementById(
+                    "registerReferral"
+                )
+                .value
+                .trim();
+
+
+        /*
+        ---------------------------------------------
+        VALIDATION
+        ---------------------------------------------
+        */
+
+        if (
+            !name
+            ||
+            !identifier
+            ||
+            !password
+            ||
+            !confirmPassword
+        ) {
+
+            showRegisterError(
+                "يرجى إدخال جميع البيانات المطلوبة"
+            );
+
+            return;
+
+        }
+
+
+        if (
+            password.length < 6
+        ) {
+
+            showRegisterError(
+                "كلمة المرور يجب أن تحتوي على 6 أحرف على الأقل"
+            );
+
+            return;
+
+        }
+
+
+        if (
+            password
+            !==
+            confirmPassword
+        ) {
+
+            showRegisterError(
+                "كلمتا المرور غير متطابقتين"
+            );
+
+            return;
+
+        }
+
+
+        /*
+        ---------------------------------------------
+        BUTTON LOADING
+        ---------------------------------------------
+        */
+
+        registerButton.disabled =
+            true;
+
+
+        registerButton.textContent =
+            "جاري إنشاء الحساب...";
+
+
+        /*
+        ---------------------------------------------
+        DEMO REGISTRATION
+        ---------------------------------------------
+        */
+
+        /*
+           ملاحظة مهمة:
+
+           هذا التسجيل تجريبي في هذه المرحلة.
+
+           لا توجد قاعدة بيانات أو سيرفر حتى الآن.
+
+           لاحقًا سنربطه بالسيرفر وقاعدة البيانات
+           باستخدام API حقيقي.
+        */
+
+
+        setTimeout(
+            function() {
+
+
+                /*
+                ---------------------------------------------
+                CREATE USER
+                ---------------------------------------------
+                */
+
+                const newUser = {
+
+                    id:
+                        "NEXORA-" +
+                        Date.now(),
+
+                    name:
+                        name,
+
+                    identifier:
+                        identifier,
+
+                    referral:
+                        referral,
+
+                    balance:
+                        0,
+
+                    team:
+                        0,
+
+                    tasks:
+                        0,
+
+                    referralCode:
+                        generateReferralCode(),
+
+                    createdAt:
+                        new Date().toISOString()
+
+                };
+
+
+                /*
+                ---------------------------------------------
+                SAVE TEMPORARILY
+                ---------------------------------------------
+                */
+
+                localStorage.setItem(
+                    "nexora_pending_user",
+                    JSON.stringify(
+                        newUser
+                    )
+                );
+
+
+                /*
+                ---------------------------------------------
+                SUCCESS
+                ---------------------------------------------
+                */
+
+                showRegisterSuccess(
+                    "تم إنشاء الحساب بنجاح. يمكنك الآن تسجيل الدخول."
+                );
+
+
+                /*
+                ---------------------------------------------
+                RESET
+                ---------------------------------------------
+                */
+
+                registerForm.reset();
+
+
+                registerButton.disabled =
+                    false;
+
+
+                registerButton.textContent =
+                    "إنشاء الحساب";
+
+
+                /*
+                ---------------------------------------------
+                REDIRECT
+                ---------------------------------------------
+                */
+
+                setTimeout(
+                    function() {
+
+                        window.location.href =
+                            "login.html";
+
+                    },
+                    1200
+                );
+
+
+            },
+            700
+        );
+
+    }
+);
+
+
+/*
+=========================================================
+GENERATE REFERRAL CODE
+=========================================================
+*/
+
+function generateReferralCode() {
+
+    const randomNumber =
+        Math.floor(
+            100000
+            +
+            Math.random()
+            *
+            900000
+        );
+
+
+    return (
+        "NEXORA"
+        +
+        randomNumber
+    );
+
+}
+
+
+/*
+=========================================================
+YEAR
+=========================================================
+*/
+
+const yearElement =
+    document.querySelector(
+        "[data-current-year]"
+    );
+
+
+if (yearElement) {
+
+    yearElement.textContent =
+        new Date().getFullYear();
+
+}
+
+</script></body></html>
