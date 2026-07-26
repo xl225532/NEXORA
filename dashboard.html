@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NEXORA | لوحة التحكم</title>
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NEXORA | لوحة التحكم</title><style>
 
 /* =====================================================
    RESET
@@ -1297,15 +1292,21 @@ a{
 
     border-radius:10px;
 
-    font-size:13px;
+    font-size:11px;
 
-    font-weight:bold;
+    font-weight:900;
+
+    letter-spacing:.3px;
 
     background:#09192d;
 
     border:
         1px solid
-        rgba(255,255,255,.06);
+        rgba(255,255,255,.07);
+
+    box-shadow:
+        inset 0 0 12px
+        rgba(255,255,255,.02);
 
 }
 
@@ -1331,21 +1332,100 @@ a{
 
 }
 
-.btc{color:#f7931a;}
-.eth{color:#8d9eff;}
-.usdt{color:#26a17b;}
-.trx{color:#ff5364;}
-.bnb{color:#f3ba2f;}
-.xrp{color:#25a7e8;}
-.sol{color:#9b6cff;}
-.ada{color:#3468d4;}
-.doge{color:#c2a633;}
-.ton{color:#39a9ff;}
-.usdc{color:#2775ca;}
-.dot{color:#008cff;}
-.link{color:#375bd2;}
-.avax{color:#e84142;}
-.ltc{color:#b7c0cc;}
+
+/* =====================================================
+   COIN COLORS
+===================================================== */
+
+.btc{
+    color:#f7931a;
+    border-color:rgba(247,147,26,.22);
+    background:rgba(247,147,26,.07);
+}
+
+.eth{
+    color:#9aa8ff;
+    border-color:rgba(141,158,255,.22);
+    background:rgba(141,158,255,.07);
+}
+
+.usdt{
+    color:#26a17b;
+    border-color:rgba(38,161,123,.22);
+    background:rgba(38,161,123,.07);
+}
+
+.trx{
+    color:#ff5364;
+    border-color:rgba(255,83,100,.22);
+    background:rgba(255,83,100,.07);
+}
+
+.bnb{
+    color:#f3ba2f;
+    border-color:rgba(243,186,47,.22);
+    background:rgba(243,186,47,.07);
+}
+
+.xrp{
+    color:#25a7e8;
+    border-color:rgba(37,167,232,.22);
+    background:rgba(37,167,232,.07);
+}
+
+.sol{
+    color:#b28cff;
+    border-color:rgba(155,108,255,.22);
+    background:rgba(155,108,255,.07);
+}
+
+.ada{
+    color:#5b85ed;
+    border-color:rgba(52,104,212,.22);
+    background:rgba(52,104,212,.07);
+}
+
+.doge{
+    color:#d5bd4a;
+    border-color:rgba(194,166,51,.22);
+    background:rgba(194,166,51,.07);
+}
+
+.ton{
+    color:#39a9ff;
+    border-color:rgba(57,169,255,.22);
+    background:rgba(57,169,255,.07);
+}
+
+.usdc{
+    color:#4b91e8;
+    border-color:rgba(39,117,202,.22);
+    background:rgba(39,117,202,.07);
+}
+
+.dot{
+    color:#249dff;
+    border-color:rgba(0,140,255,.22);
+    background:rgba(0,140,255,.07);
+}
+
+.link{
+    color:#5575e6;
+    border-color:rgba(55,91,210,.22);
+    background:rgba(55,91,210,.07);
+}
+
+.avax{
+    color:#ff5a5c;
+    border-color:rgba(232,65,66,.22);
+    background:rgba(232,65,66,.07);
+}
+
+.ltc{
+    color:#c7ced8;
+    border-color:rgba(183,192,204,.22);
+    background:rgba(183,192,204,.07);
+}
 
 
 .coin-price{
@@ -1576,7 +1656,9 @@ a{
 }
 
 
-/* COPY USER CODE */
+/* =====================================================
+   COPY USER CODE
+===================================================== */
 
 .user-code-wrap{
 
@@ -1592,42 +1674,179 @@ a{
 
 .user-code{
 
+    display:inline-flex;
+
+    align-items:center;
+
+    min-height:32px;
+
     color:#42aaff;
 
     background:
-        rgba(0,110,255,.08);
+        linear-gradient(
+            135deg,
+            rgba(0,110,255,.12),
+            rgba(0,70,180,.06)
+        );
 
     border:
         1px solid
-        rgba(30,130,255,.18);
+        rgba(30,130,255,.22);
 
-    border-radius:7px;
+    border-radius:8px;
 
-    padding:6px 9px;
+    padding:6px 10px;
 
     font-size:11px;
 
     letter-spacing:1px;
 
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
 }
+
+
+/* COPY ICON BUTTON */
 
 .copy-code-btn{
 
-    padding:6px 9px;
+    width:32px;
 
-    border-radius:7px;
+    height:32px;
 
-    background:#0878ff;
+    display:flex;
 
-    color:#fff;
+    align-items:center;
 
-    font-size:10px;
+    justify-content:center;
+
+    padding:0;
+
+    border:
+        1px solid
+        rgba(30,140,255,.25);
+
+    border-radius:8px;
+
+    background:
+        rgba(0,100,220,.08);
+
+    color:#38a8ff;
+
+    font-size:0;
+
+    transition:
+        .2s;
 
 }
 
+
+/* COPY ICON */
+
+.copy-code-btn::before{
+
+    content:"";
+
+    width:11px;
+
+    height:13px;
+
+    display:block;
+
+    position:relative;
+
+    border:
+        1.5px solid
+        currentColor;
+
+    border-radius:3px;
+
+    box-shadow:
+        3px -3px 0 -1px #071426,
+        3px -3px 0 0 currentColor;
+
+    transition:
+        .2s;
+
+}
+
+
+/* HOVER */
+
 .copy-code-btn:hover{
 
-    background:#1688ff;
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0878ff,
+            #0752bd
+        );
+
+    border-color:#1688ff;
+
+    box-shadow:
+        0 0 15px
+        rgba(0,120,255,.25);
+
+}
+
+
+/* COPIED */
+
+.copy-code-btn.copied{
+
+    color:#21d890;
+
+    border-color:
+        rgba(33,216,144,.35);
+
+    background:
+        rgba(33,216,144,.08);
+
+    box-shadow:
+        0 0 14px
+        rgba(33,216,144,.12);
+
+}
+
+
+/* SUCCESS CHECK */
+
+.copy-code-btn.copied::before{
+
+    content:"✓";
+
+    width:auto;
+
+    height:auto;
+
+    border:0;
+
+    box-shadow:none;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+}
+
+
+/* COPY ERROR */
+
+.copy-code-btn.copy-error{
+
+    color:#ff697b;
+
+    border-color:
+        rgba(255,82,103,.35);
+
+    background:
+        rgba(255,82,103,.08);
 
 }
 
@@ -2405,286 +2624,201 @@ a{
 
 }
 
-</style>
-</head>
+</style></head><body><!-- BACKGROUND --><div class="market-decoration"><span>+</span>
+<span>◆</span>
+<span>↗</span>
+<span>+</span>
 
-<body>
-
-
-<!-- BACKGROUND -->
-
-<div class="market-decoration">
-
-    <span>+</span>
-    <span>◆</span>
-    <span>↗</span>
-    <span>+</span>
-
+</div><div class="dashboard-page"><!-- SIDEBAR --><aside class="dashboard-sidebar"><div class="dashboard-logo">
+    NEXORA
 </div>
 
 
-<div class="dashboard-page">
+<div class="sidebar-user">
 
-
-<!-- SIDEBAR -->
-
-<aside class="dashboard-sidebar">
-
-    <div class="dashboard-logo">
-        NEXORA
+    <div class="sidebar-avatar">
+        NX
     </div>
-
-
-    <div class="sidebar-user">
-
-        <div class="sidebar-avatar">
-            NX
-        </div>
-
-        <div>
-
-            <strong id="sidebarUserName">
-                المستخدم
-            </strong>
-
-            <small>
-                حساب NEXORA
-            </small>
-
-        </div>
-
-    </div>
-
-
-    <nav class="dashboard-nav">
-
-        <button
-            class="dashboard-nav-item active"
-            data-section="homeSection"
-        >
-
-            <span class="nav-icon">
-                <span class="icon-grid"></span>
-            </span>
-
-            <span>الرئيسية</span>
-
-        </button>
-
-
-        <button
-            class="dashboard-nav-item"
-            data-section="profileSection"
-        >
-
-            <span class="nav-icon">
-                <span class="icon-user"></span>
-            </span>
-
-            <span>الحساب</span>
-
-        </button>
-
-
-        <button
-            class="dashboard-nav-item"
-            data-section="balanceSection"
-        >
-
-            <span class="nav-icon">
-                <span class="icon-wallet"></span>
-            </span>
-
-            <span>المحفظة</span>
-
-        </button>
-
-
-        <button
-            class="dashboard-nav-item"
-            data-section="teamSection"
-        >
-
-            <span class="nav-icon">
-                <span class="icon-team"></span>
-            </span>
-
-            <span>الفريق</span>
-
-        </button>
-
-
-        <button
-            class="dashboard-nav-item"
-            data-section="tradingSection"
-        >
-
-            <span class="nav-icon">
-                <span class="icon-chart"></span>
-            </span>
-
-            <span>التداول</span>
-
-        </button>
-
-
-        <button
-            class="dashboard-nav-item"
-            data-section="supportSection"
-        >
-
-            <span class="nav-icon">
-                <span class="icon-support"></span>
-            </span>
-
-            <span>الدعم</span>
-
-        </button>
-
-    </nav>
-
-
-    <button
-        id="logoutButton"
-        class="dashboard-logout"
-    >
-
-        تسجيل الخروج
-
-    </button>
-
-</aside>
-
-
-<!-- MAIN -->
-
-<main class="dashboard-main">
-
-
-<header class="dashboard-topbar">
 
     <div>
 
-        <span class="topbar-label">
-            لوحة التحكم
-        </span>
-
-        <h1 id="pageTitle">
-            الرئيسية
-        </h1>
-
-    </div>
-
-</header>
-
-
-<!-- HOME -->
-
-<section
-    id="homeSection"
-    class="dashboard-section active"
->
-
-
-<!-- BALANCE -->
-
-<div
-    class="top-balance-card"
-    id="topBalanceCard"
->
-
-    <span class="top-balance-label">
-        الرصيد الإجمالي
-    </span>
-
-
-    <div class="top-balance-value">
-
-        <strong id="homeTotalBalance">
-            $0.00
+        <strong id="sidebarUserName">
+            المستخدم
         </strong>
 
-        <span>
-            USDT
+        <small>
+            حساب NEXORA
+        </small>
+
+    </div>
+
+</div>
+
+
+<nav class="dashboard-nav">
+
+    <button
+        class="dashboard-nav-item active"
+        data-section="homeSection"
+    >
+
+        <span class="nav-icon">
+            <span class="icon-grid"></span>
         </span>
 
-    </div>
+        <span>الرئيسية</span>
+
+    </button>
 
 
-    <div class="top-balance-hint">
-        اضغط على قيمة الرصيد لإخفائها أو إظهارها
-    </div>
+    <button
+        class="dashboard-nav-item"
+        data-section="profileSection"
+    >
+
+        <span class="nav-icon">
+            <span class="icon-user"></span>
+        </span>
+
+        <span>الحساب</span>
+
+    </button>
+
+
+    <button
+        class="dashboard-nav-item"
+        data-section="balanceSection"
+    >
+
+        <span class="nav-icon">
+            <span class="icon-wallet"></span>
+        </span>
+
+        <span>المحفظة</span>
+
+    </button>
+
+
+    <button
+        class="dashboard-nav-item"
+        data-section="teamSection"
+    >
+
+        <span class="nav-icon">
+            <span class="icon-team"></span>
+        </span>
+
+        <span>الفريق</span>
+
+    </button>
+
+
+    <button
+        class="dashboard-nav-item"
+        data-section="tradingSection"
+    >
+
+        <span class="nav-icon">
+            <span class="icon-chart"></span>
+        </span>
+
+        <span>التداول</span>
+
+    </button>
+
+
+    <button
+        class="dashboard-nav-item"
+        data-section="supportSection"
+    >
+
+        <span class="nav-icon">
+            <span class="icon-support"></span>
+        </span>
+
+        <span>الدعم</span>
+
+    </button>
+
+</nav>
+
+
+<button
+    id="logoutButton"
+    class="dashboard-logout"
+>
+
+    تسجيل الخروج
+
+</button>
+
+</aside><!-- MAIN --><main class="dashboard-main"><header class="dashboard-topbar"><div>
+
+    <span class="topbar-label">
+        لوحة التحكم
+    </span>
+
+    <h1 id="pageTitle">
+        الرئيسية
+    </h1>
+
+</div>
+
+</header><!-- HOME --><section
+    id="homeSection"
+    class="dashboard-section active"
+><!-- BALANCE --><div
+    class="top-balance-card"
+    id="topBalanceCard"
+><span class="top-balance-label">
+    الرصيد الإجمالي
+</span>
+
+
+<div class="top-balance-value">
+
+    <strong id="homeTotalBalance">
+        $0.00
+    </strong>
+
+    <span>
+        USDT
+    </span>
 
 </div>
 
 
-<!-- MARKET -->
+<div class="top-balance-hint">
+    اضغط على قيمة الرصيد لإخفائها أو إظهارها
+</div>
 
-<div class="market-layout">
-
-
-<!-- CHART -->
-
-<div class="trading-chart-card">
-
-
-<div class="chart-header">
-
-
-<div class="chart-title">
-
-<h3>
+</div><!-- MARKET --><div class="market-layout"><!-- CHART --><div class="trading-chart-card"><div class="chart-header"><div class="chart-title"><h3>
     BTC / USDT
-</h3>
-
-<p>
+</h3><p>
     حركة السعر
-</p>
-
-</div>
-
-
-<div class="chart-controls">
-
-<button class="active">
+</p></div><div class="chart-controls"><button class="active">
     1H
-</button>
-
-<button>
+</button><button>
     1D
-</button>
-
-<button>
+</button><button>
     1W
-</button>
-
-<button>
+</button><button>
     1M
-</button>
-
-</div>
-
-
-</div>
-
-
-<div class="main-chart">
-
-<svg
+</button></div></div><div class="main-chart"><svg
 class="price-line"
 viewBox="0 0 1000 260"
 preserveAspectRatio="none"
->
 
-<defs>
+«»
 
-<linearGradient
+<defs><linearGradient
 id="blueGradient"
 x1="0"
 y1="0"
 x2="0"
 y2="1"
->
+
+«»
 
 <stop
 offset="0%"
@@ -2698,12 +2832,7 @@ stop-color="#1684ff"
 stop-opacity="0"
 />
 
-</linearGradient>
-
-</defs>
-
-
-<polygon
+</linearGradient></defs><polygon
 class="price-area"
 points="
 0,235
@@ -2726,7 +2855,6 @@ points="
 "
 />
 
-
 <polyline
 points="
 0,235
@@ -2747,12 +2875,7 @@ points="
 "
 />
 
-</svg>
-
-
-<div class="candle-layer">
-
-<div class="candle up"
+</svg><div class="candle-layer"><div class="candle up"
 style="
 --wick-top:25%;
 --wick-height:25%;
@@ -2760,9 +2883,7 @@ style="
 --body-height:15%;
 ">
 <div class="candle-body"></div>
-</div>
-
-<div class="candle down"
+</div><div class="candle down"
 style="
 --wick-top:30%;
 --wick-height:35%;
@@ -2770,9 +2891,7 @@ style="
 --body-height:18%;
 ">
 <div class="candle-body"></div>
-</div>
-
-<div class="candle up"
+</div><div class="candle up"
 style="
 --wick-top:20%;
 --wick-height:35%;
@@ -2780,9 +2899,7 @@ style="
 --body-height:20%;
 ">
 <div class="candle-body"></div>
-</div>
-
-<div class="candle up"
+</div><div class="candle up"
 style="
 --wick-top:35%;
 --wick-height:25%;
@@ -2790,9 +2907,7 @@ style="
 --body-height:18%;
 ">
 <div class="candle-body"></div>
-</div>
-
-<div class="candle down"
+</div><div class="candle down"
 style="
 --wick-top:30%;
 --wick-height:35%;
@@ -2800,9 +2915,7 @@ style="
 --body-height:20%;
 ">
 <div class="candle-body"></div>
-</div>
-
-<div class="candle up"
+</div><div class="candle up"
 style="
 --wick-top:15%;
 --wick-height:40%;
@@ -2810,9 +2923,7 @@ style="
 --body-height:22%;
 ">
 <div class="candle-body"></div>
-</div>
-
-<div class="candle up"
+</div><div class="candle up"
 style="
 --wick-top:20%;
 --wick-height:30%;
@@ -2820,9 +2931,7 @@ style="
 --body-height:18%;
 ">
 <div class="candle-body"></div>
-</div>
-
-<div class="candle down"
+</div><div class="candle down"
 style="
 --wick-top:25%;
 --wick-height:40%;
@@ -2830,9 +2939,7 @@ style="
 --body-height:22%;
 ">
 <div class="candle-body"></div>
-</div>
-
-<div class="candle up"
+</div><div class="candle up"
 style="
 --wick-top:10%;
 --wick-height:40%;
@@ -2840,16 +2947,7 @@ style="
 --body-height:20%;
 ">
 <div class="candle-body"></div>
-</div>
-
-</div>
-
-</div>
-
-
-<div class="volume-chart">
-
-<div class="volume-bar" style="height:30%"></div>
+</div></div></div><div class="volume-chart"><div class="volume-bar" style="height:30%"></div>
 <div class="volume-bar" style="height:55%"></div>
 <div class="volume-bar" style="height:40%"></div>
 <div class="volume-bar" style="height:70%"></div>
@@ -2858,1026 +2956,310 @@ style="
 <div class="volume-bar" style="height:60%"></div>
 <div class="volume-bar" style="height:90%"></div>
 <div class="volume-bar" style="height:65%"></div>
-<div class="volume-bar" style="height:75%"></div>
-
-</div>
-
-
-</div>
-
-
-<!-- COINS -->
-
-<div class="market-list">
-
-
-<div class="market-list-header">
-
-<h3>
+<div class="volume-bar" style="height:75%"></div></div></div><!-- COINS --><div class="market-list"><div class="market-list-header"><h3>
     الأسواق
-</h3>
-
-<span>
+</h3><span>
     24H
-</span>
-
-</div>
-
-
-<!-- BTC -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon btc">
+</span></div><!-- BTC --><div class="coin-row"><div class="coin-name"><div class="coin-icon btc">
     BTC
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     Bitcoin
-</strong>
-
-<small>
+</strong><small>
     BTC / USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $64,368.53
-</div>
-
-<div class="coin-change up">
+</div><div class="coin-change up">
     +0.40%
-</div>
-
-</div>
-
-
-<!-- ETH -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon eth">
+</div></div><!-- ETH --><div class="coin-row"><div class="coin-name"><div class="coin-icon eth">
     ETH
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     Ethereum
-</strong>
-
-<small>
+</strong><small>
     ETH / USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $1,874.90
-</div>
-
-<div class="coin-change up">
+</div><div class="coin-change up">
     +1.00%
-</div>
-
-</div>
-
-
-<!-- USDT -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon usdt">
+</div></div><!-- USDT --><div class="coin-row"><div class="coin-name"><div class="coin-icon usdt">
     USDT
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     Tether
-</strong>
-
-<small>
+</strong><small>
     USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $1.00
-</div>
-
-<div class="coin-change up">
+</div><div class="coin-change up">
     +0.01%
-</div>
-
-</div>
-
-
-<!-- TRX -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon trx">
+</div></div><!-- TRX --><div class="coin-row"><div class="coin-name"><div class="coin-icon trx">
     TRX
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     TRON
-</strong>
-
-<small>
+</strong><small>
     TRX / USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $0.27
-</div>
-
-<div class="coin-change up">
+</div><div class="coin-change up">
     +0.80%
-</div>
-
-</div>
-
-
-<!-- BNB -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon bnb">
+</div></div><!-- BNB --><div class="coin-row"><div class="coin-name"><div class="coin-icon bnb">
     BNB
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     BNB
-</strong>
-
-<small>
+</strong><small>
     BNB / USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $568.84
-</div>
-
-<div class="coin-change up">
+</div><div class="coin-change up">
     +0.77%
-</div>
-
-</div>
-
-
-<!-- XRP -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon xrp">
+</div></div><!-- XRP --><div class="coin-row"><div class="coin-name"><div class="coin-icon xrp">
     XRP
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     XRP
-</strong>
-
-<small>
+</strong><small>
     XRP / USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $1.09
-</div>
-
-<div class="coin-change down">
+</div><div class="coin-change down">
     -0.67%
-</div>
-
-</div>
-
-
-<!-- SOL -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon sol">
+</div></div><!-- SOL --><div class="coin-row"><div class="coin-name"><div class="coin-icon sol">
     SOL
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     Solana
-</strong>
-
-<small>
+</strong><small>
     SOL / USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $74.36
-</div>
-
-<div class="coin-change up">
+</div><div class="coin-change up">
     +0.72%
-</div>
-
-</div>
-
-
-<!-- ADA -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon ada">
+</div></div><!-- ADA --><div class="coin-row"><div class="coin-name"><div class="coin-icon ada">
     ADA
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     Cardano
-</strong>
-
-<small>
+</strong><small>
     ADA / USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $0.25
-</div>
-
-<div class="coin-change down">
+</div><div class="coin-change down">
     -0.30%
-</div>
-
-</div>
-
-
-<!-- DOGE -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon doge">
+</div></div><!-- DOGE --><div class="coin-row"><div class="coin-name"><div class="coin-icon doge">
     DOGE
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     Dogecoin
-</strong>
-
-<small>
+</strong><small>
     DOGE / USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $0.17
-</div>
-
-<div class="coin-change up">
+</div><div class="coin-change up">
     +0.55%
-</div>
-
-</div>
-
-
-<!-- TON -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon ton">
+</div></div><!-- TON --><div class="coin-row"><div class="coin-name"><div class="coin-icon ton">
     TON
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     Toncoin
-</strong>
-
-<small>
+</strong><small>
     TON / USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $3.10
-</div>
-
-<div class="coin-change down">
+</div><div class="coin-change down">
     -0.21%
-</div>
-
-</div>
-
-
-<!-- USDC -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon usdc">
+</div></div><!-- USDC --><div class="coin-row"><div class="coin-name"><div class="coin-icon usdc">
     USDC
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     USD Coin
-</strong>
-
-<small>
+</strong><small>
     USDC
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $1.00
-</div>
-
-<div class="coin-change up">
+</div><div class="coin-change up">
     +0.02%
-</div>
-
-</div>
-
-
-<!-- DOT -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon dot">
+</div></div><!-- DOT --><div class="coin-row"><div class="coin-name"><div class="coin-icon dot">
     DOT
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     Polkadot
-</strong>
-
-<small>
+</strong><small>
     DOT / USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $3.82
-</div>
-
-<div class="coin-change up">
+</div><div class="coin-change up">
     +0.45%
-</div>
-
-</div>
-
-
-<!-- LINK -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon link">
+</div></div><!-- LINK --><div class="coin-row"><div class="coin-name"><div class="coin-icon link">
     LINK
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     Chainlink
-</strong>
-
-<small>
+</strong><small>
     LINK / USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $13.20
-</div>
-
-<div class="coin-change down">
+</div><div class="coin-change down">
     -0.18%
-</div>
-
-</div>
-
-
-<!-- AVAX -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon avax">
+</div></div><!-- AVAX --><div class="coin-row"><div class="coin-name"><div class="coin-icon avax">
     AVAX
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     Avalanche
-</strong>
-
-<small>
+</strong><small>
     AVAX / USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $18.50
-</div>
-
-<div class="coin-change up">
+</div><div class="coin-change up">
     +0.66%
-</div>
-
-</div>
-
-
-<!-- LTC -->
-
-<div class="coin-row">
-
-<div class="coin-name">
-
-<div class="coin-icon ltc">
+</div></div><!-- LTC --><div class="coin-row"><div class="coin-name"><div class="coin-icon ltc">
     LTC
-</div>
-
-<div>
-
-<strong>
+</div><div><strong>
     Litecoin
-</strong>
-
-<small>
+</strong><small>
     LTC / USDT
-</small>
-
-</div>
-
-</div>
-
-<div class="coin-price">
+</small></div></div><div class="coin-price">
     $68.40
-</div>
-
-<div class="coin-change down">
+</div><div class="coin-change down">
     -0.22%
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- MARKET STATS -->
-
-<div class="market-stats">
-
-<div class="market-stat">
-
-<span>
+</div></div></div></div><!-- MARKET STATS --><div class="market-stats"><div class="market-stat"><span>
 حجم التداول 24 ساعة
-</span>
-
-<strong>
+</span><strong>
 $82.4B
-</strong>
-
-</div>
-
-
-<div class="market-stat">
-
-<span>
+</strong></div><div class="market-stat"><span>
 القيمة السوقية
-</span>
-
-<strong>
+</span><strong>
 $2.41T
-</strong>
-
-</div>
-
-
-<div class="market-stat">
-
-<span>
+</strong></div><div class="market-stat"><span>
 هيمنة BTC
-</span>
-
-<strong>
+</span><strong>
 54.8%
-</strong>
-
-</div>
-
-
-<div class="market-stat">
-
-<span>
+</strong></div><div class="market-stat"><span>
 الأسواق
-</span>
-
-<strong>
+</span><strong>
 15
-</strong>
-
-</div>
-
-</div>
-
-
-</section>
-
-
-<!-- PROFILE -->
-
-<section
+</strong></div></div></section><!-- PROFILE --><section
 id="profileSection"
 class="dashboard-section"
->
-
-<div class="section-heading">
-
-<span>
+><div class="section-heading"><span>
 الحساب
-</span>
-
-<h2>
+</span><h2>
 معلومات حسابي
-</h2>
-
-</div>
-
-
-<div class="profile-card">
-
-
-<div class="profile-avatar">
+</h2></div><div class="profile-card"><div class="profile-avatar">
 NX
-</div>
-
-
-<div class="profile-info">
-
-
-<div class="profile-row">
-
-<span>
+</div><div class="profile-info"><div class="profile-row"><span>
 الاسم
-</span>
-
-<strong id="profileName">
+</span><strong id="profileName">
 -
-</strong>
-
-</div>
-
-
-<div class="profile-row">
-
-<span>
+</strong></div><div class="profile-row"><span>
 البريد أو الهاتف
-</span>
-
-<strong id="profileIdentifier">
+</span><strong id="profileIdentifier">
 -
-</strong>
-
-</div>
-
-
-<div class="profile-row">
-
-<span>
+</strong></div><div class="profile-row"><span>
 كود المستخدم
-</span>
-
-<div class="user-code-wrap">
-
-<strong
+</span><div class="user-code-wrap"><strong
 id="profileUserCode"
 class="user-code"
->
--
-</strong>
 
-<button
+«»
+
+- 
+
+</strong><button
 id="copyUserCodeButton"
 class="copy-code-btn"
->
+aria-label="نسخ كود المستخدم"
+title="نسخ كود المستخدم"
+
+«»
+
 نسخ
 </button>
 
-</div>
-
-</div>
-
-
-<div class="profile-row">
-
-<span>
+</div></div><div class="profile-row"><span>
 كود الإحالة
-</span>
-
-<strong id="profileReferralCode">
+</span><strong id="profileReferralCode">
 -
-</strong>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- BALANCE -->
-
-<section
+</strong></div></div></div></section><!-- BALANCE --><section
 id="balanceSection"
 class="dashboard-section"
->
-
-<div class="section-heading">
-
-<span>
+><div class="section-heading"><span>
 المحفظة
-</span>
-
-<h2>
+</span><h2>
 الرصيد
-</h2>
-
-</div>
-
-
-<div class="balance-main-card">
-
-<span>
+</h2></div><div class="balance-main-card"><span>
 الرصيد الحالي
-</span>
-
-<strong id="balanceAmount">
+</span><strong id="balanceAmount">
 $0.00
-</strong>
-
-<small>
+</strong><small>
 USDT
-</small>
-
-</div>
-
-
-<div class="dashboard-panel">
-
-<div class="panel-header">
-
-<h3>
+</small></div><div class="dashboard-panel"><div class="panel-header"><h3>
 سجل العمليات
-</h3>
-
-</div>
-
-
-<div class="empty-state">
-
-<p>
+</h3></div><div class="empty-state"><p>
 لا توجد عمليات مالية حتى الآن
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- TEAM -->
-
-<section
+</p></div></div></section><!-- TEAM --><section
 id="teamSection"
 class="dashboard-section"
->
-
-<div class="section-heading">
-
-<span>
+><div class="section-heading"><span>
 الفريق
-</span>
-
-<h2>
+</span><h2>
 فريقي وإحالاتي
-</h2>
-
-</div>
-
-
-<div class="team-summary">
-
-
-<div class="dashboard-stat-card">
-
-<span class="stat-icon">
+</h2></div><div class="team-summary"><div class="dashboard-stat-card"><span class="stat-icon">
 TEAM
-</span>
-
-<span class="stat-label">
+</span><span class="stat-label">
 أعضاء الفريق
-</span>
-
-<strong id="teamCount">
+</span><strong id="teamCount">
 0
-</strong>
-
-</div>
-
-
-<div class="referral-card">
-
-<span>
+</strong></div><div class="referral-card"><span>
 كود الإحالة
-</span>
-
-<strong id="teamReferralCode">
+</span><strong id="teamReferralCode">
 -
-</strong>
-
-<button id="copyReferralButton">
+</strong><button id="copyReferralButton">
 نسخ الكود
-</button>
-
-</div>
-
-</div>
-
-
-<div class="dashboard-panel">
-
-<div class="panel-header">
-
-<h3>
+</button></div></div><div class="dashboard-panel"><div class="panel-header"><h3>
 أعضاء الفريق
-</h3>
-
-</div>
-
-
-<div class="empty-state">
-
-<p>
+</h3></div><div class="empty-state"><p>
 لا يوجد أعضاء في فريقك حاليًا
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- TRADING -->
-
-<section
+</p></div></div></section><!-- TRADING --><section
 id="tradingSection"
 class="dashboard-section"
->
-
-<div class="section-heading">
-
-<span>
+><div class="section-heading"><span>
 التداول
-</span>
-
-<h2>
+</span><h2>
 مركز التداول
-</h2>
-
-</div>
-
-
-<div class="trading-warning">
-
-<span>
+</h2></div><div class="trading-warning"><span>
 LIVE
-</span>
-
-<div>
-
-<strong>
+</span><div><strong>
 نظام التداول
-</strong>
-
-<p>
+</strong><p>
 سيتم تفعيل نظام التداول في المرحلة القادمة.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="trading-grid">
-
-
-<div class="trading-card">
-
-<span>
+</p></div></div><div class="trading-grid"><div class="trading-card"><span>
 الرصيد المتاح
-</span>
-
-<strong id="tradingBalance">
+</span><strong id="tradingBalance">
 $0.00
-</strong>
-
-</div>
-
-
-<div class="trading-card">
-
-<span>
+</strong></div><div class="trading-card"><span>
 العمليات
-</span>
-
-<strong>
+</span><strong>
 0
-</strong>
-
-</div>
-
-
-<div class="trading-card">
-
-<span>
+</strong></div><div class="trading-card"><span>
 الأرباح
-</span>
-
-<strong>
+</span><strong>
 $0.00
-</strong>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- SUPPORT -->
-
-<section
+</strong></div></div></section><!-- SUPPORT --><section
 id="supportSection"
 class="dashboard-section"
->
-
-<div class="section-heading">
-
-<span>
+><div class="section-heading"><span>
 الدعم
-</span>
-
-<h2>
+</span><h2>
 الدعم والمساعدة
-</h2>
-
-</div>
-
-
-<div class="support-card">
-
-<div class="support-icon">
+</h2></div><div class="support-card"><div class="support-icon">
 SUPPORT
-</div>
-
-<h3>
+</div><h3>
 كيف يمكننا مساعدتك؟
-</h3>
-
-<p>
+</h3><p>
 سيتم تفعيل نظام الدعم والتواصل
 في المرحلة القادمة من تطوير NEXORA.
-</p>
-
-<button class="support-button">
+</p><button class="support-button">
 فتح تذكرة دعم
-</button>
-
-</div>
-
-</section>
-
-
-<footer class="dashboard-footer">
-
-©
+</button></div></section><footer class="dashboard-footer">©
 
 <span id="dashboardYear">
 2026
-</span>
+</span>NEXORA
 
-NEXORA
-
--
+- 
 
 جميع الحقوق محفوظة
 
-</footer>
-
-
-</main>
-
-</div>
-
-
-<script>
+</footer></main></div><script>
 
 "use strict";
 
@@ -4268,288 +3650,4 @@ function openSection(
     if(target){
 
         target.classList.add(
-            "active"
-        );
-
-    }
-
-
-    navItems.forEach(
-        function(item){
-
-            item.classList.remove(
-                "active"
-            );
-
-
-            if(
-                item.dataset.section
-                ===
-                sectionId
-            ){
-
-                item.classList.add(
-                    "active"
-                );
-
-            }
-
-        }
-    );
-
-
-    pageTitle.textContent =
-        titles[sectionId] ||
-        "الرئيسية";
-
-}
-
-
-/* NAV */
-
-navItems.forEach(
-    function(item){
-
-        item.addEventListener(
-            "click",
-            function(){
-
-                openSection(
-                    this.dataset.section
-                );
-
-            }
-        );
-
-    }
-);
-
-
-/* =====================================================
-   COPY USER CODE
-===================================================== */
-
-const copyUserCodeButton =
-    document.getElementById(
-        "copyUserCodeButton"
-    );
-
-
-if(copyUserCodeButton){
-
-    copyUserCodeButton.addEventListener(
-        "click",
-        async function(){
-
-            const code =
-                document
-                    .getElementById(
-                        "profileUserCode"
-                    )
-                    .textContent;
-
-
-            if(
-                code &&
-                code !== "-"
-            ){
-
-                try{
-
-                    await navigator
-                        .clipboard
-                        .writeText(
-                            code
-                        );
-
-
-                    copyUserCodeButton.textContent =
-                        "تم ✓";
-
-
-                    setTimeout(
-                        function(){
-
-                            copyUserCodeButton.textContent =
-                                "نسخ";
-
-                        },
-                        1500
-                    );
-
-                }
-
-                catch(error){
-
-                    copyUserCodeButton.textContent =
-                        "انسخ يدويًا";
-
-                }
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   COPY REFERRAL
-===================================================== */
-
-const copyButton =
-    document.getElementById(
-        "copyReferralButton"
-    );
-
-
-if(copyButton){
-
-    copyButton.addEventListener(
-        "click",
-        async function(){
-
-            const code =
-                document
-                    .getElementById(
-                        "teamReferralCode"
-                    )
-                    .textContent;
-
-
-            if(
-                code &&
-                code !== "-"
-            ){
-
-                try{
-
-                    await navigator
-                        .clipboard
-                        .writeText(
-                            code
-                        );
-
-
-                    copyButton.textContent =
-                        "تم النسخ ✓";
-
-
-                    setTimeout(
-                        function(){
-
-                            copyButton.textContent =
-                                "نسخ الكود";
-
-                        },
-                        1500
-                    );
-
-                }
-
-                catch(error){
-
-                    copyButton.textContent =
-                        "انسخ يدويًا";
-
-                }
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   LOGOUT
-===================================================== */
-
-const logoutButton =
-    document.getElementById(
-        "logoutButton"
-    );
-
-
-if(logoutButton){
-
-    logoutButton.addEventListener(
-        "click",
-        function(){
-
-            localStorage.removeItem(
-                "nexora_session"
-            );
-
-
-            sessionStorage.removeItem(
-                "nexora_session"
-            );
-
-
-            window.location.href =
-                "login.html";
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   CHART BUTTONS
-===================================================== */
-
-const chartButtons =
-    document.querySelectorAll(
-        ".chart-controls button"
-    );
-
-
-chartButtons.forEach(
-    function(button){
-
-        button.addEventListener(
-            "click",
-            function(){
-
-                chartButtons.forEach(
-                    function(btn){
-
-                        btn.classList.remove(
-                            "active"
-                        );
-
-                    }
-                );
-
-
-                this.classList.add(
-                    "active"
-                );
-
-            }
-        );
-
-    }
-);
-
-
-/* =====================================================
-   YEAR
-===================================================== */
-
-document
-    .getElementById(
-        "dashboardYear"
-    )
-    .textContent =
-    new Date()
-        .getFullYear();
-
-</script>
-
-</body>
-   </html>
+            "act
