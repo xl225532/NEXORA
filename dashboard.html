@@ -24,10 +24,16 @@ html{
 
 body{
     font-family:Tahoma,Arial,sans-serif;
-    background:#03060d;
-    color:#f5f8ff;
+    background:#02050b;
+    color:#f4f8ff;
     min-height:100vh;
     overflow-x:hidden;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+    border:0;
 }
 
 button,
@@ -35,39 +41,28 @@ a{
     -webkit-tap-highlight-color:transparent;
 }
 
-button{
-    font-family:inherit;
-    cursor:pointer;
-}
-
-a{
-    text-decoration:none;
-}
-
-
-/* =====================================================
-   COLORS
-===================================================== */
-
 :root{
 
-    --bg:#03060d;
-    --bg2:#050b16;
+    --bg:#02050b;
+    --bg2:#050a13;
 
-    --panel:#07101e;
-    --panel2:#091526;
+    --panel:#07111f;
+    --panel2:#091728;
 
-    --blue:#1677ff;
-    --blue-light:#27a7ff;
-    --blue-glow:rgba(22,119,255,.35);
+    --blue:#0878ff;
+    --blue2:#0752bd;
+    --blue-light:#2aa7ff;
 
-    --text:#f5f8ff;
-    --muted:#71809a;
+    --blue-soft:rgba(8,120,255,.12);
+    --blue-border:rgba(25,130,255,.18);
+    --blue-glow:rgba(0,110,255,.28);
 
-    --green:#22d68a;
-    --red:#ff5364;
+    --text:#f4f8ff;
+    --muted:#71829b;
+    --muted2:#52627b;
 
-    --border:rgba(74,143,255,.15);
+    --green:#21d890;
+    --red:#ff5267;
 
 }
 
@@ -85,21 +80,21 @@ a{
     background:
 
         radial-gradient(
-            circle at 15% 10%,
-            rgba(0,100,255,.12),
+            circle at 15% 15%,
+            rgba(0,93,255,.12),
             transparent 28%
         ),
 
         radial-gradient(
-            circle at 85% 80%,
-            rgba(0,55,150,.10),
+            circle at 85% 85%,
+            rgba(0,65,190,.10),
             transparent 30%
         ),
 
         linear-gradient(
             135deg,
             #02050b,
-            #050b15
+            #050a13
         );
 
 }
@@ -127,7 +122,7 @@ a{
 
     position:absolute;
 
-    color:rgba(30,120,255,.07);
+    color:rgba(20,120,255,.055);
 
     font-size:28px;
 
@@ -139,39 +134,33 @@ a{
 }
 
 .market-decoration span:nth-child(1){
-    right:15%;
+    right:12%;
     top:20%;
-    animation-duration:16s;
-}
-
-.market-decoration span:nth-child(2){
-    right:40%;
-    top:60%;
-    animation-duration:20s;
-}
-
-.market-decoration span:nth-child(3){
-    right:70%;
-    top:30%;
-    animation-duration:14s;
-}
-
-.market-decoration span:nth-child(4){
-    right:85%;
-    top:75%;
     animation-duration:18s;
 }
 
-.market-decoration span:nth-child(5){
-    right:55%;
-    top:10%;
+.market-decoration span:nth-child(2){
+    right:35%;
+    top:70%;
     animation-duration:22s;
+}
+
+.market-decoration span:nth-child(3){
+    right:65%;
+    top:25%;
+    animation-duration:16s;
+}
+
+.market-decoration span:nth-child(4){
+    right:82%;
+    top:75%;
+    animation-duration:20s;
 }
 
 @keyframes floatingBlue{
 
     0%{
-        transform:translateY(60px);
+        transform:translateY(80px);
         opacity:0;
     }
 
@@ -184,7 +173,7 @@ a{
     }
 
     100%{
-        transform:translateY(-200px);
+        transform:translateY(-180px);
         opacity:0;
     }
 
@@ -197,7 +186,7 @@ a{
 
 .dashboard-sidebar{
 
-    width:250px;
+    width:245px;
 
     min-height:100vh;
 
@@ -207,7 +196,7 @@ a{
 
     right:0;
 
-    padding:25px 18px;
+    padding:24px 16px;
 
     display:flex;
 
@@ -217,49 +206,53 @@ a{
 
         linear-gradient(
             180deg,
-            rgba(5,13,27,.98),
-            rgba(2,7,15,.98)
+            rgba(4,12,25,.98),
+            rgba(2,6,13,.99)
         );
 
     border-left:
         1px solid
-        var(--border);
+        rgba(20,120,255,.14);
 
     z-index:1000;
 
     backdrop-filter:blur(18px);
 
     box-shadow:
-        -15px 0 50px
-        rgba(0,0,0,.35);
+        -20px 0 60px
+        rgba(0,0,0,.4);
 
 }
 
 
-/* LOGO */
+/* =====================================================
+   LOGO
+===================================================== */
 
 .dashboard-logo{
 
     text-align:center;
 
-    color:#2c9bff;
+    color:#1688ff;
 
-    font-size:28px;
+    font-size:27px;
 
     font-weight:900;
 
-    letter-spacing:4px;
+    letter-spacing:5px;
 
-    margin-bottom:30px;
+    margin-bottom:35px;
 
     text-shadow:
         0 0 25px
-        rgba(30,130,255,.45);
+        rgba(0,120,255,.5);
 
 }
 
 
-/* USER */
+/* =====================================================
+   USER
+===================================================== */
 
 .sidebar-user{
 
@@ -269,23 +262,22 @@ a{
 
     gap:12px;
 
-    padding:15px;
+    padding:14px;
 
     margin-bottom:25px;
 
     background:
-
         linear-gradient(
             135deg,
-            #0b172a,
-            #07101e
+            #09182c,
+            #06101d
         );
 
     border:
         1px solid
-        rgba(30,130,255,.14);
+        rgba(20,120,255,.13);
 
-    border-radius:14px;
+    border-radius:15px;
 
 }
 
@@ -302,22 +294,23 @@ a{
     justify-content:center;
 
     background:
-
         linear-gradient(
             135deg,
-            #1677ff,
-            #0c3e94
+            #087cff,
+            #063b91
         );
 
     color:#fff;
 
-    border-radius:50%;
+    border-radius:12px;
 
-    font-size:20px;
+    font-size:16px;
+
+    font-weight:bold;
 
     box-shadow:
-        0 0 20px
-        rgba(22,119,255,.25);
+        0 0 22px
+        rgba(0,110,255,.25);
 
 }
 
@@ -327,22 +320,24 @@ a{
 
     color:#fff;
 
-    font-size:14px;
+    font-size:13px;
 
-    margin-bottom:3px;
+    margin-bottom:4px;
 
 }
 
 .sidebar-user small{
 
-    color:#61708a;
+    color:#5f708a;
 
-    font-size:11px;
+    font-size:10px;
 
 }
 
 
-/* NAV */
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .dashboard-nav{
 
@@ -350,7 +345,7 @@ a{
 
     flex-direction:column;
 
-    gap:8px;
+    gap:7px;
 
     flex:1;
 
@@ -364,19 +359,17 @@ a{
 
     align-items:center;
 
-    gap:12px;
+    gap:13px;
 
     padding:13px 15px;
 
-    border:0;
-
-    border-radius:11px;
+    border-radius:12px;
 
     background:transparent;
 
-    color:#7d8ba2;
+    color:#77869d;
 
-    font-size:14px;
+    font-size:13px;
 
     text-align:right;
 
@@ -387,9 +380,9 @@ a{
 .dashboard-nav-item:hover{
 
     background:
-        rgba(22,119,255,.08);
+        rgba(0,110,255,.07);
 
-    color:#fff;
+    color:#dceaff;
 
 }
 
@@ -399,34 +392,229 @@ a{
 
         linear-gradient(
             135deg,
-            rgba(22,119,255,.28),
-            rgba(10,50,110,.16)
+            rgba(0,115,255,.25),
+            rgba(0,55,140,.12)
         );
 
-    color:#35a8ff;
+    color:#42aaff;
 
     border:
         1px solid
-        rgba(35,150,255,.2);
+        rgba(20,130,255,.18);
 
     box-shadow:
         0 0 25px
-        rgba(22,119,255,.08);
+        rgba(0,100,255,.08);
 
 }
 
-.dashboard-nav-item span:first-child{
+.nav-icon{
 
-    width:25px;
+    width:24px;
 
-    text-align:center;
+    height:24px;
 
-    font-size:18px;
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 
 }
 
 
-/* LOGOUT */
+/* CSS ICONS */
+
+.icon-grid{
+
+    width:14px;
+    height:14px;
+
+    border:2px solid currentColor;
+
+    border-radius:3px;
+
+}
+
+.icon-user{
+
+    width:13px;
+    height:13px;
+
+    border:2px solid currentColor;
+
+    border-radius:50%;
+
+    position:relative;
+
+    margin-top:-6px;
+
+}
+
+.icon-user::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+
+    height:9px;
+
+    border:2px solid currentColor;
+
+    border-bottom:0;
+
+    border-radius:12px 12px 0 0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    top:15px;
+
+}
+
+.icon-wallet{
+
+    width:17px;
+    height:13px;
+
+    border:2px solid currentColor;
+
+    border-radius:4px;
+
+    position:relative;
+
+}
+
+.icon-wallet::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:5px;
+
+    height:5px;
+
+    border-radius:50%;
+
+    background:currentColor;
+
+    right:2px;
+
+    top:2px;
+
+}
+
+.icon-team{
+
+    width:18px;
+    height:12px;
+
+    border:2px solid currentColor;
+
+    border-radius:7px 7px 3px 3px;
+
+    position:relative;
+
+}
+
+.icon-team::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:7px;
+
+    height:7px;
+
+    border:2px solid currentColor;
+
+    border-radius:50%;
+
+    top:-9px;
+
+    left:3px;
+
+    background:#07111f;
+
+}
+
+.icon-chart{
+
+    width:18px;
+    height:13px;
+
+    border-left:2px solid currentColor;
+
+    border-bottom:2px solid currentColor;
+
+    position:relative;
+
+}
+
+.icon-chart::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:12px;
+
+    height:7px;
+
+    border-top:2px solid currentColor;
+
+    border-right:2px solid currentColor;
+
+    transform:skewY(-30deg);
+
+    left:2px;
+
+    top:1px;
+
+}
+
+.icon-support{
+
+    width:17px;
+    height:17px;
+
+    border:2px solid currentColor;
+
+    border-radius:50%;
+
+}
+
+.icon-support::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:5px;
+
+    height:7px;
+
+    border-left:2px solid currentColor;
+
+    border-right:2px solid currentColor;
+
+    bottom:-3px;
+
+    left:4px;
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
 
 .dashboard-logout{
 
@@ -436,23 +624,23 @@ a{
 
     border:
         1px solid
-        rgba(255,80,100,.18);
+        rgba(255,70,90,.16);
 
     border-radius:10px;
 
     background:
-        rgba(255,60,80,.05);
+        rgba(255,60,80,.04);
 
-    color:#ff6d7d;
+    color:#ff697b;
 
-    font-size:13px;
+    font-size:12px;
 
 }
 
 .dashboard-logout:hover{
 
     background:
-        rgba(255,60,80,.12);
+        rgba(255,60,80,.1);
 
 }
 
@@ -467,13 +655,13 @@ a{
 
     z-index:2;
 
-    width:calc(100% - 250px);
+    width:calc(100% - 245px);
 
-    margin-right:250px;
+    margin-right:245px;
 
     min-height:100vh;
 
-    padding:28px 35px;
+    padding:28px 34px;
 
 }
 
@@ -484,21 +672,21 @@ a{
 
 .dashboard-topbar{
 
-    min-height:85px;
+    min-height:75px;
 
     display:flex;
 
     align-items:center;
 
-    justify-content:space-between;
+    justify-content:flex-start;
 
     margin-bottom:25px;
 
-    padding-bottom:20px;
+    padding-bottom:18px;
 
     border-bottom:
         1px solid
-        rgba(70,130,220,.12);
+        rgba(60,120,210,.1);
 
 }
 
@@ -506,9 +694,9 @@ a{
 
     display:block;
 
-    color:#66758c;
+    color:#5f7089;
 
-    font-size:12px;
+    font-size:11px;
 
     margin-bottom:5px;
 
@@ -519,43 +707,6 @@ a{
     color:#fff;
 
     font-size:25px;
-
-}
-
-.topbar-user{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    padding:14px 18px;
-
-    background:
-        rgba(8,20,38,.8);
-
-    border:
-        1px solid
-        rgba(30,130,255,.12);
-
-    border-radius:12px;
-
-}
-
-.topbar-user span{
-
-    color:#66758c;
-
-    font-size:12px;
-
-}
-
-.topbar-user strong{
-
-    color:#fff;
-
-    font-size:13px;
 
 }
 
@@ -597,7 +748,7 @@ a{
 
 
 /* =====================================================
-   TOP BALANCE
+   BALANCE
 ===================================================== */
 
 .top-balance-card{
@@ -614,19 +765,19 @@ a{
 
         radial-gradient(
             circle at 90% 20%,
-            rgba(24,120,255,.22),
+            rgba(0,120,255,.22),
             transparent 35%
         ),
 
         linear-gradient(
             135deg,
-            #07182e,
-            #050b15
+            #071a34,
+            #040a13
         );
 
     border:
         1px solid
-        rgba(30,130,255,.22);
+        rgba(20,130,255,.2);
 
     border-radius:20px;
 
@@ -638,28 +789,16 @@ a{
         0 15px 45px
         rgba(0,0,0,.25);
 
+    transition:.25s;
+
 }
 
-.top-balance-card::before{
+.top-balance-card:hover{
 
-    content:"";
+    border-color:
+        rgba(30,150,255,.35);
 
-    position:absolute;
-
-    width:220px;
-
-    height:220px;
-
-    left:-80px;
-
-    top:-100px;
-
-    background:
-        rgba(20,110,255,.08);
-
-    border-radius:50%;
-
-    filter:blur(20px);
+    transform:translateY(-2px);
 
 }
 
@@ -667,7 +806,7 @@ a{
 
     display:block;
 
-    color:#74849d;
+    color:#71839d;
 
     font-size:12px;
 
@@ -685,31 +824,29 @@ a{
 
     direction:ltr;
 
-    justify-content:flex-start;
-
 }
 
 .top-balance-value strong{
 
     color:#fff;
 
-    font-size:42px;
+    font-size:45px;
 
-    font-weight:800;
+    font-weight:900;
 
     letter-spacing:1px;
 
     text-shadow:
         0 0 25px
-        rgba(35,150,255,.25);
+        rgba(0,130,255,.3);
 
 }
 
 .top-balance-value span{
 
-    color:#31a5ff;
+    color:#35a8ff;
 
-    font-size:17px;
+    font-size:16px;
 
     font-weight:bold;
 
@@ -717,7 +854,7 @@ a{
 
 .top-balance-hint{
 
-    color:#52647e;
+    color:#50627d;
 
     font-size:10px;
 
@@ -727,7 +864,7 @@ a{
 
 
 /* =====================================================
-   MARKET DASHBOARD
+   MARKET
 ===================================================== */
 
 .market-layout{
@@ -746,12 +883,12 @@ a{
 
 
 /* =====================================================
-   TRADING CHART
+   CHART
 ===================================================== */
 
 .trading-chart-card{
 
-    min-height:480px;
+    min-height:490px;
 
     padding:22px;
 
@@ -763,19 +900,15 @@ a{
 
         linear-gradient(
             145deg,
-            #071426,
-            #040912
+            #071526,
+            #030810
         );
 
     border:
         1px solid
-        rgba(40,130,255,.18);
+        rgba(30,130,255,.16);
 
     border-radius:18px;
-
-    box-shadow:
-        inset 0 1px 0
-        rgba(255,255,255,.025);
 
 }
 
@@ -827,8 +960,7 @@ a{
 
     border-radius:7px;
 
-    background:
-        #081526;
+    background:#081526;
 
     color:#71839d;
 
@@ -840,22 +972,20 @@ a{
 
     color:#fff;
 
-    background:
-        #126ee8;
+    background:#0878ff;
 
-    border-color:
-        #1680ff;
+    border-color:#1688ff;
 
 }
 
 
-/* MAIN GRAPH */
+/* GRAPH */
 
 .main-chart{
 
     position:relative;
 
-    height:300px;
+    height:305px;
 
     border-radius:12px;
 
@@ -866,7 +996,7 @@ a{
         linear-gradient(
             180deg,
             rgba(5,17,32,.7),
-            rgba(2,8,16,.9)
+            rgba(2,8,16,.95)
         );
 
 }
@@ -947,7 +1077,7 @@ a{
 
     justify-content:space-around;
 
-    opacity:.45;
+    opacity:.42;
 
 }
 
@@ -1000,15 +1130,11 @@ a{
 }
 
 .candle.up{
-
     --candle-color:#21d890;
-
 }
 
 .candle.down{
-
     --candle-color:#ff5364;
-
 }
 
 
@@ -1041,14 +1167,11 @@ a{
     background:
         rgba(30,130,255,.35);
 
-    transition:.3s;
-
 }
 
 .volume-bar:hover{
 
-    background:
-        #1c9aff;
+    background:#1c9aff;
 
 }
 
@@ -1089,7 +1212,7 @@ a{
 
     border-bottom:
         1px solid
-        rgba(70,130,220,.10);
+        rgba(70,130,220,.1);
 
 }
 
@@ -1108,14 +1231,14 @@ a{
 }
 
 
-/* COIN ROW */
+/* COIN */
 
 .coin-row{
 
     display:grid;
 
     grid-template-columns:
-        1.4fr
+        1.5fr
         1fr
         .7fr;
 
@@ -1123,7 +1246,7 @@ a{
 
     gap:12px;
 
-    padding:13px 18px;
+    padding:12px 18px;
 
     border-bottom:
         1px solid
@@ -1145,9 +1268,6 @@ a{
         rgba(20,110,255,.055);
 
 }
-
-
-/* COIN LEFT */
 
 .coin-name{
 
@@ -1175,9 +1295,9 @@ a{
 
     justify-content:center;
 
-    border-radius:50%;
+    border-radius:10px;
 
-    font-size:16px;
+    font-size:13px;
 
     font-weight:bold;
 
@@ -1185,7 +1305,7 @@ a{
 
     border:
         1px solid
-        rgba(255,255,255,.08);
+        rgba(255,255,255,.06);
 
 }
 
@@ -1211,51 +1331,22 @@ a{
 
 }
 
+.btc{color:#f7931a;}
+.eth{color:#8d9eff;}
+.usdt{color:#26a17b;}
+.trx{color:#ff5364;}
+.bnb{color:#f3ba2f;}
+.xrp{color:#25a7e8;}
+.sol{color:#9b6cff;}
+.ada{color:#3468d4;}
+.doge{color:#c2a633;}
+.ton{color:#39a9ff;}
+.usdc{color:#2775ca;}
+.dot{color:#008cff;}
+.link{color:#375bd2;}
+.avax{color:#e84142;}
+.ltc{color:#b7c0cc;}
 
-/* COIN COLORS */
-
-.btc{
-    color:#f7931a;
-}
-
-.eth{
-    color:#8d9eff;
-}
-
-.usdt{
-    color:#26a17b;
-}
-
-.trx{
-    color:#ff3b4d;
-}
-
-.bnb{
-    color:#f3ba2f;
-}
-
-.xrp{
-    color:#25a7e8;
-}
-
-.sol{
-    color:#9b6cff;
-}
-
-.ada{
-    color:#3468d4;
-}
-
-.doge{
-    color:#c2a633;
-}
-
-.ton{
-    color:#39a9ff;
-}
-
-
-/* PRICE */
 
 .coin-price{
 
@@ -1271,9 +1362,6 @@ a{
 
 }
 
-
-/* CHANGE */
-
 .coin-change{
 
     direction:ltr;
@@ -1287,20 +1375,16 @@ a{
 }
 
 .coin-change.up{
-
     color:#21d890;
-
 }
 
 .coin-change.down{
-
     color:#ff5364;
-
 }
 
 
 /* =====================================================
-   MARKET STATS
+   STATS
 ===================================================== */
 
 .market-stats{
@@ -1359,12 +1443,7 @@ a{
 
 
 /* =====================================================
-   QUICK ACTIONS REMOVED
-===================================================== */
-
-
-/* =====================================================
-   OTHER SECTIONS
+   SECTION
 ===================================================== */
 
 .section-heading{
@@ -1390,7 +1469,9 @@ a{
 }
 
 
-/* PROFILE */
+/* =====================================================
+   PROFILE
+===================================================== */
 
 .profile-card{
 
@@ -1429,18 +1510,20 @@ a{
 
     justify-content:center;
 
-    border-radius:50%;
+    border-radius:20px;
 
     background:
         linear-gradient(
             135deg,
-            #1677ff,
-            #0b3b91
+            #087cff,
+            #063b91
         );
 
     color:#fff;
 
-    font-size:40px;
+    font-size:28px;
+
+    font-weight:bold;
 
 }
 
@@ -1493,7 +1576,65 @@ a{
 }
 
 
-/* BALANCE */
+/* COPY USER CODE */
+
+.user-code-wrap{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    direction:ltr;
+
+}
+
+.user-code{
+
+    color:#42aaff;
+
+    background:
+        rgba(0,110,255,.08);
+
+    border:
+        1px solid
+        rgba(30,130,255,.18);
+
+    border-radius:7px;
+
+    padding:6px 9px;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+}
+
+.copy-code-btn{
+
+    padding:6px 9px;
+
+    border-radius:7px;
+
+    background:#0878ff;
+
+    color:#fff;
+
+    font-size:10px;
+
+}
+
+.copy-code-btn:hover{
+
+    background:#1688ff;
+
+}
+
+
+/* =====================================================
+   BALANCE
+===================================================== */
 
 .balance-main-card{
 
@@ -1552,7 +1693,9 @@ a{
 }
 
 
-/* TEAM */
+/* =====================================================
+   TEAM
+===================================================== */
 
 .team-summary{
 
@@ -1585,7 +1728,9 @@ a{
 
     display:block;
 
-    font-size:25px;
+    color:#2d9dff;
+
+    font-size:22px;
 
     margin-bottom:10px;
 
@@ -1671,7 +1816,9 @@ a{
 }
 
 
-/* TRADING */
+/* =====================================================
+   TRADING
+===================================================== */
 
 .trading-warning{
 
@@ -1698,7 +1845,25 @@ a{
 
 .trading-warning > span{
 
-    font-size:30px;
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    color:#2d9dff;
+
+    border:1px solid rgba(30,130,255,.2);
+
+    background:rgba(0,100,255,.08);
+
+    font-weight:bold;
 
 }
 
@@ -1766,7 +1931,9 @@ a{
 }
 
 
-/* SUPPORT */
+/* =====================================================
+   SUPPORT
+===================================================== */
 
 .support-card{
 
@@ -1790,9 +1957,27 @@ a{
 
 .support-icon{
 
-    font-size:50px;
+    width:60px;
 
-    margin-bottom:20px;
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 20px;
+
+    border-radius:16px;
+
+    color:#2d9dff;
+
+    border:1px solid rgba(30,130,255,.2);
+
+    background:rgba(0,100,255,.08);
+
+    font-weight:bold;
 
 }
 
@@ -1820,8 +2005,6 @@ a{
 
     padding:12px 25px;
 
-    border:0;
-
     border-radius:10px;
 
     background:
@@ -1842,7 +2025,9 @@ a{
 }
 
 
-/* EMPTY */
+/* =====================================================
+   EMPTY
+===================================================== */
 
 .empty-state{
 
@@ -1873,7 +2058,9 @@ a{
 }
 
 
-/* PANEL */
+/* =====================================================
+   PANEL
+===================================================== */
 
 .dashboard-panel{
 
@@ -1916,7 +2103,9 @@ a{
 }
 
 
-/* FOOTER */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 .dashboard-footer{
 
@@ -1985,7 +2174,7 @@ a{
 
         display:block;
 
-        padding-bottom:80px;
+        padding-bottom:70px;
 
     }
 
@@ -2048,17 +2237,17 @@ a{
 
         justify-content:center;
 
-        gap:2px;
+        gap:3px;
 
         font-size:9px;
 
     }
 
-    .dashboard-nav-item span:first-child{
+    .nav-icon{
 
-        width:auto;
+        width:22px;
 
-        font-size:17px;
+        height:22px;
 
     }
 
@@ -2086,18 +2275,6 @@ a{
 
     }
 
-    .topbar-user{
-
-        padding:10px;
-
-    }
-
-    .topbar-user span{
-
-        display:none;
-
-    }
-
     .top-balance-card{
 
         padding:22px;
@@ -2106,7 +2283,7 @@ a{
 
     .top-balance-value strong{
 
-        font-size:32px;
+        font-size:36px;
 
     }
 
@@ -2216,7 +2393,7 @@ a{
 
     .top-balance-value strong{
 
-        font-size:28px;
+        font-size:30px;
 
     }
 
@@ -2234,17 +2411,14 @@ a{
 <body>
 
 
-<!-- =====================================================
-     BACKGROUND
-===================================================== -->
+<!-- BACKGROUND -->
 
 <div class="market-decoration">
 
-    <span>₿</span>
-    <span>Ξ</span>
-    <span>₿</span>
+    <span>+</span>
     <span>◆</span>
     <span>↗</span>
+    <span>+</span>
 
 </div>
 
@@ -2252,9 +2426,7 @@ a{
 <div class="dashboard-page">
 
 
-<!-- =====================================================
-     SIDEBAR
-===================================================== -->
+<!-- SIDEBAR -->
 
 <aside class="dashboard-sidebar">
 
@@ -2266,7 +2438,7 @@ a{
     <div class="sidebar-user">
 
         <div class="sidebar-avatar">
-            👤
+            NX
         </div>
 
         <div>
@@ -2291,8 +2463,11 @@ a{
             data-section="homeSection"
         >
 
-            <span>🏠</span>
-            <span>بيت</span>
+            <span class="nav-icon">
+                <span class="icon-grid"></span>
+            </span>
+
+            <span>الرئيسية</span>
 
         </button>
 
@@ -2302,8 +2477,11 @@ a{
             data-section="profileSection"
         >
 
-            <span>👤</span>
-            <span>أنا</span>
+            <span class="nav-icon">
+                <span class="icon-user"></span>
+            </span>
+
+            <span>الحساب</span>
 
         </button>
 
@@ -2313,8 +2491,11 @@ a{
             data-section="balanceSection"
         >
 
-            <span>💰</span>
-            <span>الرصيد</span>
+            <span class="nav-icon">
+                <span class="icon-wallet"></span>
+            </span>
+
+            <span>المحفظة</span>
 
         </button>
 
@@ -2324,7 +2505,10 @@ a{
             data-section="teamSection"
         >
 
-            <span>👥</span>
+            <span class="nav-icon">
+                <span class="icon-team"></span>
+            </span>
+
             <span>الفريق</span>
 
         </button>
@@ -2335,7 +2519,10 @@ a{
             data-section="tradingSection"
         >
 
-            <span>📈</span>
+            <span class="nav-icon">
+                <span class="icon-chart"></span>
+            </span>
+
             <span>التداول</span>
 
         </button>
@@ -2346,8 +2533,11 @@ a{
             data-section="supportSection"
         >
 
-            <span>🎧</span>
-            <span>دعم</span>
+            <span class="nav-icon">
+                <span class="icon-support"></span>
+            </span>
+
+            <span>الدعم</span>
 
         </button>
 
@@ -2359,17 +2549,14 @@ a{
         class="dashboard-logout"
     >
 
-        🚪 تسجيل الخروج
+        تسجيل الخروج
 
     </button>
 
 </aside>
 
 
-
-<!-- =====================================================
-     MAIN
-===================================================== -->
+<!-- MAIN -->
 
 <main class="dashboard-main">
 
@@ -2383,31 +2570,15 @@ a{
         </span>
 
         <h1 id="pageTitle">
-            بيت
+            الرئيسية
         </h1>
-
-    </div>
-
-
-    <div class="topbar-user">
-
-        <span>
-            الحساب
-        </span>
-
-        <strong id="topbarUserName">
-            المستخدم
-        </strong>
 
     </div>
 
 </header>
 
 
-
-<!-- =====================================================
-     HOME
-===================================================== -->
+<!-- HOME -->
 
 <section
     id="homeSection"
@@ -2415,7 +2586,7 @@ a{
 >
 
 
-<!-- TOP BALANCE -->
+<!-- BALANCE -->
 
 <div
     class="top-balance-card"
@@ -2441,21 +2612,18 @@ a{
 
 
     <div class="top-balance-hint">
-        اضغط على الرصيد لإخفائه أو إظهاره
+        اضغط على قيمة الرصيد لإخفائها أو إظهارها
     </div>
 
 </div>
 
 
-
-<!-- =====================================================
-     MARKET
-===================================================== -->
+<!-- MARKET -->
 
 <div class="market-layout">
 
 
-<!-- TRADING CHART -->
+<!-- CHART -->
 
 <div class="trading-chart-card">
 
@@ -2470,7 +2638,7 @@ a{
 </h3>
 
 <p>
-    حركة السعر خلال الفترة المحددة
+    حركة السعر
 </p>
 
 </div>
@@ -2501,9 +2669,6 @@ a{
 
 
 <div class="main-chart">
-
-
-<!-- SVG LINE -->
 
 <svg
 class="price-line"
@@ -2585,136 +2750,95 @@ points="
 </svg>
 
 
-<!-- CANDLES -->
-
 <div class="candle-layer">
 
-<div
-class="candle up"
+<div class="candle up"
 style="
 --wick-top:25%;
 --wick-height:25%;
 --body-top:35%;
 --body-height:15%;
-"
->
+">
 <div class="candle-body"></div>
 </div>
 
-
-<div
-class="candle down"
+<div class="candle down"
 style="
 --wick-top:30%;
 --wick-height:35%;
 --body-top:45%;
 --body-height:18%;
-"
->
+">
 <div class="candle-body"></div>
 </div>
 
-
-<div
-class="candle up"
+<div class="candle up"
 style="
 --wick-top:20%;
 --wick-height:35%;
 --body-top:30%;
 --body-height:20%;
-"
->
+">
 <div class="candle-body"></div>
 </div>
 
-
-<div
-class="candle up"
+<div class="candle up"
 style="
 --wick-top:35%;
 --wick-height:25%;
 --body-top:40%;
 --body-height:18%;
-"
->
+">
 <div class="candle-body"></div>
 </div>
 
-
-<div
-class="candle down"
+<div class="candle down"
 style="
 --wick-top:30%;
 --wick-height:35%;
 --body-top:42%;
 --body-height:20%;
-"
->
+">
 <div class="candle-body"></div>
 </div>
 
-
-<div
-class="candle up"
+<div class="candle up"
 style="
 --wick-top:15%;
 --wick-height:40%;
 --body-top:25%;
 --body-height:22%;
-"
->
+">
 <div class="candle-body"></div>
 </div>
 
-
-<div
-class="candle up"
+<div class="candle up"
 style="
 --wick-top:20%;
 --wick-height:30%;
 --body-top:28%;
 --body-height:18%;
-"
->
+">
 <div class="candle-body"></div>
 </div>
 
-
-<div
-class="candle down"
+<div class="candle down"
 style="
 --wick-top:25%;
 --wick-height:40%;
 --body-top:38%;
 --body-height:22%;
-"
->
+">
 <div class="candle-body"></div>
 </div>
 
-
-<div
-class="candle up"
+<div class="candle up"
 style="
 --wick-top:10%;
 --wick-height:40%;
 --body-top:20%;
 --body-height:20%;
-"
->
-<div class="candle-body"></div>
-</div>
-
-
-<div
-class="candle up"
-style="
---wick-top:15%;
---wick-height:35%;
---body-top:25%;
---body-height:18%;
-"
->
+">
 <div class="candle-body"></div>
 </div>
 
@@ -2722,8 +2846,6 @@ style="
 
 </div>
 
-
-<!-- VOLUME -->
 
 <div class="volume-chart">
 
@@ -2744,10 +2866,7 @@ style="
 </div>
 
 
-
-<!-- =====================================================
-     COINS
-===================================================== -->
+<!-- COINS -->
 
 <div class="market-list">
 
@@ -2755,7 +2874,7 @@ style="
 <div class="market-list-header">
 
 <h3>
-    السوق
+    الأسواق
 </h3>
 
 <span>
@@ -2772,7 +2891,7 @@ style="
 <div class="coin-name">
 
 <div class="coin-icon btc">
-    ₿
+    BTC
 </div>
 
 <div>
@@ -2782,25 +2901,22 @@ style="
 </strong>
 
 <small>
-    BTC
+    BTC / USDT
 </small>
 
 </div>
 
 </div>
 
-
 <div class="coin-price">
     $64,368.53
 </div>
-
 
 <div class="coin-change up">
     +0.40%
 </div>
 
 </div>
-
 
 
 <!-- ETH -->
@@ -2810,7 +2926,7 @@ style="
 <div class="coin-name">
 
 <div class="coin-icon eth">
-    Ξ
+    ETH
 </div>
 
 <div>
@@ -2820,25 +2936,22 @@ style="
 </strong>
 
 <small>
-    ETH
+    ETH / USDT
 </small>
 
 </div>
 
 </div>
 
-
 <div class="coin-price">
     $1,874.90
 </div>
-
 
 <div class="coin-change up">
     +1.00%
 </div>
 
 </div>
-
 
 
 <!-- USDT -->
@@ -2848,7 +2961,7 @@ style="
 <div class="coin-name">
 
 <div class="coin-icon usdt">
-    ₮
+    USDT
 </div>
 
 <div>
@@ -2865,18 +2978,15 @@ style="
 
 </div>
 
-
 <div class="coin-price">
     $1.00
 </div>
-
 
 <div class="coin-change up">
     +0.01%
 </div>
 
 </div>
-
 
 
 <!-- TRX -->
@@ -2896,25 +3006,22 @@ style="
 </strong>
 
 <small>
-    TRX
+    TRX / USDT
 </small>
 
 </div>
 
 </div>
 
-
 <div class="coin-price">
     $0.27
 </div>
-
 
 <div class="coin-change up">
     +0.80%
 </div>
 
 </div>
-
 
 
 <!-- BNB -->
@@ -2924,7 +3031,7 @@ style="
 <div class="coin-name">
 
 <div class="coin-icon bnb">
-    ◆
+    BNB
 </div>
 
 <div>
@@ -2934,25 +3041,22 @@ style="
 </strong>
 
 <small>
-    BNB
+    BNB / USDT
 </small>
 
 </div>
 
 </div>
 
-
 <div class="coin-price">
     $568.84
 </div>
-
 
 <div class="coin-change up">
     +0.77%
 </div>
 
 </div>
-
 
 
 <!-- XRP -->
@@ -2962,7 +3066,7 @@ style="
 <div class="coin-name">
 
 <div class="coin-icon xrp">
-    ✕
+    XRP
 </div>
 
 <div>
@@ -2972,25 +3076,22 @@ style="
 </strong>
 
 <small>
-    XRP
+    XRP / USDT
 </small>
 
 </div>
 
 </div>
 
-
 <div class="coin-price">
     $1.09
 </div>
-
 
 <div class="coin-change down">
     -0.67%
 </div>
 
 </div>
-
 
 
 <!-- SOL -->
@@ -3000,7 +3101,7 @@ style="
 <div class="coin-name">
 
 <div class="coin-icon sol">
-    S
+    SOL
 </div>
 
 <div>
@@ -3010,25 +3111,22 @@ style="
 </strong>
 
 <small>
-    SOL
+    SOL / USDT
 </small>
 
 </div>
 
 </div>
 
-
 <div class="coin-price">
     $74.36
 </div>
-
 
 <div class="coin-change up">
     +0.72%
 </div>
 
 </div>
-
 
 
 <!-- ADA -->
@@ -3038,7 +3136,7 @@ style="
 <div class="coin-name">
 
 <div class="coin-icon ada">
-    A
+    ADA
 </div>
 
 <div>
@@ -3048,25 +3146,22 @@ style="
 </strong>
 
 <small>
-    ADA
+    ADA / USDT
 </small>
 
 </div>
 
 </div>
 
-
 <div class="coin-price">
     $0.25
 </div>
-
 
 <div class="coin-change down">
     -0.30%
 </div>
 
 </div>
-
 
 
 <!-- DOGE -->
@@ -3076,7 +3171,7 @@ style="
 <div class="coin-name">
 
 <div class="coin-icon doge">
-    Ð
+    DOGE
 </div>
 
 <div>
@@ -3086,25 +3181,22 @@ style="
 </strong>
 
 <small>
-    DOGE
+    DOGE / USDT
 </small>
 
 </div>
 
 </div>
 
-
 <div class="coin-price">
     $0.17
 </div>
-
 
 <div class="coin-change up">
     +0.55%
 </div>
 
 </div>
-
 
 
 <!-- TON -->
@@ -3114,7 +3206,7 @@ style="
 <div class="coin-name">
 
 <div class="coin-icon ton">
-    ◇
+    TON
 </div>
 
 <div>
@@ -3124,18 +3216,16 @@ style="
 </strong>
 
 <small>
-    TON
+    TON / USDT
 </small>
 
 </div>
 
 </div>
 
-
 <div class="coin-price">
     $3.10
 </div>
-
 
 <div class="coin-change down">
     -0.21%
@@ -3144,18 +3234,189 @@ style="
 </div>
 
 
+<!-- USDC -->
+
+<div class="coin-row">
+
+<div class="coin-name">
+
+<div class="coin-icon usdc">
+    USDC
+</div>
+
+<div>
+
+<strong>
+    USD Coin
+</strong>
+
+<small>
+    USDC
+</small>
+
+</div>
+
+</div>
+
+<div class="coin-price">
+    $1.00
+</div>
+
+<div class="coin-change up">
+    +0.02%
 </div>
 
 </div>
 
 
+<!-- DOT -->
 
-<!-- =====================================================
-     MARKET STATS
-===================================================== -->
+<div class="coin-row">
+
+<div class="coin-name">
+
+<div class="coin-icon dot">
+    DOT
+</div>
+
+<div>
+
+<strong>
+    Polkadot
+</strong>
+
+<small>
+    DOT / USDT
+</small>
+
+</div>
+
+</div>
+
+<div class="coin-price">
+    $3.82
+</div>
+
+<div class="coin-change up">
+    +0.45%
+</div>
+
+</div>
+
+
+<!-- LINK -->
+
+<div class="coin-row">
+
+<div class="coin-name">
+
+<div class="coin-icon link">
+    LINK
+</div>
+
+<div>
+
+<strong>
+    Chainlink
+</strong>
+
+<small>
+    LINK / USDT
+</small>
+
+</div>
+
+</div>
+
+<div class="coin-price">
+    $13.20
+</div>
+
+<div class="coin-change down">
+    -0.18%
+</div>
+
+</div>
+
+
+<!-- AVAX -->
+
+<div class="coin-row">
+
+<div class="coin-name">
+
+<div class="coin-icon avax">
+    AVAX
+</div>
+
+<div>
+
+<strong>
+    Avalanche
+</strong>
+
+<small>
+    AVAX / USDT
+</small>
+
+</div>
+
+</div>
+
+<div class="coin-price">
+    $18.50
+</div>
+
+<div class="coin-change up">
+    +0.66%
+</div>
+
+</div>
+
+
+<!-- LTC -->
+
+<div class="coin-row">
+
+<div class="coin-name">
+
+<div class="coin-icon ltc">
+    LTC
+</div>
+
+<div>
+
+<strong>
+    Litecoin
+</strong>
+
+<small>
+    LTC / USDT
+</small>
+
+</div>
+
+</div>
+
+<div class="coin-price">
+    $68.40
+</div>
+
+<div class="coin-change down">
+    -0.22%
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- MARKET STATS -->
 
 <div class="market-stats">
-
 
 <div class="market-stat">
 
@@ -3199,15 +3460,14 @@ $2.41T
 <div class="market-stat">
 
 <span>
-العملات المتاحة
+الأسواق
 </span>
 
 <strong>
-10
+15
 </strong>
 
 </div>
-
 
 </div>
 
@@ -3215,10 +3475,7 @@ $2.41T
 </section>
 
 
-
-<!-- =====================================================
-     PROFILE
-===================================================== -->
+<!-- PROFILE -->
 
 <section
 id="profileSection"
@@ -3228,7 +3485,7 @@ class="dashboard-section"
 <div class="section-heading">
 
 <span>
-أنا
+الحساب
 </span>
 
 <h2>
@@ -3242,7 +3499,7 @@ class="dashboard-section"
 
 
 <div class="profile-avatar">
-👤
+NX
 </div>
 
 
@@ -3278,6 +3535,33 @@ class="dashboard-section"
 <div class="profile-row">
 
 <span>
+كود المستخدم
+</span>
+
+<div class="user-code-wrap">
+
+<strong
+id="profileUserCode"
+class="user-code"
+>
+-
+</strong>
+
+<button
+id="copyUserCodeButton"
+class="copy-code-btn"
+>
+نسخ
+</button>
+
+</div>
+
+</div>
+
+
+<div class="profile-row">
+
+<span>
 كود الإحالة
 </span>
 
@@ -3295,10 +3579,7 @@ class="dashboard-section"
 </section>
 
 
-
-<!-- =====================================================
-     BALANCE
-===================================================== -->
+<!-- BALANCE -->
 
 <section
 id="balanceSection"
@@ -3348,10 +3629,6 @@ USDT
 
 <div class="empty-state">
 
-<span>
-💳
-</span>
-
 <p>
 لا توجد عمليات مالية حتى الآن
 </p>
@@ -3363,10 +3640,7 @@ USDT
 </section>
 
 
-
-<!-- =====================================================
-     TEAM
-===================================================== -->
+<!-- TEAM -->
 
 <section
 id="teamSection"
@@ -3392,7 +3666,7 @@ class="dashboard-section"
 <div class="dashboard-stat-card">
 
 <span class="stat-icon">
-👥
+TEAM
 </span>
 
 <span class="stat-label">
@@ -3438,10 +3712,6 @@ class="dashboard-section"
 
 <div class="empty-state">
 
-<span>
-👥
-</span>
-
 <p>
 لا يوجد أعضاء في فريقك حاليًا
 </p>
@@ -3453,10 +3723,7 @@ class="dashboard-section"
 </section>
 
 
-
-<!-- =====================================================
-     TRADING
-===================================================== -->
+<!-- TRADING -->
 
 <section
 id="tradingSection"
@@ -3479,7 +3746,7 @@ class="dashboard-section"
 <div class="trading-warning">
 
 <span>
-📊
+LIVE
 </span>
 
 <div>
@@ -3544,10 +3811,7 @@ $0.00
 </section>
 
 
-
-<!-- =====================================================
-     SUPPORT
-===================================================== -->
+<!-- SUPPORT -->
 
 <section
 id="supportSection"
@@ -3570,7 +3834,7 @@ class="dashboard-section"
 <div class="support-card">
 
 <div class="support-icon">
-🎧
+SUPPORT
 </div>
 
 <h3>
@@ -3589,7 +3853,6 @@ class="dashboard-section"
 </div>
 
 </section>
-
 
 
 <footer class="dashboard-footer">
@@ -3612,7 +3875,6 @@ NEXORA
 </main>
 
 </div>
-
 
 
 <script>
@@ -3686,12 +3948,75 @@ catch(error){
 
 
 /* =====================================================
-   BALANCE VISIBILITY
+   BALANCE
 ===================================================== */
 
 let balanceHidden = false;
 
 let realBalanceText = "$0.00";
+
+
+/* =====================================================
+   USER CODE
+===================================================== */
+
+function generateUserCode(user){
+
+    if(
+        user.userCode
+    ){
+
+        return String(
+            user.userCode
+        );
+
+    }
+
+    if(
+        user.id
+    ){
+
+        return "NX-" +
+            String(
+                user.id
+            );
+
+    }
+
+    const identifier =
+        user.identifier ||
+        user.email ||
+        "USER";
+
+
+    let clean =
+        String(
+            identifier
+        )
+        .replace(
+            /[^a-zA-Z0-9]/g,
+            ""
+        )
+        .toUpperCase();
+
+
+    if(
+        !clean
+    ){
+
+        clean = "USER";
+
+    }
+
+
+    return "NX-" +
+        clean
+            .slice(
+                0,
+                6
+            );
+
+}
 
 
 /* =====================================================
@@ -3708,6 +4033,8 @@ if(currentUser){
 
     const identifier =
         currentUser.identifier ||
+        currentUser.email ||
+        currentUser.phone ||
         "-";
 
 
@@ -3730,6 +4057,12 @@ if(currentUser){
         "-";
 
 
+    const userCode =
+        generateUserCode(
+            currentUser
+        );
+
+
     realBalanceText =
         "$" +
         balance.toFixed(2);
@@ -3743,24 +4076,6 @@ if(currentUser){
         )
         .textContent =
         userName;
-
-
-    document
-        .getElementById(
-            "topbarUserName"
-        )
-        .textContent =
-        userName;
-
-
-    /* TOP BALANCE */
-
-    document
-        .getElementById(
-            "homeTotalBalance"
-        )
-        .textContent =
-        realBalanceText;
 
 
     /* PROFILE */
@@ -3783,10 +4098,28 @@ if(currentUser){
 
     document
         .getElementById(
+            "profileUserCode"
+        )
+        .textContent =
+        userCode;
+
+
+    document
+        .getElementById(
             "profileReferralCode"
         )
         .textContent =
         referralCode;
+
+
+    /* TOP BALANCE */
+
+    document
+        .getElementById(
+            "homeTotalBalance"
+        )
+        .textContent =
+        realBalanceText;
 
 
     /* BALANCE */
@@ -3891,13 +4224,13 @@ const pageTitle =
 const titles = {
 
     homeSection:
-        "بيت",
+        "الرئيسية",
 
     profileSection:
-        "أنا",
+        "الحساب",
 
     balanceSection:
-        "الرصيد",
+        "المحفظة",
 
     teamSection:
         "الفريق",
@@ -3906,13 +4239,14 @@ const titles = {
         "التداول",
 
     supportSection:
-        "دعم"
+        "الدعم"
 
 };
 
 
-function openSection(sectionId){
-
+function openSection(
+    sectionId
+){
 
     sections.forEach(
         function(section){
@@ -3966,7 +4300,7 @@ function openSection(sectionId){
 
     pageTitle.textContent =
         titles[sectionId] ||
-        "بيت";
+        "الرئيسية";
 
 }
 
@@ -3989,6 +4323,75 @@ navItems.forEach(
 
     }
 );
+
+
+/* =====================================================
+   COPY USER CODE
+===================================================== */
+
+const copyUserCodeButton =
+    document.getElementById(
+        "copyUserCodeButton"
+    );
+
+
+if(copyUserCodeButton){
+
+    copyUserCodeButton.addEventListener(
+        "click",
+        async function(){
+
+            const code =
+                document
+                    .getElementById(
+                        "profileUserCode"
+                    )
+                    .textContent;
+
+
+            if(
+                code &&
+                code !== "-"
+            ){
+
+                try{
+
+                    await navigator
+                        .clipboard
+                        .writeText(
+                            code
+                        );
+
+
+                    copyUserCodeButton.textContent =
+                        "تم ✓";
+
+
+                    setTimeout(
+                        function(){
+
+                            copyUserCodeButton.textContent =
+                                "نسخ";
+
+                        },
+                        1500
+                    );
+
+                }
+
+                catch(error){
+
+                    copyUserCodeButton.textContent =
+                        "انسخ يدويًا";
+
+                }
+
+            }
+
+        }
+    );
+
+}
 
 
 /* =====================================================
@@ -4048,7 +4451,7 @@ if(copyButton){
                 catch(error){
 
                     copyButton.textContent =
-                        "انسخ الكود يدويًا";
+                        "انسخ يدويًا";
 
                 }
 
@@ -4096,7 +4499,7 @@ if(logoutButton){
 
 
 /* =====================================================
-   CHART TIME BUTTONS
+   CHART BUTTONS
 ===================================================== */
 
 const chartButtons =
@@ -4143,9 +4546,10 @@ document
         "dashboardYear"
     )
     .textContent =
-    new Date().getFullYear();
+    new Date()
+        .getFullYear();
 
 </script>
 
 </body>
-       </html>
+   </html>
