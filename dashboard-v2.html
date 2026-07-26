@@ -6723,7 +6723,755 @@ else{
 
 
 })();
+<!-- =========================================================
+     NEXORA V2 - USER CODE + COIN COLORS
+     ضع هذا الجزء قبل </body> مباشرة
+========================================================= -->
 
+<style>
+
+/* =========================================================
+   USER CODE - TOP OF HOME
+========================================================= */
+
+.nexora-user-code-card{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:18px;
+
+    padding:14px 18px;
+
+    border:1px solid
+        rgba(30,130,255,.16);
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(7,24,45,.95),
+            rgba(4,10,20,.98)
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.18);
+
+}
+
+.nexora-user-code-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+
+}
+
+.nexora-user-code-title{
+
+    color:#71839d;
+
+    font-size:10px;
+
+}
+
+.nexora-user-code-value{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    direction:ltr;
+
+}
+
+.nexora-user-code-text{
+
+    padding:7px 11px;
+
+    border:1px solid
+        rgba(30,140,255,.22);
+
+    border-radius:8px;
+
+    color:#42aaff;
+
+    background:
+        rgba(0,110,255,.09);
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+}
+
+.nexora-copy-user-code{
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid
+        rgba(30,140,255,.25);
+
+    border-radius:8px;
+
+    color:#38a8ff;
+
+    background:
+        rgba(0,100,220,.08);
+
+    font-size:15px;
+
+    transition:.2s;
+
+}
+
+.nexora-copy-user-code:hover{
+
+    color:#fff;
+
+    border-color:#1688ff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0878ff,
+            #0752bd
+        );
+
+    transform:
+        translateY(-1px);
+
+}
+
+.nexora-copy-user-code.copied{
+
+    color:#21d890;
+
+    border-color:
+        rgba(33,216,144,.35);
+
+    background:
+        rgba(33,216,144,.08);
+
+}
+
+
+/* =========================================================
+   COIN COLORS - IMPROVED
+========================================================= */
+
+.coin-icon.btc{
+
+    color:#f7931a;
+
+    border-color:
+        rgba(247,147,26,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(247,147,26,.18),
+            rgba(247,147,26,.04)
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(247,147,26,.08);
+
+}
+
+.coin-icon.eth{
+
+    color:#9aa8ff;
+
+    border-color:
+        rgba(154,168,255,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(154,168,255,.18),
+            rgba(100,110,220,.04)
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(154,168,255,.08);
+
+}
+
+.coin-icon.usdt{
+
+    color:#26a17b;
+
+    border-color:
+        rgba(38,161,123,.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(38,161,123,.18),
+            rgba(38,161,123,.04)
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(38,161,123,.08);
+
+}
+
+.coin-icon.trx{
+
+    color:#ff5364;
+
+    border-color:
+        rgba(255,83,100,.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,83,100,.18),
+            rgba(255,83,100,.04)
+        );
+
+}
+
+.coin-icon.bnb{
+
+    color:#f3ba2f;
+
+    border-color:
+        rgba(243,186,47,.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(243,186,47,.18),
+            rgba(243,186,47,.04)
+        );
+
+}
+
+.coin-icon.xrp{
+
+    color:#25a7e8;
+
+    border-color:
+        rgba(37,167,232,.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,167,232,.18),
+            rgba(37,167,232,.04)
+        );
+
+}
+
+.coin-icon.sol{
+
+    color:#b28cff;
+
+    border-color:
+        rgba(178,140,255,.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(178,140,255,.18),
+            rgba(178,140,255,.04)
+        );
+
+}
+
+.coin-icon.ada{
+
+    color:#5b85ed;
+
+    border-color:
+        rgba(91,133,237,.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(91,133,237,.18),
+            rgba(91,133,237,.04)
+        );
+
+}
+
+.coin-icon.doge{
+
+    color:#d5bd4a;
+
+    border-color:
+        rgba(213,189,74,.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(213,189,74,.18),
+            rgba(213,189,74,.04)
+        );
+
+}
+
+.coin-icon.ton{
+
+    color:#39a9ff;
+
+    border-color:
+        rgba(57,169,255,.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(57,169,255,.18),
+            rgba(57,169,255,.04)
+        );
+
+}
+
+.coin-icon.usdc{
+
+    color:#4b91e8;
+
+    border-color:
+        rgba(75,145,232,.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(75,145,232,.18),
+            rgba(75,145,232,.04)
+        );
+
+}
+
+.coin-icon.dot{
+
+    color:#249dff;
+
+    border-color:
+        rgba(36,157,255,.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(36,157,255,.18),
+            rgba(36,157,255,.04)
+        );
+
+}
+
+.coin-icon.link{
+
+    color:#5575e6;
+
+    border-color:
+        rgba(85,117,230,.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(85,117,230,.18),
+            rgba(85,117,230,.04)
+        );
+
+}
+
+.coin-icon.avax{
+
+    color:#ff5a5c;
+
+    border-color:
+        rgba(255,90,92,.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,90,92,.18),
+            rgba(255,90,92,.04)
+        );
+
+}
+
+.coin-icon.ltc{
+
+    color:#c7ced8;
+
+    border-color:
+        rgba(199,206,216,.25);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(199,206,216,.15),
+            rgba(199,206,216,.03)
+        );
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .nexora-user-code-card{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        gap:10px;
+
+        padding:13px 14px;
+
+    }
+
+    .nexora-user-code-value{
+
+        width:100%;
+
+    }
+
+    .nexora-user-code-text{
+
+        flex:1;
+
+        text-align:center;
+
+    }
+
+}
+
+</style>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        /* =====================================================
+           1. CREATE USER CODE CARD
+        ===================================================== */
+
+        const homeSection =
+            document.getElementById(
+                "homeSection"
+            );
+
+
+        if(
+            homeSection &&
+            !document.getElementById(
+                "nexoraUserCodeCard"
+            )
+        ){
+
+            const userCodeCard =
+                document.createElement(
+                    "div"
+                );
+
+
+            userCodeCard.id =
+                "nexoraUserCodeCard";
+
+
+            userCodeCard.className =
+                "nexora-user-code-card";
+
+
+            userCodeCard.innerHTML = `
+
+                <div class="nexora-user-code-info">
+
+                    <span class="nexora-user-code-title">
+                        كود المستخدم الخاص بك
+                    </span>
+
+                    <div class="nexora-user-code-value">
+
+                        <span
+                            id="nexoraUserCodeText"
+                            class="nexora-user-code-text"
+                        >
+                            NEX-USER-001
+                        </span>
+
+                        <button
+                            id="nexoraCopyUserCode"
+                            class="nexora-copy-user-code"
+                            type="button"
+                            title="نسخ كود المستخدم"
+                            aria-label="نسخ كود المستخدم"
+                        >
+                            ⧉
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            /*
+             * نضع كود المستخدم
+             * بعد Topbar مباشرة
+             * وقبل بطاقة الرصيد
+             */
+
+            const balanceCard =
+                document.getElementById(
+                    "topBalanceCard"
+                );
+
+
+            if(balanceCard){
+
+                balanceCard.parentNode.insertBefore(
+                    userCodeCard,
+                    balanceCard
+                );
+
+            }else{
+
+                homeSection.prepend(
+                    userCodeCard
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           2. COPY USER CODE
+        ===================================================== */
+
+        const copyButton =
+            document.getElementById(
+                "nexoraCopyUserCode"
+            );
+
+
+        const userCodeElement =
+            document.getElementById(
+                "nexoraUserCodeText"
+            );
+
+
+        if(
+            copyButton &&
+            userCodeElement
+        ){
+
+            copyButton.addEventListener(
+                "click",
+                async function(){
+
+                    const userCode =
+                        userCodeElement
+                            .textContent
+                            .trim();
+
+
+                    let copied =
+                        false;
+
+
+                    /*
+                     * الطريقة الحديثة
+                     */
+
+                    if(
+                        navigator.clipboard &&
+                        window.isSecureContext
+                    ){
+
+                        try{
+
+                            await navigator
+                                .clipboard
+                                .writeText(
+                                    userCode
+                                );
+
+                            copied = true;
+
+                        }catch(error){
+
+                            copied = false;
+
+                        }
+
+                    }
+
+
+                    /*
+                     * طريقة احتياطية
+                     * إذا لم تعمل Clipboard API
+                     */
+
+                    if(!copied){
+
+                        try{
+
+                            const textArea =
+                                document.createElement(
+                                    "textarea"
+                                );
+
+
+                            textArea.value =
+                                userCode;
+
+
+                            textArea.style.position =
+                                "fixed";
+
+                            textArea.style.left =
+                                "-9999px";
+
+                            textArea.style.top =
+                                "-9999px";
+
+
+                            document.body.appendChild(
+                                textArea
+                            );
+
+
+                            textArea.focus();
+
+                            textArea.select();
+
+
+                            copied =
+                                document.execCommand(
+                                    "copy"
+                                );
+
+
+                            textArea.remove();
+
+                        }catch(error){
+
+                            copied = false;
+
+                        }
+
+                    }
+
+
+                    /*
+                     * تغيير شكل الزر
+                     */
+
+                    if(copied){
+
+                        const oldIcon =
+                            copyButton.innerHTML;
+
+
+                        copyButton.innerHTML =
+                            "✓";
+
+
+                        copyButton.classList.add(
+                            "copied"
+                        );
+
+
+                        /*
+                         * استخدام نظام Toast الموجود
+                         * في الملف الأصلي إذا كان موجودًا
+                         */
+
+                        if(
+                            typeof window.showToast ===
+                            "function"
+                        ){
+
+                            window.showToast(
+                                "تم نسخ كود المستخدم"
+                            );
+
+                        }
+
+
+                        setTimeout(
+                            function(){
+
+                                copyButton.innerHTML =
+                                    oldIcon;
+
+                                copyButton.classList.remove(
+                                    "copied"
+                                );
+
+                            },
+                            1500
+                        );
+
+
+                    }else{
+
+                        if(
+                            typeof window.showToast ===
+                            "function"
+                        ){
+
+                            window.showToast(
+                                "تعذر نسخ الكود، حاول مرة أخرى"
+                            );
+
+                        }else{
+
+                            alert(
+                                "تعذر نسخ الكود، حاول مرة أخرى"
+                            );
+
+                        }
+
+                    }
+
+                }
+            );
+
+        }
+
+    }
+);
+
+</script>
 </script>
 </body>
   </html>
