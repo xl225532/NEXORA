@@ -5884,6 +5884,196 @@ else{
 }
 
 </script>
+<script>
 
+/* =========================================================
+   NEXORA TOP USER CODE - COPY
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        const copyButton =
+            document.getElementById(
+                "copyTopUserCode"
+            );
+
+        const userCode =
+            document.getElementById(
+                "topUserCode"
+            );
+
+
+        if(
+            !copyButton ||
+            !userCode
+        ){
+
+            return;
+
+        }
+
+
+        copyButton.addEventListener(
+            "click",
+            async function(){
+
+                const code =
+                    userCode.textContent.trim();
+
+
+                try{
+
+                    await navigator.clipboard.writeText(
+                        code
+                    );
+
+
+                    /* علامة نجاح */
+
+                    copyButton.innerHTML =
+                        "✓";
+
+
+                    copyButton.classList.add(
+                        "copied"
+                    );
+
+
+                    /* رسالة نجاح */
+
+                    if(
+                        typeof window.showToast ===
+                        "function"
+                    ){
+
+                        window.showToast(
+                            "تم نسخ كود المستخدم بنجاح"
+                        );
+
+                    }
+
+
+                    /* إعادة شكل الزر */
+
+                    setTimeout(
+                        function(){
+
+                            copyButton.innerHTML =
+                                "⧉";
+
+                            copyButton.classList.remove(
+                                "copied"
+                            );
+
+                        },
+                        1500
+                    );
+
+                }
+
+                catch(error){
+
+                    /* طريقة النسخ الاحتياطية */
+
+                    const textarea =
+                        document.createElement(
+                            "textarea"
+                        );
+
+
+                    textarea.value =
+                        code;
+
+
+                    textarea.style.position =
+                        "fixed";
+
+                    textarea.style.opacity =
+                        "0";
+
+
+                    document.body.appendChild(
+                        textarea
+                    );
+
+
+                    textarea.select();
+
+
+                    try{
+
+                        document.execCommand(
+                            "copy"
+                        );
+
+
+                        copyButton.innerHTML =
+                            "✓";
+
+
+                        copyButton.classList.add(
+                            "copied"
+                        );
+
+
+                        if(
+                            typeof window.showToast ===
+                            "function"
+                        ){
+
+                            window.showToast(
+                                "تم نسخ كود المستخدم بنجاح"
+                            );
+
+                        }
+
+
+                        setTimeout(
+                            function(){
+
+                                copyButton.innerHTML =
+                                    "⧉";
+
+                                copyButton.classList.remove(
+                                    "copied"
+                                );
+
+                            },
+                            1500
+                        );
+
+                    }
+
+                    catch(
+                        fallbackError
+                    ){
+
+                        if(
+                            typeof window.showToast ===
+                            "function"
+                        ){
+
+                            window.showToast(
+                                "تعذر نسخ كود المستخدم"
+                            );
+
+                        }
+
+                    }
+
+
+                    textarea.remove();
+
+                }
+
+            }
+        );
+
+    }
+);
+
+</script>
 </body>
   </html>
