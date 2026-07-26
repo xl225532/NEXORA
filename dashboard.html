@@ -1,10 +1,7 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-
-«»
-
-<title>NEXORA | لوحة التحكم</title><style>
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NEXORA | لوحة التحكم</title><style>
 
 /* =====================================================
    RESET
@@ -28,18 +25,43 @@ body {
     overflow-x: hidden;
 }
 
-button {
-    font-family: inherit;
-    cursor: pointer;
-}
-
 button,
 a {
     -webkit-tap-highlight-color: transparent;
 }
 
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
+}
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+    --bg: #070707;
+    --surface: #111111;
+    --surface-2: #161616;
+    --surface-3: #1b1b1b;
+
+    --gold: #d4af37;
+    --gold-light: #f1d875;
+
+    --text: #ffffff;
+    --muted: #777777;
+    --muted-2: #555555;
+
+    --green: #2bd67b;
+    --red: #ff5d67;
+
+    --border: rgba(255,255,255,0.07);
+    --gold-border: rgba(212,175,55,0.20);
 }
 
 
@@ -58,12 +80,14 @@ a {
             rgba(212,175,55,0.07),
             transparent 25%
         ),
+
         radial-gradient(
             circle at 90% 80%,
             rgba(0,180,255,0.04),
             transparent 25%
         ),
-        #070707;
+
+        var(--bg);
 }
 
 
@@ -73,7 +97,6 @@ a {
 
 .market-decoration {
     position: fixed;
-
     inset: 0;
 
     pointer-events: none;
@@ -86,8 +109,7 @@ a {
 .market-decoration span {
     position: absolute;
 
-    color:
-        rgba(212,175,55,0.10);
+    color: rgba(212,175,55,0.07);
 
     font-size: 24px;
 
@@ -161,7 +183,6 @@ a {
 ===================================================== */
 
 .dashboard-sidebar {
-
     width: 250px;
 
     min-height: 100vh;
@@ -169,7 +190,6 @@ a {
     position: fixed;
 
     top: 0;
-
     right: 0;
 
     padding: 25px 18px;
@@ -183,7 +203,7 @@ a {
 
     border-left:
         1px solid
-        rgba(255,255,255,0.07);
+        var(--border);
 
     z-index: 1000;
 
@@ -195,10 +215,9 @@ a {
 /* LOGO */
 
 .dashboard-logo {
-
     text-align: center;
 
-    color: #d4af37;
+    color: var(--gold);
 
     font-size: 28px;
 
@@ -207,14 +226,12 @@ a {
     letter-spacing: 4px;
 
     margin-bottom: 30px;
-
 }
 
 
 /* USER */
 
 .sidebar-user {
-
     display: flex;
 
     align-items: center;
@@ -225,40 +242,34 @@ a {
 
     margin-bottom: 25px;
 
-    background: #191919;
+    background: var(--surface-2);
 
     border:
         1px solid
         rgba(212,175,55,0.15);
 
     border-radius: 14px;
-
 }
 
 .sidebar-avatar {
-
     width: 42px;
-
     height: 42px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    background: #d4af37;
+    background: var(--gold);
 
     color: #111;
 
     border-radius: 50%;
 
     font-size: 20px;
-
 }
 
 .sidebar-user strong {
-
     display: block;
 
     color: #ffffff;
@@ -266,22 +277,18 @@ a {
     font-size: 14px;
 
     margin-bottom: 3px;
-
 }
 
 .sidebar-user small {
-
     color: #777;
 
     font-size: 11px;
-
 }
 
 
 /* NAVIGATION */
 
 .dashboard-nav {
-
     display: flex;
 
     flex-direction: column;
@@ -289,11 +296,9 @@ a {
     gap: 8px;
 
     flex: 1;
-
 }
 
 .dashboard-nav-item {
-
     width: 100%;
 
     display: flex;
@@ -317,19 +322,15 @@ a {
     text-align: right;
 
     transition: 0.25s;
-
 }
 
 .dashboard-nav-item:hover {
-
     background: #1d1d1d;
 
     color: #ffffff;
-
 }
 
 .dashboard-nav-item.active {
-
     background:
         linear-gradient(
             135deg,
@@ -337,29 +338,25 @@ a {
             rgba(212,175,55,0.08)
         );
 
-    color: #d4af37;
+    color: var(--gold);
 
     border:
         1px solid
         rgba(212,175,55,0.2);
-
 }
 
 .dashboard-nav-item span:first-child {
-
     width: 25px;
 
     text-align: center;
 
     font-size: 18px;
-
 }
 
 
 /* LOGOUT */
 
 .dashboard-logout {
-
     width: 100%;
 
     padding: 12px;
@@ -378,14 +375,11 @@ a {
     font-size: 13px;
 
     transition: 0.25s;
-
 }
 
 .dashboard-logout:hover {
-
     background:
         rgba(255,60,60,0.15);
-
 }
 
 
@@ -394,7 +388,6 @@ a {
 ===================================================== */
 
 .dashboard-main {
-
     position: relative;
 
     z-index: 2;
@@ -405,8 +398,7 @@ a {
 
     min-height: 100vh;
 
-    padding: 30px 35px;
-
+    padding: 25px 35px;
 }
 
 
@@ -415,7 +407,6 @@ a {
 ===================================================== */
 
 .dashboard-topbar {
-
     min-height: 75px;
 
     display: flex;
@@ -426,48 +417,82 @@ a {
 
     margin-bottom: 30px;
 
-    padding-bottom: 20px;
+    padding-bottom: 18px;
 
     border-bottom:
         1px solid
         rgba(255,255,255,0.08);
-
 }
 
-.topbar-label {
 
-    display: block;
+/* PAGE TITLE */
 
-    color: #777;
+.topbar-title {
+    display: flex;
 
-    font-size: 12px;
+    align-items: center;
 
-    margin-bottom: 4px;
-
+    gap: 12px;
 }
 
 .dashboard-topbar h1 {
-
-    color: #d4af37;
+    color: var(--gold);
 
     font-size: 28px;
-
 }
 
-.topbar-user {
 
+/* TOP BALANCE */
+
+.topbar-balance {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 10px 16px;
+
+    border:
+        1px solid
+        rgba(212,175,55,0.20);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212,175,55,0.10),
+            rgba(255,255,255,0.025)
+        );
+}
+
+.topbar-balance-label {
     color: #777;
 
-    font-size: 13px;
-
+    font-size: 11px;
 }
 
-.topbar-user strong {
+.topbar-balance-value {
+    direction: ltr;
+
+    text-align: right;
 
     color: #ffffff;
 
-    margin-right: 5px;
+    font-size: 19px;
 
+    font-weight: 800;
+}
+
+.topbar-balance-currency {
+    direction: ltr;
+
+    color: var(--gold);
+
+    font-size: 12px;
+
+    font-weight: 700;
 }
 
 
@@ -476,219 +501,33 @@ a {
 ===================================================== */
 
 .dashboard-section {
-
     display: none;
 
     animation:
         sectionAppear
         0.25s
         ease;
-
 }
 
 .dashboard-section.active {
-
     display: block;
-
 }
 
 @keyframes sectionAppear {
 
     from {
-
         opacity: 0;
 
         transform:
             translateY(8px);
-
     }
 
     to {
-
         opacity: 1;
 
         transform:
             translateY(0);
-
     }
-
-}
-
-
-/* =====================================================
-   HOME WELCOME
-===================================================== */
-
-.welcome-card {
-
-    min-height: 170px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 30px;
-
-    padding: 30px;
-
-    margin-bottom: 20px;
-
-    background:
-
-        radial-gradient(
-            circle at left,
-            rgba(212,175,55,0.15),
-            transparent 50%
-        ),
-
-        #141414;
-
-    border:
-        1px solid
-        rgba(212,175,55,0.18);
-
-    border-radius: 20px;
-
-}
-
-.welcome-card span {
-
-    color: #d4af37;
-
-    font-size: 13px;
-
-}
-
-.welcome-card h2 {
-
-    font-size: 28px;
-
-    margin: 8px 0 10px;
-
-}
-
-.welcome-card p {
-
-    color: #888;
-
-    font-size: 13px;
-
-}
-
-.welcome-icon {
-
-    width: 90px;
-
-    height: 90px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f1d875,
-            #9c7614
-        );
-
-    color: #111;
-
-    font-size: 45px;
-
-    font-weight: 900;
-
-    box-shadow:
-        0 15px 50px
-        rgba(212,175,55,0.2);
-
-}
-
-
-/* =====================================================
-   FINANCIAL SUMMARY
-===================================================== */
-
-.financial-summary {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 12px;
-
-    margin-bottom: 22px;
-
-}
-
-.financial-card {
-
-    padding: 18px;
-
-    background:
-        rgba(20,20,20,0.95);
-
-    border:
-        1px solid
-        rgba(255,255,255,0.07);
-
-    border-radius: 14px;
-
-    transition: 0.25s;
-
-}
-
-.financial-card:hover {
-
-    transform:
-        translateY(-3px);
-
-    border-color:
-        rgba(212,175,55,0.25);
-
-}
-
-.financial-card span {
-
-    display: block;
-
-    color: #777;
-
-    font-size: 11px;
-
-    margin-bottom: 8px;
-
-}
-
-.financial-card strong {
-
-    display: block;
-
-    color: #d4af37;
-
-    font-size: 21px;
-
-}
-
-.financial-card small {
-
-    display: block;
-
-    color: #555;
-
-    margin-top: 4px;
-
-    font-size: 10px;
-
 }
 
 
@@ -697,24 +536,24 @@ a {
 ===================================================== */
 
 .market-layout {
-
     display: grid;
 
     grid-template-columns:
-        1fr 1.5fr;
+        1.15fr
+        1.85fr;
 
     gap: 18px;
 
     margin-bottom: 22px;
-
 }
 
 
-/* MARKET CHART */
+/* =====================================================
+   MARKET CHART
+===================================================== */
 
 .market-chart-card {
-
-    min-height: 360px;
+    min-height: 390px;
 
     padding: 25px;
 
@@ -723,11 +562,10 @@ a {
     overflow: hidden;
 
     background:
-
         linear-gradient(
             145deg,
             #151515,
-            #0e0e0e
+            #0d0d0d
         );
 
     border:
@@ -735,128 +573,162 @@ a {
         rgba(212,175,55,0.15);
 
     border-radius: 18px;
-
 }
 
 .market-chart-card h3 {
-
-    font-size: 17px;
+    font-size: 18px;
 
     margin-bottom: 5px;
-
 }
 
 .market-chart-card p {
-
     color: #666;
 
     font-size: 11px;
-
 }
 
-.chart-visual {
 
+/* CHART HEADER */
+
+.chart-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.chart-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: var(--green);
+
+    font-size: 11px;
+}
+
+.chart-status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 10px
+        rgba(43,214,123,0.6);
+}
+
+
+/* CHART VISUAL */
+
+.chart-visual {
     position: absolute;
 
     left: 20px;
-
     right: 20px;
 
-    bottom: 25px;
+    bottom: 20px;
 
-    height: 210px;
+    height: 235px;
 
     overflow: hidden;
 
-}
-
-.chart-line {
-
-    position: absolute;
-
-    width: 120%;
-
-    height: 100%;
-
-    left: -10%;
+    border-radius: 12px;
 
     background:
         linear-gradient(
-            135deg,
-            transparent 45%,
-            rgba(212,175,55,0.05) 45%
+            180deg,
+            rgba(255,255,255,0.015),
+            rgba(255,255,255,0.005)
         );
-
 }
 
-.chart-line::before {
 
-    content: "";
+/* GRID */
 
+.chart-grid {
     position: absolute;
 
     inset: 0;
 
     background:
         repeating-linear-gradient(
-            90deg,
+            to bottom,
             transparent 0,
-            transparent 48px,
-            rgba(255,255,255,0.04) 49px
-        );
+            transparent 44px,
+            rgba(255,255,255,0.045) 45px
+        ),
 
+        repeating-linear-gradient(
+            to right,
+            transparent 0,
+            transparent 55px,
+            rgba(255,255,255,0.035) 56px
+        );
 }
 
-.chart-arrow {
 
+/* MAIN SVG */
+
+.main-chart {
     position: absolute;
 
-    left: 15%;
+    inset: 10px;
 
-    bottom: 30px;
+    width: calc(100% - 20px);
 
-    font-size: 110px;
+    height: calc(100% - 20px);
 
-    color:
-        rgba(40,210,120,0.35);
-
-    transform:
-        rotate(-25deg);
-
-    animation:
-        chartMove
-        3s
-        ease-in-out
-        infinite;
-
+    overflow: visible;
 }
 
-@keyframes chartMove {
+.chart-area {
+    fill:
+        url(#chartGradient);
 
-    0%,
-    100% {
+    opacity: 0.25;
+}
 
-        transform:
-            translateY(10px)
-            rotate(-25deg);
+.chart-path {
+    fill: none;
 
-    }
+    stroke:
+        #d4af37;
 
-    50% {
+    stroke-width: 3;
 
-        transform:
-            translateY(-15px)
-            rotate(-25deg);
+    stroke-linecap: round;
 
-    }
+    stroke-linejoin: round;
 
+    filter:
+        drop-shadow(
+            0 0 6px
+            rgba(212,175,55,0.35)
+        );
+}
+
+.chart-point {
+    fill: #f1d875;
+
+    stroke: #111;
+
+    stroke-width: 2;
 }
 
 
-/* COINS LIST */
+/* =====================================================
+   COINS LIST
+===================================================== */
 
 .market-list {
-
     background: #121212;
 
     border:
@@ -866,115 +738,185 @@ a {
     border-radius: 18px;
 
     overflow: hidden;
-
 }
 
 .market-list-header {
-
     display: flex;
 
     justify-content: space-between;
+
+    align-items: center;
 
     padding: 20px;
 
     border-bottom:
         1px solid
         rgba(255,255,255,0.06);
-
 }
 
 .market-list-header h3 {
-
     font-size: 17px;
-
 }
 
 .market-list-header span {
-
-    color: #d4af37;
+    color: var(--gold);
 
     font-size: 11px;
-
 }
 
-.coin-row {
 
+/* COIN ROW */
+
+.coin-row {
     display: grid;
 
     grid-template-columns:
         1.5fr
         1fr
-        0.8fr
+        0.75fr
         1fr;
 
     align-items: center;
 
-    gap: 10px;
+    gap: 12px;
 
-    padding: 15px 20px;
+    padding: 14px 20px;
 
     border-bottom:
         1px solid
         rgba(255,255,255,0.04);
 
     transition: 0.25s;
-
 }
 
 .coin-row:last-child {
-
     border-bottom: 0;
-
 }
 
 .coin-row:hover {
-
     background:
         rgba(212,175,55,0.04);
-
 }
 
-.coin-name {
 
+/* COIN NAME LEFT */
+
+.coin-name {
     display: flex;
 
     align-items: center;
 
     gap: 10px;
 
+    direction: ltr;
+
+    text-align: left;
+
+    justify-content: flex-start;
 }
 
 .coin-icon {
+    width: 38px;
+    height: 38px;
 
-    width: 34px;
-
-    height: 34px;
+    flex-shrink: 0;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 50%;
 
+    font-size: 18px;
+
+    font-weight: 900;
+
+    color: #ffffff;
+
+    background: #222;
+}
+
+
+/* ORIGINAL-STYLE COIN COLORS */
+
+.coin-icon.btc {
     background:
-        #222;
+        linear-gradient(
+            135deg,
+            #f7931a,
+            #c96b00
+        );
 
-    font-size: 17px;
+    box-shadow:
+        0 0 16px
+        rgba(247,147,26,0.25);
+}
 
+.coin-icon.eth {
+    background:
+        linear-gradient(
+            135deg,
+            #627eea,
+            #3c51a3
+        );
+
+    box-shadow:
+        0 0 16px
+        rgba(98,126,234,0.25);
+}
+
+.coin-icon.bnb {
+    background:
+        linear-gradient(
+            135deg,
+            #f3ba2f,
+            #b98300
+        );
+
+    color: #111;
+}
+
+.coin-icon.xrp {
+    background:
+        linear-gradient(
+            135deg,
+            #23292f,
+            #11161a
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.18);
+}
+
+.coin-icon.sol {
+    background:
+        linear-gradient(
+            135deg,
+            #9945ff,
+            #14f195
+        );
+}
+
+.coin-icon.ada {
+    background:
+        linear-gradient(
+            135deg,
+            #3468d4,
+            #1d3d86
+        );
 }
 
 .coin-name strong {
-
     display: block;
 
-    font-size: 13px;
+    color: #ffffff;
 
+    font-size: 13px;
 }
 
 .coin-name small {
-
     display: block;
 
     color: #666;
@@ -982,59 +924,59 @@ a {
     font-size: 10px;
 
     margin-top: 2px;
-
 }
 
+
+/* PRICE RIGHT */
+
 .coin-price {
-
-    color: #ddd;
-
-    font-size: 13px;
-
     direction: ltr;
 
     text-align: right;
 
+    color: #eeeeee;
+
+    font-size: 13px;
+
+    font-weight: 600;
 }
 
+
+/* CHANGE */
+
 .coin-change {
+    direction: ltr;
+
+    text-align: right;
 
     font-size: 12px;
 
     font-weight: bold;
-
-    direction: ltr;
-
 }
 
 .coin-change.up {
-
-    color: #2bd67b;
-
+    color: var(--green);
 }
 
 .coin-change.down {
-
-    color: #ff5d67;
-
+    color: var(--red);
 }
 
-.coin-chart {
 
-    height: 28px;
+/* MINI CHART */
+
+.coin-chart {
+    height: 32px;
 
     display: flex;
 
     align-items: center;
-
 }
 
 .mini-chart {
-
     width: 100%;
 
-    height: 25px;
-
+    height: 30px;
 }
 
 
@@ -1043,7 +985,6 @@ a {
 ===================================================== */
 
 .dashboard-panel {
-
     padding: 22px;
 
     margin-bottom: 22px;
@@ -1055,11 +996,9 @@ a {
         rgba(255,255,255,0.07);
 
     border-radius: 16px;
-
 }
 
 .panel-header {
-
     display: flex;
 
     align-items: center;
@@ -1073,36 +1012,28 @@ a {
     border-bottom:
         1px solid
         rgba(255,255,255,0.06);
-
 }
 
 .panel-header h3 {
-
     font-size: 16px;
-
 }
 
 .panel-header span {
-
-    color: #d4af37;
+    color: var(--gold);
 
     font-size: 11px;
-
 }
 
 .quick-actions {
-
     display: grid;
 
     grid-template-columns:
         repeat(4, 1fr);
 
     gap: 12px;
-
 }
 
 .quick-action {
-
     min-height: 80px;
 
     display: flex;
@@ -1128,11 +1059,9 @@ a {
     font-size: 12px;
 
     transition: 0.25s;
-
 }
 
 .quick-action:hover {
-
     transform:
         translateY(-3px);
 
@@ -1140,13 +1069,10 @@ a {
         rgba(212,175,55,0.3);
 
     color: #ffffff;
-
 }
 
 .quick-action span:first-child {
-
     font-size: 22px;
-
 }
 
 
@@ -1155,29 +1081,25 @@ a {
 ===================================================== */
 
 .section-heading {
-
     margin-bottom: 25px;
-
 }
 
 .section-heading span {
-
-    color: #d4af37;
+    color: var(--gold);
 
     font-size: 13px;
-
 }
 
 .section-heading h2 {
-
     font-size: 28px;
 
     margin-top: 5px;
-
 }
 
-.profile-card {
 
+/* PROFILE */
+
+.profile-card {
     display: flex;
 
     align-items: flex-start;
@@ -1193,13 +1115,10 @@ a {
         rgba(255,255,255,0.07);
 
     border-radius: 18px;
-
 }
 
 .profile-avatar {
-
     width: 90px;
-
     height: 90px;
 
     flex-shrink: 0;
@@ -1207,27 +1126,22 @@ a {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 50%;
 
-    background: #d4af37;
+    background: var(--gold);
 
     color: #111;
 
     font-size: 40px;
-
 }
 
 .profile-info {
-
     flex: 1;
-
 }
 
 .profile-row {
-
     display: flex;
 
     align-items: center;
@@ -1241,38 +1155,32 @@ a {
     border-bottom:
         1px solid
         rgba(255,255,255,0.06);
-
 }
 
 .profile-row:last-child {
-
     border-bottom: 0;
-
 }
 
 .profile-row span {
-
     color: #777;
 
     font-size: 13px;
-
 }
 
 .profile-row strong {
-
     color: #ffffff;
 
     font-size: 13px;
 
     word-break: break-word;
-
 }
 
 
-/* BALANCE */
+/* =====================================================
+   BALANCE
+===================================================== */
 
 .balance-main-card {
-
     padding: 40px;
 
     margin-bottom: 25px;
@@ -1291,11 +1199,9 @@ a {
         rgba(212,175,55,0.25);
 
     border-radius: 20px;
-
 }
 
 .balance-main-card span {
-
     display: block;
 
     color: #888;
@@ -1303,45 +1209,78 @@ a {
     font-size: 14px;
 
     margin-bottom: 10px;
-
 }
 
 .balance-main-card strong {
-
     display: block;
 
-    color: #d4af37;
+    color: var(--gold);
 
     font-size: 48px;
 
+    direction: ltr;
 }
 
 .balance-main-card small {
-
     color: #777;
 
     font-size: 12px;
-
 }
 
 
-/* TEAM */
+/* =====================================================
+   TEAM
+===================================================== */
 
 .team-summary {
-
     display: grid;
 
     grid-template-columns:
-        1fr 2fr;
+        1fr
+        2fr;
 
     gap: 20px;
 
     margin-bottom: 25px;
+}
 
+.dashboard-stat-card {
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    background: #151515;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    border-radius: 16px;
+}
+
+.stat-icon {
+    font-size: 25px;
+}
+
+.stat-label {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.dashboard-stat-card strong {
+    color: var(--gold);
+
+    font-size: 30px;
 }
 
 .referral-card {
-
     padding: 25px;
 
     display: flex;
@@ -1359,27 +1298,21 @@ a {
         rgba(212,175,55,0.2);
 
     border-radius: 16px;
-
 }
 
 .referral-card span {
-
     color: #777;
 
     font-size: 13px;
-
 }
 
 .referral-card strong {
-
-    color: #d4af37;
+    color: var(--gold);
 
     font-size: 17px;
-
 }
 
 #copyReferralButton {
-
     padding: 9px 14px;
 
     border:
@@ -1390,17 +1323,17 @@ a {
 
     background: transparent;
 
-    color: #d4af37;
+    color: var(--gold);
 
     font-size: 12px;
-
 }
 
 
-/* TRADING */
+/* =====================================================
+   TRADING
+===================================================== */
 
 .trading-warning {
-
     display: flex;
 
     align-items: center;
@@ -1419,46 +1352,36 @@ a {
         rgba(212,175,55,0.2);
 
     border-radius: 15px;
-
 }
 
 .trading-warning > span {
-
     font-size: 30px;
-
 }
 
 .trading-warning strong {
-
     display: block;
 
-    color: #d4af37;
+    color: var(--gold);
 
     margin-bottom: 5px;
-
 }
 
 .trading-warning p {
-
     color: #888;
 
     font-size: 13px;
-
 }
 
 .trading-grid {
-
     display: grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
     gap: 20px;
-
 }
 
 .trading-card {
-
     padding: 25px;
 
     background: #151515;
@@ -1468,11 +1391,9 @@ a {
         rgba(255,255,255,0.07);
 
     border-radius: 16px;
-
 }
 
 .trading-card span {
-
     display: block;
 
     color: #777;
@@ -1480,22 +1401,20 @@ a {
     font-size: 13px;
 
     margin-bottom: 10px;
-
 }
 
 .trading-card strong {
-
-    color: #d4af37;
+    color: var(--gold);
 
     font-size: 22px;
-
 }
 
 
-/* SUPPORT */
+/* =====================================================
+   SUPPORT
+===================================================== */
 
 .support-card {
-
     max-width: 600px;
 
     margin: 0 auto;
@@ -1511,27 +1430,21 @@ a {
         rgba(255,255,255,0.07);
 
     border-radius: 20px;
-
 }
 
 .support-icon {
-
     font-size: 50px;
 
     margin-bottom: 20px;
-
 }
 
 .support-card h3 {
-
     font-size: 22px;
 
     margin-bottom: 10px;
-
 }
 
 .support-card p {
-
     color: #888;
 
     font-size: 14px;
@@ -1539,11 +1452,9 @@ a {
     line-height: 1.9;
 
     margin-bottom: 25px;
-
 }
 
 .support-button {
-
     padding: 12px 25px;
 
     border: 0;
@@ -1553,21 +1464,21 @@ a {
     background:
         linear-gradient(
             135deg,
-            #f1d875,
+            var(--gold-light),
             #9c7614
         );
 
     color: #111;
 
     font-weight: bold;
-
 }
 
 
-/* EMPTY */
+/* =====================================================
+   EMPTY
+===================================================== */
 
 .empty-state {
-
     min-height: 150px;
 
     display: flex;
@@ -1583,22 +1494,20 @@ a {
     color: #555;
 
     text-align: center;
-
 }
 
 .empty-state p {
-
     color: #777;
 
     font-size: 13px;
-
 }
 
 
-/* FOOTER */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 .dashboard-footer {
-
     padding: 30px 0;
 
     margin-top: 40px;
@@ -1612,7 +1521,6 @@ a {
     border-top:
         1px solid
         rgba(255,255,255,0.06);
-
 }
 
 
@@ -1623,16 +1531,7 @@ a {
 @media (max-width: 1100px) {
 
     .market-layout {
-
         grid-template-columns: 1fr;
-
-    }
-
-    .financial-summary {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
     }
 
 }
@@ -1640,20 +1539,16 @@ a {
 @media (max-width: 1000px) {
 
     .dashboard-sidebar {
-
         width: 210px;
-
     }
 
     .dashboard-main {
-
         width:
             calc(100% - 210px);
 
         margin-right: 210px;
 
         padding: 25px;
-
     }
 
 }
@@ -1661,23 +1556,18 @@ a {
 @media (max-width: 700px) {
 
     .dashboard-page {
-
         display: block;
 
         padding-bottom: 80px;
-
     }
 
     .dashboard-sidebar {
-
         position: fixed;
 
         top: auto;
-
         bottom: 0;
 
         right: 0;
-
         left: 0;
 
         width: 100%;
@@ -1689,19 +1579,15 @@ a {
         padding: 6px 8px;
 
         display: block;
-
     }
 
     .dashboard-logo,
     .sidebar-user,
     .dashboard-logout {
-
         display: none;
-
     }
 
     .dashboard-nav {
-
         width: 100%;
 
         height: 100%;
@@ -1712,11 +1598,9 @@ a {
             repeat(6, 1fr);
 
         gap: 3px;
-
     }
 
     .dashboard-nav-item {
-
         padding: 5px 2px;
 
         display: flex;
@@ -1730,150 +1614,104 @@ a {
         gap: 2px;
 
         font-size: 9px;
-
     }
 
     .dashboard-nav-item span:first-child {
-
         width: auto;
 
         font-size: 17px;
-
     }
 
     .dashboard-main {
-
         width: 100%;
 
         margin-right: 0;
 
-        padding: 18px 15px 30px;
-
+        padding: 15px 15px 30px;
     }
 
     .dashboard-topbar {
-
         min-height: 60px;
 
         margin-bottom: 20px;
 
+        align-items: center;
     }
 
     .dashboard-topbar h1 {
-
         font-size: 22px;
-
     }
 
-    .welcome-card {
-
-        padding: 22px;
-
-    }
-
-    .welcome-card h2 {
-
-        font-size: 21px;
-
-    }
-
-    .welcome-icon {
-
-        width: 65px;
-
-        height: 65px;
-
-        font-size: 30px;
-
-    }
-
-    .financial-summary {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
+    .topbar-balance {
         gap: 8px;
 
+        padding: 8px 10px;
     }
 
-    .financial-card {
-
-        padding: 14px;
-
+    .topbar-balance-label {
+        display: none;
     }
 
-    .financial-card strong {
+    .topbar-balance-value {
+        font-size: 15px;
+    }
 
-        font-size: 17px;
-
+    .topbar-balance-currency {
+        font-size: 11px;
     }
 
     .coin-row {
-
         grid-template-columns:
-            1.5fr
+            1.4fr
             1fr
-            0.8fr;
-
+            0.7fr;
     }
 
     .coin-chart {
-
         display: none;
+    }
 
+    .coin-price {
+        font-size: 12px;
     }
 
     .quick-actions {
-
         grid-template-columns:
             repeat(2, 1fr);
-
     }
 
     .profile-card {
-
         flex-direction: column;
 
         align-items: center;
-
     }
 
     .profile-info {
-
         width: 100%;
-
     }
 
     .profile-row {
-
         flex-direction: column;
 
         align-items: flex-start;
 
         gap: 5px;
-
     }
 
     .team-summary {
-
         grid-template-columns: 1fr;
-
     }
 
     .referral-card {
-
         flex-direction: column;
 
         align-items: stretch;
 
         text-align: center;
-
     }
 
     .trading-grid {
-
         grid-template-columns: 1fr;
-
     }
 
 }
@@ -1881,29 +1719,28 @@ a {
 @media (max-width: 400px) {
 
     .dashboard-main {
-
         padding-left: 10px;
-
         padding-right: 10px;
-
-    }
-
-    .financial-card strong {
-
-        font-size: 15px;
-
     }
 
     .coin-row {
-
         padding:
             12px;
+    }
 
+    .coin-name strong {
+        font-size: 12px;
+    }
+
+    .coin-price {
+        font-size: 11px;
     }
 
 }
 
-</style></head><body><!-- FLOATING DECORATION --><div class="market-decoration"><span>₿</span>
+</style></head><body><!-- =====================================================
+     FLOATING DECORATION
+===================================================== --><div class="market-decoration"><span>₿</span>
 
 <span>Ξ</span>
 
@@ -1913,436 +1750,1047 @@ a {
 
 <span>↗</span>
 
-</div><div class="dashboard-page"><!-- SIDEBAR --><aside class="dashboard-sidebar"><div class="dashboard-logo">
-NEXORA
-</div><div class="sidebar-user"><div class="sidebar-avatar">
-👤
-</div><div><strong id="sidebarUserName">
-المستخدم
-</strong><small>
-حساب NEXORA
-</small></div></div><nav class="dashboard-nav"><button
-class="dashboard-nav-item active"
-data-section="homeSection"
+</div><div class="dashboard-page"><!-- =====================================================
+     SIDEBAR
+===================================================== --><aside class="dashboard-sidebar"><div class="dashboard-logo">
+    NEXORA
+</div>
 
-«»
 
-<span>🏠</span>
+<div class="sidebar-user">
 
-<span>بيت</span>
+    <div class="sidebar-avatar">
+        👤
+    </div>
 
-</button><button
-class="dashboard-nav-item"
-data-section="profileSection"
+    <div>
 
-«»
+        <strong id="sidebarUserName">
+            المستخدم
+        </strong>
 
-<span>👤</span>
+        <small>
+            حساب NEXORA
+        </small>
 
-<span>أنا</span>
+    </div>
 
-</button><button
-class="dashboard-nav-item"
-data-section="balanceSection"
+</div>
 
-«»
 
-<span>💰</span>
+<nav class="dashboard-nav">
 
-<span>الرصيد</span>
+    <button
+        class="dashboard-nav-item active"
+        data-section="homeSection"
+    >
+        <span>🏠</span>
+        <span>بيت</span>
+    </button>
 
-</button><button
-class="dashboard-nav-item"
-data-section="teamSection"
 
-«»
+    <button
+        class="dashboard-nav-item"
+        data-section="profileSection"
+    >
+        <span>👤</span>
+        <span>أنا</span>
+    </button>
 
-<span>👥</span>
 
-<span>الفريق</span>
+    <button
+        class="dashboard-nav-item"
+        data-section="balanceSection"
+    >
+        <span>💰</span>
+        <span>الرصيد</span>
+    </button>
 
-</button><button
-class="dashboard-nav-item"
-data-section="tradingSection"
 
-«»
+    <button
+        class="dashboard-nav-item"
+        data-section="teamSection"
+    >
+        <span>👥</span>
+        <span>الفريق</span>
+    </button>
 
-<span>📈</span>
 
-<span>التداول</span>
+    <button
+        class="dashboard-nav-item"
+        data-section="tradingSection"
+    >
+        <span>📈</span>
+        <span>التداول</span>
+    </button>
 
-</button><button
-class="dashboard-nav-item"
-data-section="supportSection"
 
-«»
+    <button
+        class="dashboard-nav-item"
+        data-section="supportSection"
+    >
+        <span>🎧</span>
+        <span>دعم</span>
+    </button>
 
-<span>🎧</span>
+</nav>
 
-<span>دعم</span>
 
-</button></nav><button
-id="logoutButton"
-class="dashboard-logout"
+<button
+    id="logoutButton"
+    class="dashboard-logout"
+>
+    🚪 تسجيل الخروج
+</button>
 
-«»
+</aside><!-- =====================================================
+     MAIN
+===================================================== --><main class="dashboard-main"><!-- =====================================================
+     TOPBAR
+===================================================== --><header class="dashboard-topbar"><div class="topbar-title">
 
-🚪 تسجيل الخروج
+    <h1 id="pageTitle">
+        بيت
+    </h1>
 
-</button></aside><!-- MAIN --><main class="dashboard-main"><header class="dashboard-topbar"><div><span class="topbar-label">
-لوحة التحكم
-</span><h1 id="pageTitle">
-بيت
-</h1></div><div class="topbar-user"><span>
-مرحبًا
-</span><strong id="topbarUserName">
-المستخدم
-</strong></div></header><!-- HOME --><section
-id="homeSection"
-class="dashboard-section active"
-><div class="welcome-card"><div><span>
-مرحبًا بك من جديد 👋
-</span><h2 id="welcomeUserName">
-أهلاً بك في NEXORA
-</h2><p>
-تابع الأسواق الرقمية وأدر حسابك من مكان واحد.
-</p></div><div class="welcome-icon">
-N
-</div></div><!-- FINANCIAL SUMMARY --><div class="financial-summary"><div class="financial-card"><span>
-الرصيد الإجمالي
-</span><strong id="homeTotalBalance">
-$0.00
-</strong><small>
-USD
-</small></div><div class="financial-card"><span>
-أرباح الإحالة
-</span><strong id="homeReferralProfit">
-$0.00
-</strong><small>
-USD
-</small></div><div class="financial-card"><span>
-أرباح الدعوات
-</span><strong id="homeInviteProfit">
-$0.00
-</strong><small>
-USD
-</small></div><div class="financial-card"><span>
-أعضاء الفريق
-</span><strong id="homeTeam">
-0
-</strong><small>
-عضو
-</small></div></div><!-- MARKET --><div class="market-layout"><!-- CHART --><div class="market-chart-card"><h3>
-حركة السوق
-</h3><p>
-نظرة سريعة على اتجاه التداول
-</p><div class="chart-visual"><div class="chart-line"></div><div class="chart-arrow">
-↗
-</div></div></div><!-- COINS --><div class="market-list"><div class="market-list-header"><h3>
-العملات الرقمية
-</h3><span>
-السوق العالمي
-</span></div><!-- BTC --><div class="coin-row"><div class="coin-name"><div class="coin-icon">
-₿
-</div><div><strong>
-Bitcoin
-</strong><small>
-BTC
-</small></div></div><div class="coin-price">
-$64,368.53
-</div><div class="coin-change up">
-+0.40%
-</div><div class="coin-chart"><svg
-class="mini-chart"
-viewBox="0 0 100 30"
-preserveAspectRatio="none"
+</div>
 
-«»
 
-<polyline
-points="0,25 15,20 30,22 45,15 60,18 75,8 100,5"
-fill="none"
-stroke="#2bd67b"
-stroke-width="2"
-/>
+<!-- TOTAL BALANCE ONLY -->
 
-</svg></div></div><!-- ETH --><div class="coin-row"><div class="coin-name"><div class="coin-icon">
-Ξ
-</div><div><strong>
-Ethereum
-</strong><small>
-ETH
-</small></div></div><div class="coin-price">
-$1,874.90
-</div><div class="coin-change up">
-+1.00%
-</div><div class="coin-chart"><svg
-class="mini-chart"
-viewBox="0 0 100 30"
-preserveAspectRatio="none"
+<div class="topbar-balance">
 
-«»
+    <span class="topbar-balance-label">
+        الرصيد الإجمالي
+    </span>
 
-<polyline
-points="0,22 15,25 30,18 45,20 60,12 75,15 100,6"
-fill="none"
-stroke="#2bd67b"
-stroke-width="2"
-/>
+    <strong
+        id="topbarTotalBalance"
+        class="topbar-balance-value"
+    >
+        0.00
+    </strong>
 
-</svg></div></div><!-- BNB --><div class="coin-row"><div class="coin-name"><div class="coin-icon">
-◆
-</div><div><strong>
-BNB
-</strong><small>
-BNB
-</small></div></div><div class="coin-price">
-$568.84
-</div><div class="coin-change up">
-+0.77%
-</div><div class="coin-chart"><svg
-class="mini-chart"
-viewBox="0 0 100 30"
-preserveAspectRatio="none"
+    <span class="topbar-balance-currency">
+        USDT
+    </span>
 
-«»
+</div>
 
-<polyline
-points="0,20 15,15 30,22 45,12 60,15 75,9 100,12"
-fill="none"
-stroke="#2bd67b"
-stroke-width="2"
-/>
+</header><!-- =====================================================
+     HOME
+===================================================== --><section
+    id="homeSection"
+    class="dashboard-section active"
+><!-- MARKET --><div class="market-layout"><!-- =====================================================
+     MARKET CHART
+===================================================== --><div class="market-chart-card"><div class="chart-header">
 
-</svg></div></div><!-- XRP --><div class="coin-row"><div class="coin-name"><div class="coin-icon">
-✕
-</div><div><strong>
-XRP
-</strong><small>
-XRP
-</small></div></div><div class="coin-price">
-$1.09
-</div><div class="coin-change down">
--0.67%
-</div><div class="coin-chart"><svg
-class="mini-chart"
-viewBox="0 0 100 30"
-preserveAspectRatio="none"
+    <div>
 
-«»
+        <h3>
+            حركة السوق
+        </h3>
 
-<polyline
-points="0,5 15,10 30,8 45,15 60,13 75,22 100,25"
-fill="none"
-stroke="#ff5d67"
-stroke-width="2"
-/>
+        <p>
+            اتجاه السوق الرقمي
+        </p>
 
-</svg></div></div><!-- SOL --><div class="coin-row"><div class="coin-name"><div class="coin-icon">
-S
-</div><div><strong>
-Solana
-</strong><small>
-SOL
-</small></div></div><div class="coin-price">
-$74.36
-</div><div class="coin-change up">
-+0.72%
-</div><div class="coin-chart"><svg
-class="mini-chart"
-viewBox="0 0 100 30"
-preserveAspectRatio="none"
+    </div>
 
-«»
 
-<polyline
-points="0,25 15,22 30,15 45,18 60,10 75,12 100,5"
-fill="none"
-stroke="#2bd67b"
-stroke-width="2"
-/>
+    <div class="chart-status">
 
-</svg></div></div><!-- ADA --><div class="coin-row"><div class="coin-name"><div class="coin-icon">
-A
-</div><div><strong>
-Cardano
-</strong><small>
-ADA
-</small></div></div><div class="coin-price">
-$0.25
-</div><div class="coin-change down">
--0.30%
-</div><div class="coin-chart"><svg
-class="mini-chart"
-viewBox="0 0 100 30"
-preserveAspectRatio="none"
+        <span class="chart-status-dot"></span>
 
-«»
+        مباشر
 
-<polyline
-points="0,8 15,12 30,10 45,18 60,15 75,22 100,25"
-fill="none"
-stroke="#ff5d67"
-stroke-width="2"
-/>
+    </div>
 
-</svg></div></div></div></div><!-- QUICK ACTIONS --><div class="dashboard-panel"><div class="panel-header"><h3>
-الوصول السريع
-</h3><span>
-NEXORA
-</span></div><div class="quick-actions"><button
-class="quick-action"
-data-section="profileSection"
+</div>
 
-«»
 
-<span>👤</span>
+<div class="chart-visual">
 
-<span>
-حسابي
-</span></button><button
-class="quick-action"
-data-section="balanceSection"
+    <div class="chart-grid"></div>
 
-«»
 
-<span>💰</span>
+    <svg
+        class="main-chart"
+        viewBox="0 0 600 220"
+        preserveAspectRatio="none"
+    >
 
-<span>
-الرصيد
-</span></button><button
-class="quick-action"
-data-section="teamSection"
+        <defs>
 
-«»
+            <linearGradient
+                id="chartGradient"
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="1"
+            >
 
-<span>👥</span>
+                <stop
+                    offset="0%"
+                    stop-color="#d4af37"
+                    stop-opacity="0.45"
+                />
 
-<span>
-فريقي
-</span></button><button
-class="quick-action"
-data-section="tradingSection"
+                <stop
+                    offset="100%"
+                    stop-color="#d4af37"
+                    stop-opacity="0"
+                />
 
-«»
+            </linearGradient>
 
-<span>📈</span>
+        </defs>
 
-<span>
-التداول
-</span></button></div></div></section><!-- PROFILE --><section
+
+        <path
+            class="chart-area"
+            d="
+                M0,185
+                L60,165
+                L120,175
+                L180,135
+                L240,145
+                L300,105
+                L360,120
+                L420,75
+                L480,90
+                L540,45
+                L600,55
+                L600,220
+                L0,220
+                Z
+            "
+        ></path>
+
+
+        <path
+            class="chart-path"
+            d="
+                M0,185
+                L60,165
+                L120,175
+                L180,135
+                L240,145
+                L300,105
+                L360,120
+                L420,75
+                L480,90
+                L540,45
+                L600,55
+            "
+        ></path>
+
+
+        <circle
+            class="chart-point"
+            cx="600"
+            cy="55"
+            r="5"
+        ></circle>
+
+    </svg>
+
+</div>
+
+</div><!-- =====================================================
+     COINS
+===================================================== --><div class="market-list"><div class="market-list-header">
+
+    <h3>
+        العملات الرقمية
+    </h3>
+
+    <span>
+        السوق العالمي
+    </span>
+
+</div>
+
+<!-- BTC --><div class="coin-row"><div class="coin-name">
+
+    <div class="coin-icon btc">
+        ₿
+    </div>
+
+    <div>
+
+        <strong>
+            Bitcoin
+        </strong>
+
+        <small>
+            BTC
+        </small>
+
+    </div>
+
+</div>
+
+
+<div class="coin-price">
+    $64,368.53
+</div>
+
+
+<div class="coin-change up">
+    +0.40%
+</div>
+
+
+<div class="coin-chart">
+
+    <svg
+        class="mini-chart"
+        viewBox="0 0 100 30"
+        preserveAspectRatio="none"
+    >
+
+        <polyline
+            points="
+                0,25
+                15,20
+                30,22
+                45,15
+                60,18
+                75,8
+                100,5
+            "
+            fill="none"
+            stroke="#f7931a"
+            stroke-width="2.5"
+        />
+
+    </svg>
+
+</div>
+
+</div><!-- ETH --><div class="coin-row"><div class="coin-name">
+
+    <div class="coin-icon eth">
+        Ξ
+    </div>
+
+    <div>
+
+        <strong>
+            Ethereum
+        </strong>
+
+        <small>
+            ETH
+        </small>
+
+    </div>
+
+</div>
+
+
+<div class="coin-price">
+    $1,874.90
+</div>
+
+
+<div class="coin-change up">
+    +1.00%
+</div>
+
+
+<div class="coin-chart">
+
+    <svg
+        class="mini-chart"
+        viewBox="0 0 100 30"
+        preserveAspectRatio="none"
+    >
+
+        <polyline
+            points="
+                0,22
+                15,25
+                30,18
+                45,20
+                60,12
+                75,15
+                100,6
+            "
+            fill="none"
+            stroke="#627eea"
+            stroke-width="2.5"
+        />
+
+    </svg>
+
+</div>
+
+</div><!-- BNB --><div class="coin-row"><div class="coin-name">
+
+    <div class="coin-icon bnb">
+        ◆
+    </div>
+
+    <div>
+
+        <strong>
+            BNB
+        </strong>
+
+        <small>
+            BNB
+        </small>
+
+    </div>
+
+</div>
+
+
+<div class="coin-price">
+    $568.84
+</div>
+
+
+<div class="coin-change up">
+    +0.77%
+</div>
+
+
+<div class="coin-chart">
+
+    <svg
+        class="mini-chart"
+        viewBox="0 0 100 30"
+        preserveAspectRatio="none"
+    >
+
+        <polyline
+            points="
+                0,20
+                15,15
+                30,22
+                45,12
+                60,15
+                75,9
+                100,12
+            "
+            fill="none"
+            stroke="#f3ba2f"
+            stroke-width="2.5"
+        />
+
+    </svg>
+
+</div>
+
+</div><!-- XRP --><div class="coin-row"><div class="coin-name">
+
+    <div class="coin-icon xrp">
+        ✕
+    </div>
+
+    <div>
+
+        <strong>
+            XRP
+        </strong>
+
+        <small>
+            XRP
+        </small>
+
+    </div>
+
+</div>
+
+
+<div class="coin-price">
+    $1.09
+</div>
+
+
+<div class="coin-change down">
+    -0.67%
+</div>
+
+
+<div class="coin-chart">
+
+    <svg
+        class="mini-chart"
+        viewBox="0 0 100 30"
+        preserveAspectRatio="none"
+    >
+
+        <polyline
+            points="
+                0,5
+                15,10
+                30,8
+                45,15
+                60,13
+                75,22
+                100,25
+            "
+            fill="none"
+            stroke="#9aa0a6"
+            stroke-width="2.5"
+        />
+
+    </svg>
+
+</div>
+
+</div><!-- SOL --><div class="coin-row"><div class="coin-name">
+
+    <div class="coin-icon sol">
+        S
+    </div>
+
+    <div>
+
+        <strong>
+            Solana
+        </strong>
+
+        <small>
+            SOL
+        </small>
+
+    </div>
+
+</div>
+
+
+<div class="coin-price">
+    $74.36
+</div>
+
+
+<div class="coin-change up">
+    +0.72%
+</div>
+
+
+<div class="coin-chart">
+
+    <svg
+        class="mini-chart"
+        viewBox="0 0 100 30"
+        preserveAspectRatio="none"
+    >
+
+        <polyline
+            points="
+                0,25
+                15,22
+                30,15
+                45,18
+                60,10
+                75,12
+                100,5
+            "
+            fill="none"
+            stroke="#9945ff"
+            stroke-width="2.5"
+        />
+
+    </svg>
+
+</div>
+
+</div><!-- ADA --><div class="coin-row"><div class="coin-name">
+
+    <div class="coin-icon ada">
+        A
+    </div>
+
+    <div>
+
+        <strong>
+            Cardano
+        </strong>
+
+        <small>
+            ADA
+        </small>
+
+    </div>
+
+</div>
+
+
+<div class="coin-price">
+    $0.25
+</div>
+
+
+<div class="coin-change down">
+    -0.30%
+</div>
+
+
+<div class="coin-chart">
+
+    <svg
+        class="mini-chart"
+        viewBox="0 0 100 30"
+        preserveAspectRatio="none"
+    >
+
+        <polyline
+            points="
+                0,8
+                15,12
+                30,10
+                45,18
+                60,15
+                75,22
+                100,25
+            "
+            fill="none"
+            stroke="#3468d4"
+            stroke-width="2.5"
+        />
+
+    </svg>
+
+</div>
+
+</div></div></div><!-- =====================================================
+     QUICK ACTIONS
+===================================================== --><div class="dashboard-panel"><div class="panel-header">
+
+    <h3>
+        الوصول السريع
+    </h3>
+
+    <span>
+        NEXORA
+    </span>
+
+</div>
+
+
+<div class="quick-actions">
+
+
+    <button
+        class="quick-action"
+        data-section="profileSection"
+    >
+
+        <span>👤</span>
+
+        <span>
+            حسابي
+        </span>
+
+    </button>
+
+
+    <button
+        class="quick-action"
+        data-section="balanceSection"
+    >
+
+        <span>💰</span>
+
+        <span>
+            الرصيد
+        </span>
+
+    </button>
+
+
+    <button
+        class="quick-action"
+        data-section="teamSection"
+    >
+
+        <span>👥</span>
+
+        <span>
+            فريقي
+        </span>
+
+    </button>
+
+
+    <button
+        class="quick-action"
+        data-section="tradingSection"
+    >
+
+        <span>📈</span>
+
+        <span>
+            التداول
+        </span>
+
+    </button>
+
+
+</div>
+
+</div></section><!-- =====================================================
+     PROFILE
+===================================================== --><section
 id="profileSection"
 class="dashboard-section"
-><div class="section-heading"><span>
-أنا
-</span><h2>
-معلومات حسابي
-</h2></div><div class="profile-card"><div class="profile-avatar">
-👤
-</div><div class="profile-info"><div class="profile-row"><span>
-الاسم
-</span><strong id="profileName">
--
-</strong></div><div class="profile-row"><span>
-البريد أو الهاتف
-</span><strong id="profileIdentifier">
--
-</strong></div><div class="profile-row"><span>
-كود الإحالة
-</span><strong id="profileReferralCode">
--
-</strong></div></div></div></section><!-- BALANCE --><section
+><div class="section-heading">
+
+    <span>
+        أنا
+    </span>
+
+    <h2>
+        معلومات حسابي
+    </h2>
+
+</div>
+
+
+<div class="profile-card">
+
+
+    <div class="profile-avatar">
+        👤
+    </div>
+
+
+    <div class="profile-info">
+
+
+        <div class="profile-row">
+
+            <span>
+                الاسم
+            </span>
+
+            <strong id="profileName">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="profile-row">
+
+            <span>
+                البريد أو الهاتف
+            </span>
+
+            <strong id="profileIdentifier">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="profile-row">
+
+            <span>
+                كود الإحالة
+            </span>
+
+            <strong id="profileReferralCode">
+                -
+            </strong>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section><!-- =====================================================
+     BALANCE
+===================================================== --><section
 id="balanceSection"
 class="dashboard-section"
-><div class="section-heading"><span>
-المحفظة
-</span><h2>
-الرصيد
-</h2></div><div class="balance-main-card"><span>
-الرصيد الحالي
-</span><strong id="balanceAmount">
-$0.00
-</strong><small>
-USD
-</small></div><div class="dashboard-panel"><div class="panel-header"><h3>
-سجل العمليات
-</h3></div><div class="empty-state"><span>
-💳
-</span><p>
-لا توجد عمليات مالية حتى الآن
-</p></div></div></section><!-- TEAM --><section
+><div class="section-heading">
+
+    <span>
+        المحفظة
+    </span>
+
+    <h2>
+        الرصيد
+    </h2>
+
+</div>
+
+
+<div class="balance-main-card">
+
+    <span>
+        الرصيد الحالي
+    </span>
+
+    <strong id="balanceAmount">
+        0.00
+    </strong>
+
+    <small>
+        USDT
+    </small>
+
+</div>
+
+
+<div class="dashboard-panel">
+
+
+    <div class="panel-header">
+
+        <h3>
+            سجل العمليات
+        </h3>
+
+    </div>
+
+
+    <div class="empty-state">
+
+        <span>
+            💳
+        </span>
+
+        <p>
+            لا توجد عمليات مالية حتى الآن
+        </p>
+
+    </div>
+
+
+</div>
+
+</section><!-- =====================================================
+     TEAM
+===================================================== --><section
 id="teamSection"
 class="dashboard-section"
-><div class="section-heading"><span>
-الفريق
-</span><h2>
-فريقي وإحالاتي
-</h2></div><div class="team-summary"><div class="dashboard-stat-card"><span class="stat-icon">
-👥
-</span><span class="stat-label">
-أعضاء الفريق
-</span><strong id="teamCount">
-0
-</strong></div><div class="referral-card"><span>
-كود الإحالة
-</span><strong id="teamReferralCode">
--
-</strong><button id="copyReferralButton">
-نسخ الكود
-</button></div></div><div class="dashboard-panel"><div class="panel-header"><h3>
-أعضاء الفريق
-</h3></div><div class="empty-state"><span>
-👥
-</span><p>
-لا يوجد أعضاء في فريقك حاليًا
-</p></div></div></section><!-- TRADING --><section
+><div class="section-heading">
+
+    <span>
+        الفريق
+    </span>
+
+    <h2>
+        فريقي وإحالاتي
+    </h2>
+
+</div>
+
+
+<div class="team-summary">
+
+
+    <div class="dashboard-stat-card">
+
+        <span class="stat-icon">
+            👥
+        </span>
+
+        <span class="stat-label">
+            أعضاء الفريق
+        </span>
+
+        <strong id="teamCount">
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="referral-card">
+
+        <span>
+            كود الإحالة
+        </span>
+
+        <strong id="teamReferralCode">
+            -
+        </strong>
+
+        <button id="copyReferralButton">
+            نسخ الكود
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<div class="dashboard-panel">
+
+
+    <div class="panel-header">
+
+        <h3>
+            أعضاء الفريق
+        </h3>
+
+    </div>
+
+
+    <div class="empty-state">
+
+        <span>
+            👥
+        </span>
+
+        <p>
+            لا يوجد أعضاء في فريقك حاليًا
+        </p>
+
+    </div>
+
+
+</div>
+
+</section><!-- =====================================================
+     TRADING
+===================================================== --><section
 id="tradingSection"
 class="dashboard-section"
-><div class="section-heading"><span>
-التداول
-</span><h2>
-مركز التداول
-</h2></div><div class="trading-warning"><span>
-📊
-</span><div><strong>
-نظام التداول
-</strong><p>
-سيتم تفعيل نظام التداول في المرحلة القادمة.
-</p></div></div><div class="trading-grid"><div class="trading-card"><span>
-الرصيد المتاح
-</span><strong id="tradingBalance">
-$0.00
-</strong></div><div class="trading-card"><span>
-العمليات
-</span><strong>
-0
-</strong></div><div class="trading-card"><span>
-الأرباح
-</span><strong>
-$0.00
-</strong></div></div></section><!-- SUPPORT --><section
+><div class="section-heading">
+
+    <span>
+        التداول
+    </span>
+
+    <h2>
+        مركز التداول
+    </h2>
+
+</div>
+
+
+<div class="trading-warning">
+
+    <span>
+        📊
+    </span>
+
+    <div>
+
+        <strong>
+            نظام التداول
+        </strong>
+
+        <p>
+            سيتم تفعيل نظام التداول في المرحلة القادمة.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="trading-grid">
+
+
+    <div class="trading-card">
+
+        <span>
+            الرصيد المتاح
+        </span>
+
+        <strong id="tradingBalance">
+            0.00 USDT
+        </strong>
+
+    </div>
+
+
+    <div class="trading-card">
+
+        <span>
+            العمليات
+        </span>
+
+        <strong>
+            0
+        </strong>
+
+    </div>
+
+
+    <div class="trading-card">
+
+        <span>
+            الأرباح
+        </span>
+
+        <strong>
+            0.00 USDT
+        </strong>
+
+    </div>
+
+
+</div>
+
+</section><!-- =====================================================
+     SUPPORT
+===================================================== --><section
 id="supportSection"
 class="dashboard-section"
-><div class="section-heading"><span>
-الدعم
-</span><h2>
-الدعم والمساعدة
-</h2></div><div class="support-card"><div class="support-icon">
-🎧
-</div><h3>
-كيف يمكننا مساعدتك؟
-</h3><p>
-سيتم تفعيل نظام الدعم والتواصل
-في المرحلة القادمة من تطوير NEXORA.
-</p><button class="support-button">
-فتح تذكرة دعم
-</button></div></section><footer class="dashboard-footer">©
+><div class="section-heading">
+
+    <span>
+        الدعم
+    </span>
+
+    <h2>
+        الدعم والمساعدة
+    </h2>
+
+</div>
+
+
+<div class="support-card">
+
+
+    <div class="support-icon">
+        🎧
+    </div>
+
+
+    <h3>
+        كيف يمكننا مساعدتك؟
+    </h3>
+
+
+    <p>
+        سيتم تفعيل نظام الدعم والتواصل
+        في المرحلة القادمة من تطوير NEXORA.
+    </p>
+
+
+    <button class="support-button">
+        فتح تذكرة دعم
+    </button>
+
+
+</div>
+
+</section><!-- FOOTER --><footer class="dashboard-footer">©
 
 <span id="dashboardYear">
-2026
-</span>NEXORA
+    2026
+</span>
 
-- 
+NEXORA
+
+-
 
 جميع الحقوق محفوظة
 
@@ -2452,148 +2900,153 @@ if (currentUser) {
         "-";
 
 
-    const referralProfit =
-        Number(
-            currentUser.referralProfit ||
-            0
-        );
-
-
-    const inviteProfit =
-        Number(
-            currentUser.inviteProfit ||
-            0
-        );
-
-
     /* USER */
 
-    document
-        .getElementById(
+    const sidebarUserName =
+        document.getElementById(
             "sidebarUserName"
-        )
-        .textContent =
-        userName;
+        );
 
 
-    document
-        .getElementById(
-            "topbarUserName"
-        )
-        .textContent =
-        userName;
+    if (sidebarUserName) {
+
+        sidebarUserName.textContent =
+            userName;
+
+    }
 
 
-    document
-        .getElementById(
-            "welcomeUserName"
-        )
-        .textContent =
-        "أهلاً بك، " +
-        userName;
+    /* =================================================
+       TOP BALANCE
+    ================================================= */
+
+    const topbarTotalBalance =
+        document.getElementById(
+            "topbarTotalBalance"
+        );
 
 
-    /* FINANCIAL */
+    if (topbarTotalBalance) {
 
-    document
-        .getElementById(
-            "homeTotalBalance"
-        )
-        .textContent =
-        "$" +
-        balance.toFixed(2);
+        topbarTotalBalance.textContent =
+            balance.toFixed(2);
+
+    }
 
 
-    document
-        .getElementById(
-            "homeReferralProfit"
-        )
-        .textContent =
-        "$" +
-        referralProfit.toFixed(2);
+    /* =================================================
+       PROFILE
+    ================================================= */
 
-
-    document
-        .getElementById(
-            "homeInviteProfit"
-        )
-        .textContent =
-        "$" +
-        inviteProfit.toFixed(2);
-
-
-    document
-        .getElementById(
-            "homeTeam"
-        )
-        .textContent =
-        team;
-
-
-    /* PROFILE */
-
-    document
-        .getElementById(
+    const profileName =
+        document.getElementById(
             "profileName"
-        )
-        .textContent =
-        userName;
+        );
 
 
-    document
-        .getElementById(
+    if (profileName) {
+
+        profileName.textContent =
+            userName;
+
+    }
+
+
+    const profileIdentifier =
+        document.getElementById(
             "profileIdentifier"
-        )
-        .textContent =
-        identifier;
+        );
 
 
-    document
-        .getElementById(
+    if (profileIdentifier) {
+
+        profileIdentifier.textContent =
+            identifier;
+
+    }
+
+
+    const profileReferralCode =
+        document.getElementById(
             "profileReferralCode"
-        )
-        .textContent =
-        referralCode;
+        );
 
 
-    /* BALANCE */
+    if (profileReferralCode) {
 
-    document
-        .getElementById(
+        profileReferralCode.textContent =
+            referralCode;
+
+    }
+
+
+    /* =================================================
+       BALANCE
+    ================================================= */
+
+    const balanceAmount =
+        document.getElementById(
             "balanceAmount"
-        )
-        .textContent =
-        "$" +
-        balance.toFixed(2);
+        );
 
 
-    /* TEAM */
+    if (balanceAmount) {
 
-    document
-        .getElementById(
+        balanceAmount.textContent =
+            balance.toFixed(2);
+
+    }
+
+
+    /* =================================================
+       TEAM
+    ================================================= */
+
+    const teamCount =
+        document.getElementById(
             "teamCount"
-        )
-        .textContent =
-        team;
+        );
 
 
-    document
-        .getElementById(
+    if (teamCount) {
+
+        teamCount.textContent =
+            team;
+
+    }
+
+
+    const teamReferralCode =
+        document.getElementById(
             "teamReferralCode"
-        )
-        .textContent =
-        referralCode;
+        );
 
 
-    /* TRADING */
+    if (teamReferralCode) {
 
-    document
-        .getElementById(
+        teamReferralCode.textContent =
+            referralCode;
+
+    }
+
+
+    /* =================================================
+       TRADING
+    ================================================= */
+
+    const tradingBalance =
+        document.getElementById(
             "tradingBalance"
-        )
-        .textContent =
-        "$" +
-        balance.toFixed(2);
+        );
+
+
+    if (tradingBalance) {
+
+        tradingBalance.textContent =
+            balance.toFixed(2) +
+            " USDT";
+
+    }
 
 }
 
@@ -2704,9 +3157,13 @@ function openSection(
     );
 
 
-    pageTitle.textContent =
-        titles[sectionId] ||
-        "بيت";
+    if (pageTitle) {
+
+        pageTitle.textContent =
+            titles[sectionId] ||
+            "بيت";
+
+    }
 
 }
 
@@ -2865,11 +3322,18 @@ if (logoutButton) {
    YEAR
 ===================================================== */
 
-document
-    .getElementById(
+const dashboardYear =
+    document.getElementById(
         "dashboardYear"
-    )
-    .textContent =
-    new Date().getFullYear();
+    );
 
-</script></body></html>
+
+if (dashboardYear) {
+
+    dashboardYear.textContent =
+        new Date().getFullYear();
+
+}
+
+</script></body>
+   </html>
