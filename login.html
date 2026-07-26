@@ -1,213 +1,494 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">
 
-<head>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <meta charset="UTF-8">
+<title>تسجيل الدخول | NEXORA</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<link
+    rel="stylesheet"
+    href="style.css"
+>
 
-    <title>تسجيل الدخول | NEXORA</title>
+<style>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    /* =====================================================
+       NEXORA LOGIN - DARK BLUE THEME
+    ===================================================== */
 
-</head>
-
-
-<body>
-
-
-<main class="auth-page">
+    body {
+        background: #06152b !important;
+        color: #ffffff;
+    }
 
 
-    <div class="auth-container">
+    .auth-page {
+        min-height: 100vh;
+        background:
+            radial-gradient(
+                circle at top,
+                rgba(18, 64, 120, 0.35),
+                transparent 55%
+            ),
+            #06152b;
+    }
 
 
-        <!-- LOGO -->
-
-        <div class="auth-logo">
-            NEXORA
-        </div>
+    .auth-logo {
+        color: #4da3ff !important;
+    }
 
 
-        <!-- SUBTITLE -->
-
-        <div class="auth-subtitle">
-            مرحبًا بك من جديد
-        </div>
+    .auth-subtitle {
+        display: none !important;
+    }
 
 
-        <!-- LOGIN CARD -->
+    .auth-card {
+        background: #0b203b !important;
+        border:
+            1px solid
+            rgba(77, 163, 255, 0.25) !important;
 
-        <div class="auth-card">
+        box-shadow:
+            0 20px 60px
+            rgba(0, 0, 0, 0.45);
+    }
 
 
-            <h1>
-                تسجيل الدخول
-            </h1>
+    .auth-card h1 {
+        color: #ffffff;
+    }
 
 
-            <!-- ERROR MESSAGE -->
+    .form-group label {
+        color: #c8d8ea !important;
+    }
+
+
+    .form-input {
+        background: #071a31 !important;
+        border:
+            1px solid
+            rgba(255, 255, 255, 0.12) !important;
+
+        color: #ffffff !important;
+    }
+
+
+    .form-input:focus {
+        border-color:
+            #4da3ff !important;
+
+        box-shadow:
+            0 0 0 3px
+            rgba(77, 163, 255, 0.12) !important;
+    }
+
+
+    .auth-btn {
+        background:
+            linear-gradient(
+                135deg,
+                #1976d2,
+                #0d47a1
+            ) !important;
+
+        color: #ffffff !important;
+    }
+
+
+    .auth-btn:hover:not(:disabled) {
+        transform:
+            translateY(-2px);
+
+        box-shadow:
+            0 8px 25px
+            rgba(25, 118, 210, 0.3);
+    }
+
+
+    .auth-btn:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+
+    .auth-switch {
+        color: #8fa8c2 !important;
+    }
+
+
+    .auth-switch a {
+        color: #4da3ff !important;
+    }
+
+
+    .privacy-agreement {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+
+        margin:
+            18px 0;
+
+        padding:
+            12px;
+
+        background:
+            rgba(77, 163, 255, 0.05);
+
+        border:
+            1px solid
+            rgba(77, 163, 255, 0.12);
+
+        border-radius: 10px;
+
+        color: #aebfd2;
+
+        font-size: 13px;
+
+        line-height: 1.8;
+    }
+
+
+    .privacy-agreement input {
+        width: 18px;
+        height: 18px;
+
+        flex-shrink: 0;
+
+        margin-top: 4px;
+
+        accent-color: #1976d2;
+
+        cursor: pointer;
+    }
+
+
+    .privacy-agreement label {
+        cursor: pointer;
+    }
+
+
+    .privacy-link {
+        color: #4da3ff;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        text-decoration: underline;
+    }
+
+
+    /* =====================================================
+       PRIVACY MODAL
+    ===================================================== */
+
+    .privacy-modal {
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 9999;
+
+        display: none;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 20px;
+
+        background:
+            rgba(0, 8, 20, 0.85);
+
+        backdrop-filter:
+            blur(8px);
+    }
+
+
+    .privacy-modal.active {
+        display: flex;
+    }
+
+
+    .privacy-modal-box {
+        width: 100%;
+        max-width: 600px;
+
+        max-height: 85vh;
+
+        overflow-y: auto;
+
+        padding: 30px;
+
+        background:
+            #0b203b;
+
+        border:
+            1px solid
+            rgba(77, 163, 255, 0.3);
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 30px 80px
+            rgba(0, 0, 0, 0.6);
+    }
+
+
+    .privacy-modal-box h2 {
+        color: #4da3ff;
+
+        margin-bottom: 20px;
+
+        font-size: 24px;
+    }
+
+
+    .privacy-modal-box h3 {
+        color: #ffffff;
+
+        margin-top: 20px;
+
+        margin-bottom: 8px;
+
+        font-size: 16px;
+    }
+
+
+    .privacy-modal-box p {
+        color: #aebfd2;
+
+        font-size: 14px;
+
+        line-height: 2;
+
+        margin-bottom: 10px;
+    }
+
+
+    .privacy-close {
+        width: 100%;
+
+        margin-top: 20px;
+
+        padding: 12px;
+
+        border: 0;
+
+        border-radius: 10px;
+
+        background:
+            #1976d2;
+
+        color: #ffffff;
+
+        font-weight: bold;
+
+        cursor: pointer;
+    }
+
+
+    .privacy-close:hover {
+        background:
+            #1565c0;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .auth-footer {
+        text-align: center;
+
+        color: #607d9a;
+
+        font-size: 12px;
+
+        margin-top: 20px;
+    }
+
+</style>
+
+</head><body><main class="auth-page"><div class="auth-container">
+
+
+    <!-- LOGO -->
+
+    <div class="auth-logo">
+        NEXORA
+    </div>
+
+
+    <!-- LOGIN CARD -->
+
+    <div class="auth-card">
+
+
+        <h1>
+            تسجيل الدخول
+        </h1>
+
+
+        <!-- ERROR -->
+
+        <div
+            id="loginError"
+            class="error-message hidden"
+        ></div>
+
+
+        <!-- SUCCESS -->
+
+        <div
+            id="loginSuccess"
+            class="success-message hidden"
+        ></div>
+
+
+        <!-- LOGIN FORM -->
+
+        <form id="loginForm">
+
+
+            <!-- EMAIL / PHONE -->
+
+            <div class="form-group">
+
+                <label for="loginIdentifier">
+                    البريد الإلكتروني أو رقم الهاتف
+                </label>
+
+
+                <input
+                    id="loginIdentifier"
+                    class="form-input"
+                    type="text"
+                    placeholder="أدخل البريد أو رقم الهاتف"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="loginPassword">
+                    كلمة المرور
+                </label>
+
+
+                <input
+                    id="loginPassword"
+                    class="form-input"
+                    type="password"
+                    placeholder="أدخل كلمة المرور"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- REMEMBER ME -->
 
             <div
-                id="loginError"
-                class="error-message hidden"
-            ></div>
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:8px;
+                    margin-bottom:18px;
+                    color:#8fa8c2;
+                    font-size:13px;
+                "
+            >
 
-
-            <!-- SUCCESS MESSAGE -->
-
-            <div
-                id="loginSuccess"
-                class="success-message hidden"
-            ></div>
-
-
-            <!-- LOGIN FORM -->
-
-            <form id="loginForm">
-
-
-                <!-- EMAIL OR PHONE -->
-
-                <div class="form-group">
-
-                    <label for="loginIdentifier">
-                        البريد الإلكتروني أو رقم الهاتف
-                    </label>
-
-
-                    <input
-                        id="loginIdentifier"
-                        class="form-input"
-                        type="text"
-                        placeholder="أدخل البريد أو رقم الهاتف"
-                        autocomplete="username"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- PASSWORD -->
-
-                <div class="form-group">
-
-                    <label for="loginPassword">
-                        كلمة المرور
-                    </label>
-
-
-                    <input
-                        id="loginPassword"
-                        class="form-input"
-                        type="password"
-                        placeholder="أدخل كلمة المرور"
-                        autocomplete="current-password"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- REMEMBER ME -->
-
-                <div
+                <input
+                    id="rememberMe"
+                    type="checkbox"
                     style="
-                        display: flex;
-                        align-items: center;
-                        gap: 8px;
-                        margin-bottom: 18px;
-                        color: #888;
-                        font-size: 13px;
+                        width:18px;
+                        height:18px;
+                        accent-color:#1976d2;
                     "
                 >
 
-                    <input
-                        id="rememberMe"
-                        type="checkbox"
-                        style="
-                            width: 18px;
-                            height: 18px;
-                            accent-color: #d4af37;
-                        "
-                    >
 
-
-                    <label
-                        for="rememberMe"
-                        style="margin: 0;"
-                    >
-                        تذكرني
-                    </label>
-
-                </div>
-
-
-                <!-- LOGIN BUTTON -->
-
-                <button
-                    type="submit"
-                    class="auth-btn"
-                    id="loginButton"
+                <label
+                    for="rememberMe"
+                    style="margin:0;"
                 >
-                    تسجيل الدخول
-                </button>
-
-
-            </form>
-
-
-            <!-- REGISTER LINK -->
-
-            <div class="auth-switch">
-
-                ليس لديك حساب؟
-
-                <a href="register.html">
-                    إنشاء حساب جديد
-                </a>
+                    تذكرني
+                </label>
 
             </div>
 
 
-            <!-- HOME LINK -->
+            <!-- PRIVACY AGREEMENT -->
 
-            <div
-                class="auth-switch"
-                style="margin-top: 12px;"
+            <div class="privacy-agreement">
+
+                <input
+                    id="privacyAgreement"
+                    type="checkbox"
+                    required
+                >
+
+
+                <label for="privacyAgreement">
+
+                    أوافق على
+
+                    <span
+                        class="privacy-link"
+                        id="openPrivacy"
+                    >
+                        سياسة الخصوصية
+                    </span>
+
+                    وأقر بأنني قرأت الشروط
+                    وأوافق عليها.
+
+                </label>
+
+            </div>
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                type="submit"
+                class="auth-btn"
+                id="loginButton"
+                disabled
             >
 
-                <a href="index.html">
-                    العودة إلى الرئيسية
-                </a>
+                تسجيل الدخول
 
-            </div>
+            </button>
 
 
-        </div>
+        </form>
 
 
-        <!-- FOOTER -->
+        <!-- REGISTER -->
 
-        <div
-            style="
-                text-align: center;
-                color: #555;
-                font-size: 12px;
-                margin-top: 20px;
-            "
-        >
+        <div class="auth-switch">
 
-            ©
-            <span data-current-year></span>
-            NEXORA
+            ليس لديك حساب؟
+
+            <a href="register.html">
+                إنشاء حساب جديد
+            </a>
 
         </div>
 
@@ -215,71 +496,340 @@
     </div>
 
 
-</main>
+    <!-- FOOTER -->
+
+    <div class="auth-footer">
+
+        ©
+        <span data-current-year></span>
+
+        NEXORA
+
+    </div>
 
 
+</div>
 
-<script>
+</main><!-- =====================================================
+     PRIVACY MODAL
+===================================================== --><div
+    class="privacy-modal"
+    id="privacyModal"
+><div class="privacy-modal-box">
+
+
+    <h2>
+        سياسة الخصوصية
+    </h2>
+
+
+    <p>
+
+        نحن في NEXORA نحترم خصوصية المستخدمين
+        ونسعى إلى حماية البيانات والمعلومات
+        التي يتم إدخالها واستخدامها داخل المنصة.
+
+    </p>
+
+
+    <h3>
+        1. البيانات المستخدمة
+    </h3>
+
+
+    <p>
+
+        قد يتم استخدام بيانات الحساب التي تدخلها
+        أثناء التسجيل وتسجيل الدخول بهدف تشغيل
+        وظائف المنصة وإدارة حسابك.
+
+    </p>
+
+
+    <h3>
+        2. حماية الحساب
+    </h3>
+
+
+    <p>
+
+        يجب على المستخدم الحفاظ على سرية بيانات
+        تسجيل الدخول الخاصة به وعدم مشاركتها
+        مع أي شخص آخر.
+
+    </p>
+
+
+    <h3>
+        3. استخدام البيانات
+    </h3>
+
+
+    <p>
+
+        تستخدم البيانات المقدمة لتشغيل الخدمات
+        والوظائف المرتبطة بحساب المستخدم داخل
+        منصة NEXORA.
+
+    </p>
+
+
+    <h3>
+        4. الموافقة
+    </h3>
+
+
+    <p>
+
+        باستخدام المنصة والموافقة على هذه السياسة،
+        يقر المستخدم بأنه قرأ سياسة الخصوصية
+        وفهم محتواها ووافق على استخدامها.
+
+    </p>
+
+
+    <button
+        type="button"
+        class="privacy-close"
+        id="closePrivacy"
+    >
+
+        إغلاق
+
+    </button>
+
+
+</div>
+
+</div><script>
 
 "use strict";
 
 
 /* =====================================================
    NEXORA LOGIN SYSTEM
-   ===================================================== */
+===================================================== */
 
 
 /* KEYS */
 
-const USERS_KEY = "nexora_users";
+const USERS_KEY =
+    "nexora_users";
 
-const SESSION_KEY = "nexora_session";
+
+const SESSION_KEY =
+    "nexora_session";
+
+
+const PRIVACY_KEY =
+    "nexora_privacy_accepted";
 
 
 
 /* =====================================================
    ELEMENTS
-   ===================================================== */
+===================================================== */
 
 const loginForm =
-    document.getElementById("loginForm");
+    document.getElementById(
+        "loginForm"
+    );
 
 
 const loginError =
-    document.getElementById("loginError");
+    document.getElementById(
+        "loginError"
+    );
 
 
 const loginSuccess =
-    document.getElementById("loginSuccess");
+    document.getElementById(
+        "loginSuccess"
+    );
 
 
 const loginButton =
-    document.getElementById("loginButton");
+    document.getElementById(
+        "loginButton"
+    );
 
 
 const loginIdentifier =
-    document.getElementById("loginIdentifier");
+    document.getElementById(
+        "loginIdentifier"
+    );
 
 
 const loginPassword =
-    document.getElementById("loginPassword");
+    document.getElementById(
+        "loginPassword"
+    );
 
 
 const rememberMe =
-    document.getElementById("rememberMe");
+    document.getElementById(
+        "rememberMe"
+    );
+
+
+const privacyAgreement =
+    document.getElementById(
+        "privacyAgreement"
+    );
+
+
+const privacyModal =
+    document.getElementById(
+        "privacyModal"
+    );
+
+
+const openPrivacy =
+    document.getElementById(
+        "openPrivacy"
+    );
+
+
+const closePrivacy =
+    document.getElementById(
+        "closePrivacy"
+    );
+
+
+
+/* =====================================================
+   PRIVACY
+===================================================== */
+
+function updateLoginButton() {
+
+    loginButton.disabled =
+        !privacyAgreement.checked;
+
+}
+
+
+const privacyAccepted =
+    localStorage.getItem(
+        PRIVACY_KEY
+    );
+
+
+if (
+    privacyAccepted === "true"
+) {
+
+    privacyAgreement.checked =
+        true;
+
+}
+
+
+updateLoginButton();
+
+
+
+privacyAgreement.addEventListener(
+    "change",
+    function() {
+
+        if (
+            privacyAgreement.checked
+        ) {
+
+            localStorage.setItem(
+                PRIVACY_KEY,
+                "true"
+            );
+
+        }
+
+        else {
+
+            localStorage.removeItem(
+                PRIVACY_KEY
+            );
+
+        }
+
+
+        updateLoginButton();
+
+    }
+);
+
+
+
+/* =====================================================
+   OPEN PRIVACY
+===================================================== */
+
+openPrivacy.addEventListener(
+    "click",
+    function(event) {
+
+        event.preventDefault();
+
+        privacyModal.classList.add(
+            "active"
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   CLOSE PRIVACY
+===================================================== */
+
+closePrivacy.addEventListener(
+    "click",
+    function() {
+
+        privacyModal.classList.remove(
+            "active"
+        );
+
+    }
+);
+
+
+
+/* CLOSE WHEN CLICK OUTSIDE */
+
+privacyModal.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target ===
+            privacyModal
+        ) {
+
+            privacyModal.classList.remove(
+                "active"
+            );
+
+        }
+
+    }
+);
 
 
 
 /* =====================================================
    GET USERS
-   ===================================================== */
+===================================================== */
 
 function getUsers() {
 
     try {
 
         const savedUsers =
-            localStorage.getItem(USERS_KEY);
+            localStorage.getItem(
+                USERS_KEY
+            );
 
 
         if (!savedUsers) {
@@ -290,7 +840,9 @@ function getUsers() {
 
 
         const users =
-            JSON.parse(savedUsers);
+            JSON.parse(
+                savedUsers
+            );
 
 
         if (!Array.isArray(users)) {
@@ -304,7 +856,7 @@ function getUsers() {
 
     }
 
-    catch (error) {
+    catch(error) {
 
         console.error(
             "Users data error:",
@@ -321,18 +873,24 @@ function getUsers() {
 
 /* =====================================================
    SHOW ERROR
-   ===================================================== */
+===================================================== */
 
-function showLoginError(message) {
+function showLoginError(
+    message
+) {
 
-    loginSuccess.classList.add("hidden");
+    loginSuccess.classList.add(
+        "hidden"
+    );
 
 
     loginError.textContent =
         message;
 
 
-    loginError.classList.remove("hidden");
+    loginError.classList.remove(
+        "hidden"
+    );
 
 }
 
@@ -340,18 +898,24 @@ function showLoginError(message) {
 
 /* =====================================================
    SHOW SUCCESS
-   ===================================================== */
+===================================================== */
 
-function showLoginSuccess(message) {
+function showLoginSuccess(
+    message
+) {
 
-    loginError.classList.add("hidden");
+    loginError.classList.add(
+        "hidden"
+    );
 
 
     loginSuccess.textContent =
         message;
 
 
-    loginSuccess.classList.remove("hidden");
+    loginSuccess.classList.remove(
+        "hidden"
+    );
 
 }
 
@@ -359,7 +923,7 @@ function showLoginSuccess(message) {
 
 /* =====================================================
    RESET BUTTON
-   ===================================================== */
+===================================================== */
 
 function resetLoginButton() {
 
@@ -375,8 +939,8 @@ function resetLoginButton() {
 
 
 /* =====================================================
-   LOGIN FORM
-   ===================================================== */
+   LOGIN
+===================================================== */
 
 loginForm.addEventListener(
     "submit",
@@ -385,11 +949,31 @@ loginForm.addEventListener(
         event.preventDefault();
 
 
+        /* PRIVACY CHECK */
+
+        if (
+            !privacyAgreement.checked
+        ) {
+
+            showLoginError(
+                "يجب الموافقة على سياسة الخصوصية قبل تسجيل الدخول."
+            );
+
+            return;
+
+        }
+
+
         /* HIDE OLD MESSAGES */
 
-        loginError.classList.add("hidden");
+        loginError.classList.add(
+            "hidden"
+        );
 
-        loginSuccess.classList.add("hidden");
+
+        loginSuccess.classList.add(
+            "hidden"
+        );
 
 
         /* GET VALUES */
@@ -454,13 +1038,19 @@ loginForm.addEventListener(
 
 
                     return (
-                        String(item.identifier)
-                            .toLowerCase()
-                            .trim()
+
+                        String(
+                            item.identifier
+                        )
+                        .toLowerCase()
+                        .trim()
+
                         ===
+
                         identifier
-                            .toLowerCase()
-                            .trim()
+                        .toLowerCase()
+                        .trim()
+
                     );
 
                 }
@@ -487,9 +1077,17 @@ loginForm.addEventListener(
         /* PASSWORD CHECK */
 
         if (
-            String(user.password)
+
+            String(
+                user.password
+            )
+
             !==
-            String(password)
+
+            String(
+                password
+            )
+
         ) {
 
             showLoginError(
@@ -538,18 +1136,26 @@ loginForm.addEventListener(
 
 
             loginAt:
-                new Date().toISOString()
+                new Date()
+                    .toISOString()
 
         };
 
 
         /* SAVE SESSION */
 
-        if (shouldRemember) {
+        if (
+            shouldRemember
+        ) {
 
             localStorage.setItem(
+
                 SESSION_KEY,
-                JSON.stringify(session)
+
+                JSON.stringify(
+                    session
+                )
+
             );
 
 
@@ -562,8 +1168,13 @@ loginForm.addEventListener(
         else {
 
             sessionStorage.setItem(
+
                 SESSION_KEY,
-                JSON.stringify(session)
+
+                JSON.stringify(
+                    session
+                )
+
             );
 
 
@@ -574,7 +1185,7 @@ loginForm.addEventListener(
         }
 
 
-        /* SUCCESS MESSAGE */
+        /* SUCCESS */
 
         showLoginSuccess(
             "تم تسجيل الدخول بنجاح. جاري فتح لوحة التحكم..."
@@ -600,7 +1211,7 @@ loginForm.addEventListener(
 
 /* =====================================================
    CURRENT YEAR
-   ===================================================== */
+===================================================== */
 
 const yearElement =
     document.querySelector(
@@ -611,14 +1222,9 @@ const yearElement =
 if (yearElement) {
 
     yearElement.textContent =
-        new Date().getFullYear();
+        new Date()
+            .getFullYear();
 
 }
 
-
-</script>
-
-
-</body>
-
-</html>
+</script></body></html>
