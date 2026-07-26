@@ -5884,6 +5884,846 @@ else{
 }
 
 </script>
+<!-- =========================================================
+     NEXORA V2 - HOME BALANCE & COIN COLORS ENHANCEMENT
+     أضف هذا الجزء في dashboard-v2.html فقط
+========================================================= -->
 
+<style>
+
+/* =========================================================
+   BALANCE VISIBILITY
+========================================================= */
+
+.top-balance-card{
+    cursor:pointer;
+    user-select:none;
+    -webkit-user-select:none;
+}
+
+.top-balance-card::after{
+
+    content:"اضغط لإخفاء / إظهار الرصيد";
+
+    position:absolute;
+
+    left:20px;
+    bottom:18px;
+
+    padding:5px 9px;
+
+    border:1px solid
+        rgba(30,140,255,.14);
+
+    border-radius:7px;
+
+    color:#55708f;
+
+    background:
+        rgba(0,80,180,.06);
+
+    font-size:9px;
+
+    opacity:.75;
+
+    transition:.25s;
+
+}
+
+.top-balance-card:hover::after{
+
+    color:#6fbaff;
+
+    border-color:
+        rgba(30,150,255,.3);
+
+    background:
+        rgba(0,100,220,.1);
+
+    opacity:1;
+
+}
+
+/* =========================================================
+   HIDDEN BALANCE
+========================================================= */
+
+.top-balance-value.balance-hidden strong{
+
+    font-size:38px;
+
+    letter-spacing:7px;
+
+    color:#8da1bb;
+
+    text-shadow:none;
+
+}
+
+/* =========================================================
+   BALANCE EYE STATE
+========================================================= */
+
+.top-balance-card.balance-hidden{
+
+    border-color:
+        rgba(100,130,170,.2);
+
+}
+
+.top-balance-card.balance-hidden
+.top-balance-hint{
+
+    color:#63809f;
+
+}
+
+/* =========================================================
+   COIN ICON ENHANCEMENTS
+========================================================= */
+
+.coin-icon{
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+
+        transform .2s ease,
+
+        box-shadow .2s ease,
+
+        border-color .2s ease;
+
+}
+
+.coin-row:hover .coin-icon{
+
+    transform:
+        translateY(-1px);
+
+}
+
+/* Bitcoin */
+
+.coin-icon.btc{
+
+    color:#f7931a;
+
+    border-color:
+        rgba(247,147,26,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(247,147,26,.16),
+            rgba(247,147,26,.035)
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(247,147,26,.08);
+
+}
+
+/* Ethereum */
+
+.coin-icon.eth{
+
+    color:#9aa8ff;
+
+    border-color:
+        rgba(154,168,255,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(154,168,255,.16),
+            rgba(154,168,255,.035)
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(154,168,255,.08);
+
+}
+
+/* USDT */
+
+.coin-icon.usdt{
+
+    color:#26a17b;
+
+    border-color:
+        rgba(38,161,123,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(38,161,123,.16),
+            rgba(38,161,123,.035)
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(38,161,123,.08);
+
+}
+
+/* TRON */
+
+.coin-icon.trx{
+
+    color:#ff5364;
+
+    border-color:
+        rgba(255,83,100,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,83,100,.16),
+            rgba(255,83,100,.035)
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(255,83,100,.08);
+
+}
+
+/* BNB */
+
+.coin-icon.bnb{
+
+    color:#f3ba2f;
+
+    border-color:
+        rgba(243,186,47,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(243,186,47,.16),
+            rgba(243,186,47,.035)
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(243,186,47,.08);
+
+}
+
+/* XRP */
+
+.coin-icon.xrp{
+
+    color:#25a7e8;
+
+    border-color:
+        rgba(37,167,232,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,167,232,.16),
+            rgba(37,167,232,.035)
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(37,167,232,.08);
+
+}
+
+/* SOL */
+
+.coin-icon.sol{
+
+    color:#b28cff;
+
+    border-color:
+        rgba(178,140,255,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(178,140,255,.16),
+            rgba(178,140,255,.035)
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(178,140,255,.08);
+
+}
+
+/* ADA */
+
+.coin-icon.ada{
+
+    color:#5b85ed;
+
+    border-color:
+        rgba(91,133,237,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(91,133,237,.16),
+            rgba(91,133,237,.035)
+        );
+
+}
+
+/* DOGE */
+
+.coin-icon.doge{
+
+    color:#d5bd4a;
+
+    border-color:
+        rgba(213,189,74,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(213,189,74,.16),
+            rgba(213,189,74,.035)
+        );
+
+}
+
+/* TON */
+
+.coin-icon.ton{
+
+    color:#39a9ff;
+
+    border-color:
+        rgba(57,169,255,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(57,169,255,.16),
+            rgba(57,169,255,.035)
+        );
+
+}
+
+/* USDC */
+
+.coin-icon.usdc{
+
+    color:#4b91e8;
+
+    border-color:
+        rgba(75,145,232,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(75,145,232,.16),
+            rgba(75,145,232,.035)
+        );
+
+}
+
+/* DOT */
+
+.coin-icon.dot{
+
+    color:#249dff;
+
+    border-color:
+        rgba(36,157,255,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(36,157,255,.16),
+            rgba(36,157,255,.035)
+        );
+
+}
+
+/* LINK */
+
+.coin-icon.link{
+
+    color:#5575e6;
+
+    border-color:
+        rgba(85,117,230,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(85,117,230,.16),
+            rgba(85,117,230,.035)
+        );
+
+}
+
+/* AVAX */
+
+.coin-icon.avax{
+
+    color:#ff5a5c;
+
+    border-color:
+        rgba(255,90,92,.28);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,90,92,.16),
+            rgba(255,90,92,.035)
+        );
+
+}
+
+/* LTC */
+
+.coin-icon.ltc{
+
+    color:#c7ced8;
+
+    border-color:
+        rgba(199,206,216,.24);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(199,206,216,.12),
+            rgba(199,206,216,.025)
+        );
+
+}
+
+/* =========================================================
+   COIN ROW
+========================================================= */
+
+.coin-row{
+
+    transition:
+
+        background .2s ease,
+
+        transform .2s ease;
+
+}
+
+.coin-row:hover{
+
+    transform:
+        translateX(-2px);
+
+}
+
+/* =========================================================
+   COPY BUTTON
+========================================================= */
+
+.nexora-copy-balance-btn{
+
+    position:absolute;
+
+    left:22px;
+
+    top:22px;
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid
+        rgba(40,140,255,.2);
+
+    border-radius:9px;
+
+    color:#4aaaff;
+
+    background:
+        rgba(0,100,220,.08);
+
+    font-size:14px;
+
+    opacity:.8;
+
+    transition:.2s;
+
+    z-index:3;
+
+}
+
+.nexora-copy-balance-btn:hover{
+
+    color:#fff;
+
+    opacity:1;
+
+    border-color:
+        rgba(40,150,255,.4);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0878ff,
+            #0752bd
+        );
+
+}
+
+.nexora-copy-balance-btn.copied{
+
+    color:#21d890;
+
+    border-color:
+        rgba(33,216,144,.35);
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .top-balance-card::after{
+
+        left:15px;
+
+        bottom:14px;
+
+        font-size:8px;
+
+    }
+
+    .nexora-copy-balance-btn{
+
+        left:15px;
+
+        top:15px;
+
+        width:32px;
+
+        height:32px;
+
+    }
+
+    .top-balance-value.balance-hidden strong{
+
+        font-size:28px;
+
+        letter-spacing:5px;
+
+    }
+
+}
+
+</style>
+
+
+<script>
+
+/* =========================================================
+   NEXORA V2 - BALANCE VISIBILITY SYSTEM
+========================================================= */
+
+(function(){
+
+    "use strict";
+
+
+    /* -------------------------------------------------------
+       ELEMENTS
+    ------------------------------------------------------- */
+
+    const balanceCard =
+        document.getElementById(
+            "topBalanceCard"
+        );
+
+    const balanceValue =
+        document.getElementById(
+            "homeTotalBalance"
+        );
+
+
+    /* -------------------------------------------------------
+       SAFETY CHECK
+    ------------------------------------------------------- */
+
+    if(
+        !balanceCard ||
+        !balanceValue
+    ){
+
+        return;
+
+    }
+
+
+    /* -------------------------------------------------------
+       DEFAULT STATE
+    ------------------------------------------------------- */
+
+    let balanceHidden = false;
+
+
+    /* -------------------------------------------------------
+       SAVE ORIGINAL BALANCE
+    ------------------------------------------------------- */
+
+    const originalBalance =
+        balanceValue.textContent.trim();
+
+
+    /* -------------------------------------------------------
+       CREATE COPY BUTTON
+    ------------------------------------------------------- */
+
+    const copyButton =
+        document.createElement(
+            "button"
+        );
+
+
+    copyButton.type =
+        "button";
+
+
+    copyButton.className =
+        "nexora-copy-balance-btn";
+
+
+    copyButton.title =
+        "نسخ الرصيد";
+
+
+    copyButton.setAttribute(
+        "aria-label",
+        "نسخ الرصيد"
+    );
+
+
+    copyButton.textContent =
+        "⧉";
+
+
+    balanceCard.appendChild(
+        copyButton
+    );
+
+
+    /* -------------------------------------------------------
+       BALANCE TOGGLE
+    ------------------------------------------------------- */
+
+    function toggleBalance(){
+
+        balanceHidden =
+            !balanceHidden;
+
+
+        if(
+            balanceHidden
+        ){
+
+            balanceValue.textContent =
+                "••••••";
+
+
+            balanceValue.parentElement
+                .classList.add(
+                    "balance-hidden"
+                );
+
+
+            balanceCard.classList.add(
+                "balance-hidden"
+            );
+
+        }else{
+
+            balanceValue.textContent =
+                originalBalance;
+
+
+            balanceValue.parentElement
+                .classList.remove(
+                    "balance-hidden"
+                );
+
+
+            balanceCard.classList.remove(
+                "balance-hidden"
+            );
+
+        }
+
+    }
+
+
+    /* -------------------------------------------------------
+       CLICK BALANCE CARD
+       COPY BUTTON DOES NOT TOGGLE
+    ------------------------------------------------------- */
+
+    balanceCard.addEventListener(
+        "click",
+        function(event){
+
+            if(
+                event.target.closest(
+                    ".nexora-copy-balance-btn"
+                )
+            ){
+
+                return;
+
+            }
+
+
+            toggleBalance();
+
+        }
+    );
+
+
+    /* -------------------------------------------------------
+       COPY BALANCE
+    ------------------------------------------------------- */
+
+    copyButton.addEventListener(
+        "click",
+        async function(event){
+
+            event.stopPropagation();
+
+
+            const valueToCopy =
+                originalBalance;
+
+
+            try{
+
+                await navigator.clipboard.writeText(
+                    valueToCopy
+                );
+
+
+                copyButton.textContent =
+                    "✓";
+
+
+                copyButton.classList.add(
+                    "copied"
+                );
+
+
+                copyButton.title =
+                    "تم نسخ الرصيد";
+
+
+                setTimeout(
+                    function(){
+
+                        copyButton.textContent =
+                            "⧉";
+
+
+                        copyButton.classList.remove(
+                            "copied"
+                        );
+
+
+                        copyButton.title =
+                            "نسخ الرصيد";
+
+                    },
+                    1500
+                );
+
+
+            }catch(error){
+
+                /* fallback */
+
+                const tempInput =
+                    document.createElement(
+                        "input"
+                    );
+
+
+                tempInput.value =
+                    valueToCopy;
+
+
+                document.body.appendChild(
+                    tempInput
+                );
+
+
+                tempInput.select();
+
+
+                try{
+
+                    document.execCommand(
+                        "copy"
+                    );
+
+                }catch(e){}
+
+
+                document.body.removeChild(
+                    tempInput
+                );
+
+
+                copyButton.textContent =
+                    "✓";
+
+
+                copyButton.classList.add(
+                    "copied"
+                );
+
+
+                setTimeout(
+                    function(){
+
+                        copyButton.textContent =
+                            "⧉";
+
+
+                        copyButton.classList.remove(
+                            "copied"
+                        );
+
+                    },
+                    1500
+                );
+
+            }
+
+        }
+    );
+
+
+})();
+
+</script>
 </body>
   </html>
