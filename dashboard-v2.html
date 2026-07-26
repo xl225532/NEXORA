@@ -5884,6 +5884,298 @@ else{
 }
 
 </script>
+<style>
+/* =========================================================
+   NEXORA USER CODE - FIXED TOP
+========================================================= */
 
+.nexora-fixed-user-code{
+
+    position:fixed;
+
+    top:18px;
+
+    left:18px;
+
+    z-index:99999;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    direction:ltr;
+}
+
+.nexora-fixed-user-code-value{
+
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 12px;
+
+    border:1px solid
+        rgba(30,130,255,.30);
+
+    border-radius:10px;
+
+    color:#42aaff;
+
+    background:
+        rgba(4,15,32,.95);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.35);
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+}
+
+.nexora-fixed-copy{
+
+    width:40px;
+
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid
+        rgba(30,140,255,.30);
+
+    border-radius:10px;
+
+    color:#38a8ff;
+
+    background:
+        rgba(4,15,32,.95);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.35);
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.nexora-fixed-copy:hover{
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0878ff,
+            #0752bd
+        );
+}
+
+.nexora-fixed-copy.copied{
+
+    color:#21d890;
+
+    border-color:
+        rgba(33,216,144,.40);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .nexora-fixed-user-code{
+
+        top:10px;
+
+        left:10px;
+    }
+
+    .nexora-fixed-user-code-value{
+
+        height:34px;
+
+        padding:0 8px;
+
+        font-size:9px;
+    }
+
+    .nexora-fixed-copy{
+
+        width:34px;
+
+        height:34px;
+
+        font-size:13px;
+    }
+
+}
+
+</style>
+
+
+<script>
+
+(function(){
+
+    "use strict";
+
+
+    /* كود المستخدم التجريبي */
+
+    const NEXORA_USER_CODE =
+        "NX-USER-001";
+
+
+    /* إنشاء الكود */
+
+    const box =
+        document.createElement(
+            "div"
+        );
+
+
+    box.className =
+        "nexora-fixed-user-code";
+
+
+    box.innerHTML = `
+
+        <div
+            class="nexora-fixed-user-code-value"
+        >
+            ${NEXORA_USER_CODE}
+        </div>
+
+
+        <button
+            type="button"
+            class="nexora-fixed-copy"
+            title="نسخ كود المستخدم"
+        >
+            ⧉
+        </button>
+
+    `;
+
+
+    /* إضافة إلى الصفحة */
+
+    document.body.appendChild(
+        box
+    );
+
+
+    /* زر النسخ */
+
+    const copyButton =
+        box.querySelector(
+            ".nexora-fixed-copy"
+        );
+
+
+    copyButton.addEventListener(
+        "click",
+        async function(){
+
+            try{
+
+                await navigator.clipboard.writeText(
+                    NEXORA_USER_CODE
+                );
+
+                copyButton.textContent =
+                    "✓";
+
+                copyButton.classList.add(
+                    "copied"
+                );
+
+
+                setTimeout(
+                    function(){
+
+                        copyButton.textContent =
+                            "⧉";
+
+                        copyButton.classList.remove(
+                            "copied"
+                        );
+
+                    },
+                    1500
+                );
+
+            }
+
+            catch(error){
+
+                const textarea =
+                    document.createElement(
+                        "textarea"
+                    );
+
+                textarea.value =
+                    NEXORA_USER_CODE;
+
+                document.body.appendChild(
+                    textarea
+                );
+
+                textarea.select();
+
+                document.execCommand(
+                    "copy"
+                );
+
+                textarea.remove();
+
+
+                copyButton.textContent =
+                    "✓";
+
+                copyButton.classList.add(
+                    "copied"
+                );
+
+
+                setTimeout(
+                    function(){
+
+                        copyButton.textContent =
+                            "⧉";
+
+                        copyButton.classList.remove(
+                            "copied"
+                        );
+
+                    },
+                    1500
+                );
+
+            }
+
+        }
+    );
+
+
+})();
+
+</script>
 </body>
   </html>
