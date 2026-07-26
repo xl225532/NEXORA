@@ -1,5 +1,4 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
-<head>
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NEXORA | لوحة التحكم</title><style>
 
@@ -25,8 +24,12 @@ body{
     overflow-x:hidden;
 }
 
-button{
+button,
+input{
     font-family:inherit;
+}
+
+button{
     cursor:pointer;
     border:0;
 }
@@ -61,71 +64,49 @@ a{
 
 }
 
-
 /* =====================================================
    PAGE
 ===================================================== */
 
 .dashboard-page{
-
     min-height:100vh;
-
     display:flex;
 
     background:
-
         radial-gradient(
             circle at 15% 15%,
             rgba(0,93,255,.12),
             transparent 28%
         ),
-
         radial-gradient(
             circle at 85% 85%,
             rgba(0,65,190,.10),
             transparent 30%
         ),
-
         linear-gradient(
             135deg,
             #02050b,
             #050a13
         );
-
 }
-
 
 /* =====================================================
    BACKGROUND
 ===================================================== */
 
 .market-decoration{
-
     position:fixed;
-
     inset:0;
-
     pointer-events:none;
-
     overflow:hidden;
-
     z-index:0;
-
 }
 
 .market-decoration span{
-
     position:absolute;
-
     color:rgba(20,120,255,.055);
-
     font-size:28px;
-
-    animation:
-        floatingBlue
-        linear
-        infinite;
-
+    animation:floatingBlue linear infinite;
 }
 
 .market-decoration span:nth-child(1){
@@ -174,7 +155,6 @@ a{
 
 }
 
-
 /* =====================================================
    SIDEBAR
 ===================================================== */
@@ -182,23 +162,18 @@ a{
 .dashboard-sidebar{
 
     width:245px;
-
     min-height:100vh;
 
     position:fixed;
-
     top:0;
-
     right:0;
 
     padding:24px 16px;
 
     display:flex;
-
     flex-direction:column;
 
     background:
-
         linear-gradient(
             180deg,
             rgba(4,12,25,.98),
@@ -218,7 +193,6 @@ a{
         rgba(0,0,0,.4);
 
 }
-
 
 /* =====================================================
    LOGO
@@ -244,7 +218,6 @@ a{
 
 }
 
-
 /* =====================================================
    USER
 ===================================================== */
@@ -252,13 +225,10 @@ a{
 .sidebar-user{
 
     display:flex;
-
     align-items:center;
-
     gap:12px;
 
     padding:14px;
-
     margin-bottom:25px;
 
     background:
@@ -279,13 +249,10 @@ a{
 .sidebar-avatar{
 
     width:42px;
-
     height:42px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     background:
@@ -300,7 +267,6 @@ a{
     border-radius:12px;
 
     font-size:16px;
-
     font-weight:bold;
 
     box-shadow:
@@ -310,25 +276,16 @@ a{
 }
 
 .sidebar-user strong{
-
     display:block;
-
     color:#fff;
-
     font-size:13px;
-
     margin-bottom:4px;
-
 }
 
 .sidebar-user small{
-
     color:#5f708a;
-
     font-size:10px;
-
 }
-
 
 /* =====================================================
    NAVIGATION
@@ -337,11 +294,8 @@ a{
 .dashboard-nav{
 
     display:flex;
-
     flex-direction:column;
-
     gap:7px;
-
     flex:1;
 
 }
@@ -351,9 +305,7 @@ a{
     width:100%;
 
     display:flex;
-
     align-items:center;
-
     gap:13px;
 
     padding:13px 15px;
@@ -384,7 +336,6 @@ a{
 .dashboard-nav-item.active{
 
     background:
-
         linear-gradient(
             135deg,
             rgba(0,115,255,.25),
@@ -406,21 +357,19 @@ a{
 .nav-icon{
 
     width:24px;
-
     height:24px;
 
     position:relative;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
 }
 
-
-/* CSS ICONS */
+/* =====================================================
+   CSS ICONS
+===================================================== */
 
 .icon-grid{
 
@@ -428,7 +377,6 @@ a{
     height:14px;
 
     border:2px solid currentColor;
-
     border-radius:3px;
 
 }
@@ -439,11 +387,9 @@ a{
     height:13px;
 
     border:2px solid currentColor;
-
     border-radius:50%;
 
     position:relative;
-
     margin-top:-6px;
 
 }
@@ -455,11 +401,9 @@ a{
     position:absolute;
 
     width:18px;
-
     height:9px;
 
     border:2px solid currentColor;
-
     border-bottom:0;
 
     border-radius:12px 12px 0 0;
@@ -478,7 +422,6 @@ a{
     height:13px;
 
     border:2px solid currentColor;
-
     border-radius:4px;
 
     position:relative;
@@ -492,7 +435,6 @@ a{
     position:absolute;
 
     width:5px;
-
     height:5px;
 
     border-radius:50%;
@@ -500,7 +442,6 @@ a{
     background:currentColor;
 
     right:2px;
-
     top:2px;
 
 }
@@ -525,7 +466,6 @@ a{
     position:absolute;
 
     width:7px;
-
     height:7px;
 
     border:2px solid currentColor;
@@ -533,7 +473,6 @@ a{
     border-radius:50%;
 
     top:-9px;
-
     left:3px;
 
     background:#07111f;
@@ -546,7 +485,6 @@ a{
     height:13px;
 
     border-left:2px solid currentColor;
-
     border-bottom:2px solid currentColor;
 
     position:relative;
@@ -560,17 +498,14 @@ a{
     position:absolute;
 
     width:12px;
-
     height:7px;
 
     border-top:2px solid currentColor;
-
     border-right:2px solid currentColor;
 
     transform:skewY(-30deg);
 
     left:2px;
-
     top:1px;
 
 }
@@ -593,19 +528,15 @@ a{
     position:absolute;
 
     width:5px;
-
     height:7px;
 
     border-left:2px solid currentColor;
-
     border-right:2px solid currentColor;
 
     bottom:-3px;
-
     left:4px;
 
 }
-
 
 /* =====================================================
    LOGOUT
@@ -639,7 +570,6 @@ a{
 
 }
 
-
 /* =====================================================
    MAIN
 ===================================================== */
@@ -647,7 +577,6 @@ a{
 .dashboard-main{
 
     position:relative;
-
     z-index:2;
 
     width:calc(100% - 245px);
@@ -660,7 +589,6 @@ a{
 
 }
 
-
 /* =====================================================
    TOPBAR
 ===================================================== */
@@ -670,13 +598,10 @@ a{
     min-height:75px;
 
     display:flex;
-
     align-items:center;
-
-    justify-content:flex-start;
+    justify-content:space-between;
 
     margin-bottom:25px;
-
     padding-bottom:18px;
 
     border-bottom:
@@ -705,6 +630,46 @@ a{
 
 }
 
+/* =====================================================
+   TOPBAR ACTIONS
+===================================================== */
+
+.topbar-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.topbar-action{
+
+    width:40px;
+    height:40px;
+
+    border-radius:10px;
+
+    background:#071426;
+
+    color:#7d8da5;
+
+    border:1px solid rgba(40,130,255,.12);
+
+    transition:.2s;
+
+}
+
+.topbar-action:hover{
+
+    color:#fff;
+
+    background:#0a1d35;
+
+    border-color:rgba(30,140,255,.35);
+
+}
 
 /* =====================================================
    SECTIONS
@@ -740,7 +705,6 @@ a{
     }
 
 }
-
 
 /* =====================================================
    BALANCE
@@ -857,7 +821,6 @@ a{
 
 }
 
-
 /* =====================================================
    MARKET
 ===================================================== */
@@ -875,7 +838,6 @@ a{
     margin-bottom:22px;
 
 }
-
 
 /* =====================================================
    CHART
@@ -973,7 +935,6 @@ a{
 
 }
 
-
 /* GRAPH */
 
 .main-chart{
@@ -1052,11 +1013,9 @@ a{
 
 .price-area{
 
-    fill:
-        url(#blueGradient);
+    fill:url(#blueGradient);
 
 }
-
 
 /* CANDLES */
 
@@ -1100,8 +1059,7 @@ a{
 
     height:var(--wick-height);
 
-    background:
-        var(--candle-color);
+    background:var(--candle-color);
 
 }
 
@@ -1117,8 +1075,7 @@ a{
 
     height:var(--body-height);
 
-    background:
-        var(--candle-color);
+    background:var(--candle-color);
 
     border-radius:2px;
 
@@ -1131,7 +1088,6 @@ a{
 .candle.down{
     --candle-color:#ff5364;
 }
-
 
 /* VOLUME */
 
@@ -1159,8 +1115,7 @@ a{
 
     border-radius:3px 3px 0 0;
 
-    background:
-        rgba(30,130,255,.35);
+    background:rgba(30,130,255,.35);
 
 }
 
@@ -1169,7 +1124,6 @@ a{
     background:#1c9aff;
 
 }
-
 
 /* =====================================================
    MARKET LIST
@@ -1225,6 +1179,41 @@ a{
 
 }
 
+/* MARKET SEARCH */
+
+.market-search{
+
+    padding:12px 15px;
+
+    border-bottom:1px solid rgba(70,130,220,.08);
+
+}
+
+.market-search input{
+
+    width:100%;
+
+    padding:10px 12px;
+
+    color:#fff;
+
+    background:#050d19;
+
+    border:1px solid rgba(40,130,255,.12);
+
+    border-radius:8px;
+
+    outline:none;
+
+    font-size:11px;
+
+}
+
+.market-search input:focus{
+
+    border-color:rgba(30,140,255,.4);
+
+}
 
 /* COIN */
 
@@ -1332,10 +1321,7 @@ a{
 
 }
 
-
-/* =====================================================
-   COIN COLORS
-===================================================== */
+/* COIN COLORS */
 
 .btc{
     color:#f7931a;
@@ -1427,7 +1413,6 @@ a{
     background:rgba(183,192,204,.07);
 }
 
-
 .coin-price{
 
     color:#eaf2ff;
@@ -1461,7 +1446,6 @@ a{
 .coin-change.down{
     color:#ff5364;
 }
-
 
 /* =====================================================
    STATS
@@ -1521,7 +1505,6 @@ a{
 
 }
 
-
 /* =====================================================
    SECTION
 ===================================================== */
@@ -1547,7 +1530,6 @@ a{
     margin-top:5px;
 
 }
-
 
 /* =====================================================
    PROFILE
@@ -1655,7 +1637,6 @@ a{
 
 }
 
-
 /* =====================================================
    COPY USER CODE
 ===================================================== */
@@ -1701,29 +1682,18 @@ a{
 
     letter-spacing:1px;
 
-    font-family:
-        Tahoma,
-        Arial,
-        sans-serif;
-
 }
 
-
-/* COPY ICON BUTTON */
+/* COPY */
 
 .copy-code-btn{
 
     width:32px;
-
     height:32px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
-    padding:0;
 
     border:
         1px solid
@@ -1738,20 +1708,15 @@ a{
 
     font-size:0;
 
-    transition:
-        .2s;
+    transition:.2s;
 
 }
-
-
-/* COPY ICON */
 
 .copy-code-btn::before{
 
     content:"";
 
     width:11px;
-
     height:13px;
 
     display:block;
@@ -1768,13 +1733,7 @@ a{
         3px -3px 0 -1px #071426,
         3px -3px 0 0 currentColor;
 
-    transition:
-        .2s;
-
 }
-
-
-/* HOVER */
 
 .copy-code-btn:hover{
 
@@ -1789,14 +1748,7 @@ a{
 
     border-color:#1688ff;
 
-    box-shadow:
-        0 0 15px
-        rgba(0,120,255,.25);
-
 }
-
-
-/* COPIED */
 
 .copy-code-btn.copied{
 
@@ -1805,24 +1757,13 @@ a{
     border-color:
         rgba(33,216,144,.35);
 
-    background:
-        rgba(33,216,144,.08);
-
-    box-shadow:
-        0 0 14px
-        rgba(33,216,144,.12);
-
 }
-
-
-/* SUCCESS CHECK */
 
 .copy-code-btn.copied::before{
 
     content:"✓";
 
     width:auto;
-
     height:auto;
 
     border:0;
@@ -1834,22 +1775,6 @@ a{
     font-weight:bold;
 
 }
-
-
-/* COPY ERROR */
-
-.copy-code-btn.copy-error{
-
-    color:#ff697b;
-
-    border-color:
-        rgba(255,82,103,.35);
-
-    background:
-        rgba(255,82,103,.08);
-
-}
-
 
 /* =====================================================
    BALANCE
@@ -1910,7 +1835,6 @@ a{
     font-size:12px;
 
 }
-
 
 /* =====================================================
    TEAM
@@ -2034,7 +1958,6 @@ a{
 
 }
 
-
 /* =====================================================
    TRADING
 ===================================================== */
@@ -2065,22 +1988,22 @@ a{
 .trading-warning > span{
 
     width:45px;
-
     height:45px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     border-radius:12px;
 
     color:#2d9dff;
 
-    border:1px solid rgba(30,130,255,.2);
+    border:
+        1px solid
+        rgba(30,130,255,.2);
 
-    background:rgba(0,100,255,.08);
+    background:
+        rgba(0,100,255,.08);
 
     font-weight:bold;
 
@@ -2149,7 +2072,6 @@ a{
 
 }
 
-
 /* =====================================================
    SUPPORT
 ===================================================== */
@@ -2177,13 +2099,11 @@ a{
 .support-icon{
 
     width:60px;
-
     height:60px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     margin:0 auto 20px;
@@ -2192,9 +2112,12 @@ a{
 
     color:#2d9dff;
 
-    border:1px solid rgba(30,130,255,.2);
+    border:
+        1px solid
+        rgba(30,130,255,.2);
 
-    background:rgba(0,100,255,.08);
+    background:
+        rgba(0,100,255,.08);
 
     font-weight:bold;
 
@@ -2243,7 +2166,6 @@ a{
 
 }
 
-
 /* =====================================================
    EMPTY
 ===================================================== */
@@ -2275,7 +2197,6 @@ a{
     font-size:13px;
 
 }
-
 
 /* =====================================================
    PANEL
@@ -2321,6 +2242,64 @@ a{
 
 }
 
+/* =====================================================
+   NOTIFICATION
+===================================================== */
+
+.toast{
+
+    position:fixed;
+
+    left:25px;
+
+    bottom:25px;
+
+    z-index:9999;
+
+    min-width:220px;
+
+    max-width:320px;
+
+    padding:14px 18px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b2341,
+            #06101e
+        );
+
+    border:
+        1px solid
+        rgba(40,150,255,.35);
+
+    border-radius:12px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.4);
+
+    transform:translateY(20px);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.25s;
+
+    font-size:12px;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
 
 /* =====================================================
    FOOTER
@@ -2344,7 +2323,6 @@ a{
 
 }
 
-
 /* =====================================================
    RESPONSIVE
 ===================================================== */
@@ -2352,16 +2330,12 @@ a{
 @media(max-width:1100px){
 
     .market-layout{
-
         grid-template-columns:1fr;
-
     }
 
     .market-stats{
-
         grid-template-columns:
             repeat(2,1fr);
-
     }
 
 }
@@ -2369,9 +2343,7 @@ a{
 @media(max-width:1000px){
 
     .dashboard-sidebar{
-
         width:210px;
-
     }
 
     .dashboard-main{
@@ -2535,21 +2507,16 @@ a{
     .coin-icon{
 
         width:32px;
-
         height:32px;
 
     }
 
     .coin-price{
-
         font-size:10px;
-
     }
 
     .coin-change{
-
         font-size:10px;
-
     }
 
     .profile-card{
@@ -2598,6 +2565,12 @@ a{
 
     }
 
+    .topbar-actions{
+
+        display:none;
+
+    }
+
 }
 
 @media(max-width:400px){
@@ -2629,7 +2602,9 @@ a{
 <span>↗</span>
 <span>+</span>
 
-</div><div class="dashboard-page"><!-- SIDEBAR --><aside class="dashboard-sidebar"><div class="dashboard-logo">
+</div><div class="dashboard-page"><!-- =====================================================
+     SIDEBAR
+===================================================== --><aside class="dashboard-sidebar"><div class="dashboard-logo">
     NEXORA
 </div>
 
@@ -2752,7 +2727,9 @@ a{
 
 </button>
 
-</aside><!-- MAIN --><main class="dashboard-main"><header class="dashboard-topbar"><div>
+</aside><!-- =====================================================
+     MAIN
+===================================================== --><main class="dashboard-main"><header class="dashboard-topbar"><div>
 
     <span class="topbar-label">
         لوحة التحكم
@@ -2764,10 +2741,25 @@ a{
 
 </div>
 
-</header><!-- HOME --><section
+
+<div class="topbar-actions">
+
+    <button
+        id="refreshDashboardButton"
+        class="topbar-action"
+        title="تحديث"
+    >
+        ↻
+    </button>
+
+</div>
+
+</header><!-- =====================================================
+     HOME
+===================================================== --><section
     id="homeSection"
     class="dashboard-section active"
-><!-- BALANCE --><div
+><div
     class="top-balance-card"
     id="topBalanceCard"
 ><span class="top-balance-label">
@@ -2792,17 +2784,17 @@ a{
     اضغط على قيمة الرصيد لإخفائها أو إظهارها
 </div>
 
-</div><!-- MARKET --><div class="market-layout"><!-- CHART --><div class="trading-chart-card"><div class="chart-header"><div class="chart-title"><h3>
+</div><div class="market-layout"><!-- CHART --><div class="trading-chart-card"><div class="chart-header"><div class="chart-title"><h3>
     BTC / USDT
-</h3><p>
+</h3><p id="chartStatusText">
     حركة السعر
-</p></div><div class="chart-controls"><button class="active">
+</p></div><div class="chart-controls"><button class="active" data-range="1H">
     1H
-</button><button>
+</button><button data-range="1D">
     1D
-</button><button>
+</button><button data-range="1W">
     1W
-</button><button>
+</button><button data-range="1M">
     1M
 </button></div></div><div class="main-chart"><svg
 class="price-line"
@@ -2856,6 +2848,7 @@ points="
 />
 
 <polyline
+id="pricePolyline"
 points="
 0,235
 70,210
@@ -2881,73 +2874,55 @@ style="
 --wick-height:25%;
 --body-top:35%;
 --body-height:15%;
-">
-<div class="candle-body"></div>
-</div><div class="candle down"
+"><div class="candle-body"></div></div><div class="candle down"
 style="
 --wick-top:30%;
 --wick-height:35%;
 --body-top:45%;
 --body-height:18%;
-">
-<div class="candle-body"></div>
-</div><div class="candle up"
+"><div class="candle-body"></div></div><div class="candle up"
 style="
 --wick-top:20%;
 --wick-height:35%;
 --body-top:30%;
 --body-height:20%;
-">
-<div class="candle-body"></div>
-</div><div class="candle up"
+"><div class="candle-body"></div></div><div class="candle up"
 style="
 --wick-top:35%;
 --wick-height:25%;
 --body-top:40%;
 --body-height:18%;
-">
-<div class="candle-body"></div>
-</div><div class="candle down"
+"><div class="candle-body"></div></div><div class="candle down"
 style="
 --wick-top:30%;
 --wick-height:35%;
 --body-top:42%;
 --body-height:20%;
-">
-<div class="candle-body"></div>
-</div><div class="candle up"
+"><div class="candle-body"></div></div><div class="candle up"
 style="
 --wick-top:15%;
 --wick-height:40%;
 --body-top:25%;
 --body-height:22%;
-">
-<div class="candle-body"></div>
-</div><div class="candle up"
+"><div class="candle-body"></div></div><div class="candle up"
 style="
 --wick-top:20%;
 --wick-height:30%;
 --body-top:28%;
 --body-height:18%;
-">
-<div class="candle-body"></div>
-</div><div class="candle down"
+"><div class="candle-body"></div></div><div class="candle down"
 style="
 --wick-top:25%;
 --wick-height:40%;
 --body-top:38%;
 --body-height:22%;
-">
-<div class="candle-body"></div>
-</div><div class="candle up"
+"><div class="candle-body"></div></div><div class="candle up"
 style="
 --wick-top:10%;
 --wick-height:40%;
 --body-top:20%;
 --body-height:20%;
-">
-<div class="candle-body"></div>
-</div></div></div><div class="volume-chart"><div class="volume-bar" style="height:30%"></div>
+"><div class="candle-body"></div></div></div></div><div class="volume-chart"><div class="volume-bar" style="height:30%"></div>
 <div class="volume-bar" style="height:55%"></div>
 <div class="volume-bar" style="height:40%"></div>
 <div class="volume-bar" style="height:70%"></div>
@@ -2960,7 +2935,14 @@ style="
     الأسواق
 </h3><span>
     24H
-</span></div><!-- BTC --><div class="coin-row"><div class="coin-name"><div class="coin-icon btc">
+</span></div><div class="market-search"><input
+id="marketSearch"
+type="search"
+placeholder="ابحث عن عملة..."
+autocomplete="off"
+/>
+
+</div><!-- BTC --><div class="coin-row"><div class="coin-name"><div class="coin-icon btc">
     BTC
 </div><div><strong>
     Bitcoin
@@ -3126,7 +3108,9 @@ $2.41T
 الأسواق
 </span><strong>
 15
-</strong></div></div></section><!-- PROFILE --><section
+</strong></div></div></section><!-- =====================================================
+     PROFILE
+===================================================== --><section
 id="profileSection"
 class="dashboard-section"
 ><div class="section-heading"><span>
@@ -3168,7 +3152,9 @@ title="نسخ كود المستخدم"
 كود الإحالة
 </span><strong id="profileReferralCode">
 -
-</strong></div></div></div></section><!-- BALANCE --><section
+</strong></div></div></div></section><!-- =====================================================
+     BALANCE
+===================================================== --><section
 id="balanceSection"
 class="dashboard-section"
 ><div class="section-heading"><span>
@@ -3185,7 +3171,9 @@ USDT
 سجل العمليات
 </h3></div><div class="empty-state"><p>
 لا توجد عمليات مالية حتى الآن
-</p></div></div></section><!-- TEAM --><section
+</p></div></div></section><!-- =====================================================
+     TEAM
+===================================================== --><section
 id="teamSection"
 class="dashboard-section"
 ><div class="section-heading"><span>
@@ -3208,7 +3196,9 @@ TEAM
 أعضاء الفريق
 </h3></div><div class="empty-state"><p>
 لا يوجد أعضاء في فريقك حاليًا
-</p></div></div></section><!-- TRADING --><section
+</p></div></div></section><!-- =====================================================
+     TRADING
+===================================================== --><section
 id="tradingSection"
 class="dashboard-section"
 ><div class="section-heading"><span>
@@ -3233,7 +3223,9 @@ $0.00
 الأرباح
 </span><strong>
 $0.00
-</strong></div></div></section><!-- SUPPORT --><section
+</strong></div></div></section><!-- =====================================================
+     SUPPORT
+===================================================== --><section
 id="supportSection"
 class="dashboard-section"
 ><div class="section-heading"><span>
@@ -3245,11 +3237,17 @@ SUPPORT
 </div><h3>
 كيف يمكننا مساعدتك؟
 </h3><p>
-سيتم تفعيل نظام الدعم والتواصل
-في المرحلة القادمة من تطوير NEXORA.
-</p><button class="support-button">
+يمكنك إرسال طلب دعم وسنقوم بمراجعته.
+</p><button
+id="supportButton"
+class="support-button"
+
+«»
+
 فتح تذكرة دعم
-</button></div></section><footer class="dashboard-footer">©
+</button>
+
+</div></section><!-- FOOTER --><footer class="dashboard-footer">©
 
 <span id="dashboardYear">
 2026
@@ -3259,9 +3257,66 @@ SUPPORT
 
 جميع الحقوق محفوظة
 
-</footer></main></div><script>
+</footer></main></div><!-- TOAST --><div
+id="toast"
+class="toast"
+>
+تم تنفيذ العملية
+</div><script>
 
 "use strict";
+
+/* =====================================================
+   HELPERS
+===================================================== */
+
+const $ = (selector) =>
+    document.querySelector(selector);
+
+
+const $$ = (selector) =>
+    document.querySelectorAll(selector);
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+let toastTimer = null;
+
+function showToast(message){
+
+    const toast =
+        $("#toast");
+
+    if(!toast){
+        return;
+    }
+
+    toast.textContent =
+        message;
+
+    toast.classList.add(
+        "show"
+    );
+
+    clearTimeout(
+        toastTimer
+    );
+
+    toastTimer =
+        setTimeout(
+            () => {
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            },
+            2200
+        );
+
+}
 
 
 /* =====================================================
@@ -3286,7 +3341,7 @@ const sessionData =
 
 
 /* =====================================================
-   CHECK LOGIN
+   LOGIN CHECK
 ===================================================== */
 
 if(!sessionData){
@@ -3335,18 +3390,19 @@ catch(error){
 
 let balanceHidden = false;
 
-let realBalanceText = "$0.00";
+let realBalanceText =
+    "$0.00";
 
 
 /* =====================================================
    USER CODE
 ===================================================== */
 
-function generateUserCode(user){
+function generateUserCode(
+    user
+){
 
-    if(
-        user.userCode
-    ){
+    if(user.userCode){
 
         return String(
             user.userCode
@@ -3354,9 +3410,8 @@ function generateUserCode(user){
 
     }
 
-    if(
-        user.id
-    ){
+
+    if(user.id){
 
         return "NX-" +
             String(
@@ -3364,6 +3419,7 @@ function generateUserCode(user){
             );
 
     }
+
 
     const identifier =
         user.identifier ||
@@ -3382,272 +3438,53 @@ function generateUserCode(user){
         .toUpperCase();
 
 
-    if(
-        !clean
-    ){
+    if(!clean){
 
-        clean = "USER";
+        clean =
+            "USER";
 
     }
 
 
     return "NX-" +
-        clean
-            .slice(
-                0,
-                6
-            );
+        clean.slice(
+            0,
+            6
+        );
 
 }
 
 
 /* =====================================================
-   LOAD USER
+   UPDATE BALANCE
 ===================================================== */
 
-if(currentUser){
+function updateBalanceDisplays(){
 
-
-    const userName =
-        currentUser.name ||
-        "المستخدم";
-
-
-    const identifier =
-        currentUser.identifier ||
-        currentUser.email ||
-        currentUser.phone ||
-        "-";
-
+    const home =
+        $("#homeTotalBalance");
 
     const balance =
-        Number(
-            currentUser.balance ||
-            0
-        );
+        $("#balanceAmount");
 
+    const trading =
+        $("#tradingBalance");
 
-    const team =
-        Number(
-            currentUser.team ||
-            0
-        );
 
+    const value =
+        balanceHidden
+        ? "••••••"
+        : realBalanceText;
 
-    const referralCode =
-        currentUser.referralCode ||
-        "-";
 
+    if(home){
 
-    const userCode =
-        generateUserCode(
-            currentUser
-        );
+        home.textContent =
+            value;
 
+    }
 
-    realBalanceText =
-        "$" +
-        balance.toFixed(2);
 
+    if(balance){
 
-    /* USER */
-
-    document
-        .getElementById(
-            "sidebarUserName"
-        )
-        .textContent =
-        userName;
-
-
-    /* PROFILE */
-
-    document
-        .getElementById(
-            "profileName"
-        )
-        .textContent =
-        userName;
-
-
-    document
-        .getElementById(
-            "profileIdentifier"
-        )
-        .textContent =
-        identifier;
-
-
-    document
-        .getElementById(
-            "profileUserCode"
-        )
-        .textContent =
-        userCode;
-
-
-    document
-        .getElementById(
-            "profileReferralCode"
-        )
-        .textContent =
-        referralCode;
-
-
-    /* TOP BALANCE */
-
-    document
-        .getElementById(
-            "homeTotalBalance"
-        )
-        .textContent =
-        realBalanceText;
-
-
-    /* BALANCE */
-
-    document
-        .getElementById(
-            "balanceAmount"
-        )
-        .textContent =
-        realBalanceText;
-
-
-    /* TEAM */
-
-    document
-        .getElementById(
-            "teamCount"
-        )
-        .textContent =
-        team;
-
-
-    document
-        .getElementById(
-            "teamReferralCode"
-        )
-        .textContent =
-        referralCode;
-
-
-    /* TRADING */
-
-    document
-        .getElementById(
-            "tradingBalance"
-        )
-        .textContent =
-        realBalanceText;
-
-}
-
-
-/* =====================================================
-   HIDE / SHOW BALANCE
-===================================================== */
-
-const topBalanceCard =
-    document.getElementById(
-        "topBalanceCard"
-    );
-
-
-const homeTotalBalance =
-    document.getElementById(
-        "homeTotalBalance"
-    );
-
-
-if(topBalanceCard){
-
-    topBalanceCard.addEventListener(
-        "click",
-        function(){
-
-            balanceHidden =
-                !balanceHidden;
-
-
-            homeTotalBalance.textContent =
-                balanceHidden
-                ? "••••••"
-                : realBalanceText;
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-const navItems =
-    document.querySelectorAll(
-        ".dashboard-nav-item"
-    );
-
-
-const sections =
-    document.querySelectorAll(
-        ".dashboard-section"
-    );
-
-
-const pageTitle =
-    document.getElementById(
-        "pageTitle"
-    );
-
-
-const titles = {
-
-    homeSection:
-        "الرئيسية",
-
-    profileSection:
-        "الحساب",
-
-    balanceSection:
-        "المحفظة",
-
-    teamSection:
-        "الفريق",
-
-    tradingSection:
-        "التداول",
-
-    supportSection:
-        "الدعم"
-
-};
-
-
-function openSection(
-    sectionId
-){
-
-    sections.forEach(
-        function(section){
-
-            section.classList.remove(
-                "active"
-            );
-
-        }
-    );
-
-
-    const target =
-        document.getElementById(
-            sectionId
-        );
-
-
-    if(target){
-
-        target.classList.add(
-            "act
+        balance.textContent =
